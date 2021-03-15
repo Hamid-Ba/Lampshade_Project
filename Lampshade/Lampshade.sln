@@ -19,9 +19,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SM.Application", "SM.Applic
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SM.Infrastructure", "SM.Infrastructure", "{F408E048-E941-41B3-B3DF-8698C203BD8E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopManagement.Infrastructure.EfCore", "ShopManagement.Infrastructure.EfCore\ShopManagement.Infrastructure.EfCore.csproj", "{9A96E745-0988-43D2-9843-3D0CA57EEDC2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopManagement.Infrastructure.EfCore", "ShopManagement.Infrastructure.EfCore\ShopManagement.Infrastructure.EfCore.csproj", "{9A96E745-0988-43D2-9843-3D0CA57EEDC2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopManagement.Infrastructure.Configuration", "ShopManagement.Infrastructure.Configuration\ShopManagement.Infrastructure.Configuration.csproj", "{D23ED388-FF5D-485B-A146-F40B32F3AA9C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopManagement.Infrastructure.Configuration", "ShopManagement.Infrastructure.Configuration\ShopManagement.Infrastructure.Configuration.csproj", "{D23ED388-FF5D-485B-A146-F40B32F3AA9C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceHost", "ServiceHost\ServiceHost.csproj", "{DB9E1F0C-A369-4947-9E3F-E68287474F97}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +55,10 @@ Global
 		{D23ED388-FF5D-485B-A146-F40B32F3AA9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D23ED388-FF5D-485B-A146-F40B32F3AA9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D23ED388-FF5D-485B-A146-F40B32F3AA9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB9E1F0C-A369-4947-9E3F-E68287474F97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB9E1F0C-A369-4947-9E3F-E68287474F97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB9E1F0C-A369-4947-9E3F-E68287474F97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB9E1F0C-A369-4947-9E3F-E68287474F97}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

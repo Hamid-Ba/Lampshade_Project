@@ -10,7 +10,7 @@ namespace ShopManagement.Infrastructure.Configuration
 {
     public class ShopManagementBootstrapper
     {
-        public void Configuration(IServiceCollection service, string connectionString)
+        public static void Configuration(IServiceCollection service, string connectionString)
         {
 
             #region ConfigDataBase

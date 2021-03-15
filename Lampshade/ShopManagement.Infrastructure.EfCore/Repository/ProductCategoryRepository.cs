@@ -21,6 +21,7 @@ namespace ShopManagement.Infrastructure.EfCore.Repository
         {
             var categoryList = _context.ProductCategories.Select(c => new AdminProductCategoryVM()
             {
+                Id = c.Id,
                 Name = c.Name,
                 CreationDate = c.CreationTime.ToString(CultureInfo.InvariantCulture),
                 Description = c.Description,
