@@ -38,4 +38,10 @@ namespace ShopManagement.Application.Contracts.ProductCategoryAgg
         public string CreationDate { get; set; }
         public long ProductCount { get; set; }
     }
+
+    public class DeleteProductCategoryVM
+    {
+        public long Id { get; set; }
+        public string Name { get; set; }
+    }
 }

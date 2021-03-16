@@ -18,7 +18,7 @@ namespace SM.Application.ProductCategoryAgg
             if (_productCategoryRepository.IsExist(c => c.Name == command.Name))
                 return operation.Failed("نام گروه تکراری است!");
 
-            var productCategory = new ProductCategory(command.Name, command.Description,command.KeyWords, command.Picture,
+            var productCategory = new ProductCategory(command.Name, command.Description, command.KeyWords, command.Picture,
                 command.PictureAlt, command.PictureTitle, command.MetaDescription,
                 command.Slug.Slugify());
 
@@ -26,6 +26,19 @@ namespace SM.Application.ProductCategoryAgg
             _productCategoryRepository.SaveChanges();
 
             return operation.Succeeded();
+        }
+
+        public OperationResult DeleteCategory(long id)
+        {
+            OperationResult result = new OperationResult();
+
+            var category = _productCategoryRepository.Get(id);
+
+            if (category == null || category.IsDeleted) return result.Failed();
+
+            category.Delete();
+            _productCategoryRepository.SaveChanges();
+            return result.Succeeded("حذف با موفقیت انجام شد");
         }
 
         public OperationResult Edit(EditProductCategoryVM command)
@@ -37,7 +50,7 @@ namespace SM.Application.ProductCategoryAgg
 
             var productCategory = _productCategoryRepository.Get(command.Id);
 
-            productCategory.Edit(command.Name, command.Description,command.KeyWords, command.Picture
+            productCategory.Edit(command.Name, command.Description, command.KeyWords, command.Picture
                 , command.PictureAlt, command.PictureTitle, command.MetaDescription, command.Slug.Slugify());
 
             _productCategoryRepository.SaveChanges();
@@ -49,5 +62,6 @@ namespace SM.Application.ProductCategoryAgg
 
         public EditProductCategoryVM GetDetailBy(long id) => _productCategoryRepository.GetDetail(id);
 
+        public DeleteProductCategoryVM GetDetailForDelete(long id) => _productCategoryRepository.GetDetailForDelete(id);
     }
 }

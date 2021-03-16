@@ -67,6 +67,11 @@
                                                href="#showmodal=@Url.Page("./Index", "Edit",new {id = category.Id})">
                                                 <i class="fa fa-edit"></i> ویرایش
                                             </a>
+
+                                            <a class="btn btn-danger pull-right m-rl-5"
+                                               href="#showmodal=@Url.Page("./Index", "Delete",new {id = category.Id})">
+                                                <i class="fa fa-trash"></i> حذف
+                                            </a>
                                         </td>
                                     </tr>
                                 }

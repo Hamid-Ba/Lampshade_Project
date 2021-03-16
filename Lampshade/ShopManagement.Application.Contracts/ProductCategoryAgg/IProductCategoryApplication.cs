@@ -7,7 +7,9 @@ namespace ShopManagement.Application.Contracts.ProductCategoryAgg
     {
         IEnumerable<AdminProductCategoryVM> GetAllForAdmin(string searchName);
         EditProductCategoryVM GetDetailBy(long id);
+        DeleteProductCategoryVM GetDetailForDelete(long id);
         OperationResult Create(CreateProductCategoryVM command);
         OperationResult Edit(EditProductCategoryVM command);
+        OperationResult DeleteCategory(long id);
     }
 }

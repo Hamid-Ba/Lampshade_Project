@@ -42,5 +42,6 @@ namespace ShopManagement.Domain.ProductCategoryAgg
             Slug = slug;
         }
 
+        public void Delete() => IsDeleted = true;
     }
 }

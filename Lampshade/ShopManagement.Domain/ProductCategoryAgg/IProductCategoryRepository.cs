@@ -11,5 +11,6 @@ namespace ShopManagement.Domain.ProductCategoryAgg
     {
         IEnumerable<AdminProductCategoryVM> GetAllForAdmin(string searchName);
         EditProductCategoryVM GetDetail(long id);
+        DeleteProductCategoryVM GetDetailForDelete(long id);
     }
 }

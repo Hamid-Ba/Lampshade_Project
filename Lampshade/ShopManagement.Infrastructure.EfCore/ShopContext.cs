@@ -18,6 +18,8 @@ namespace ShopManagement.Infrastructure.EfCore
         {
             var assembly = typeof(ProductCategoryMapping).Assembly;
             modelBuilder.ApplyConfigurationsFromAssembly(assembly);
+
+            modelBuilder.Entity<ProductCategory>().HasQueryFilter(c => !c.IsDeleted);
         }
 
         public DbSet<ProductCategory> ProductCategories { get; set; }

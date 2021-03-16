@@ -51,5 +51,14 @@ namespace ShopManagement.Infrastructure.EfCore.Repository
                 Slug = category.Slug
             };
         }
+
+        public DeleteProductCategoryVM GetDetailForDelete(long id)
+        {
+            return _context.ProductCategories.Where(c => c.Id == id).Select(c => new DeleteProductCategoryVM()
+            {
+                Id = c.Id,
+                Name = c.Name
+            }).FirstOrDefault();
+        }
     }
 }

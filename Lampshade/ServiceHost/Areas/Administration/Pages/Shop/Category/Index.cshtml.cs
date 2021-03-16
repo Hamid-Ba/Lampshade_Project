@@ -45,5 +45,17 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.Category
             var result = _categoryApplication.Edit(command);
             return new JsonResult(result);
         }
+
+        public  IActionResult OnGetDelete(long id)
+        {
+            var deleteCategory = _categoryApplication.GetDetailForDelete(id);
+            return Partial("Delete", deleteCategory);
+        }
+
+        public IActionResult OnPostDelete(DeleteProductCategoryVM command)
+        {
+            var result = _categoryApplication.DeleteCategory(command.Id);
+            return new JsonResult(result);
+        }
     }
 }

@@ -54,7 +54,7 @@
             <!-- LOGO -->
             <div class="topbar-left">
                 <div class="text-center">
-                    <a asp-page="Index" class="logo"><i class="md md-terrain"></i> <span>Lampshade </span></a>
+                    <a asp-page="/Index" class="logo"><i class="md md-terrain"></i> <span>Lampshade </span></a>
                 </div>
             </div>
             <!-- Button mobile view to collapse sidebar menu -->
@@ -179,13 +179,13 @@
                 <div id="sidebar-menu">
                     <ul>
                         <li>
-                            <a asp-page="Index" class="waves-effect active"><i class="md md-home"></i><span> داشبورد </span></a>
+                            <a asp-page="/Index" class="waves-effect active"><i class="md md-home"></i><span> داشبورد </span></a>
                         </li>
 
                         <li class="has_sub">
-                            <a class="waves-effect"><i class="md md-mail"></i><span> فروشگاه </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                            <a class="waves-effect"><i class="md md-shopping-cart"></i><span> فروشگاه </span><span class="pull-right"><i class="md md-add"></i></span></a>
                             <ul class="list-unstyled">
-                                <li><a asp-page="Index">گروه محصولات</a></li>
+                                <li><a asp-page="/Shop/Category/Index">گروه محصولات</a></li>
                                 <li><a href="email-compose.html">محصولات</a></li>
                             </ul>
                         </li>
