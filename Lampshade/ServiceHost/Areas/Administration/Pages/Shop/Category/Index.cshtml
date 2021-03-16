@@ -23,7 +23,7 @@
                 <form class="form-inline" role="form" method="get">
                     <div class="form-group">
                         <label class="sr-only"></label>
-                        <input class="form-control" asp-for ="SearchName" placeholder="نام گروه محصولی">
+                        <input class="form-control" asp-for="SearchName" placeholder="نام گروه محصولی">
                     </div>
                     <button type="submit" class="btn btn-success waves-effect waves-light m-l-10">جستجو</button>
                     <a class="btn btn-primary waves-effect waves-light m-l-10" asp-page="Index">مشاهده همه</a>
@@ -54,22 +54,22 @@
                             </thead>
                             <tbody>
                                 @foreach (var category in Model.ProductCategories)
-                                    {
-                                        <tr>
-                                            <td>@category.Id</td>
-                                            <td>
-                                                <img src="@category.Picture" style="width: 70px; height: 70px" />
-                                            </td>
-                                            <td>@category.Name</td>
-                                            <td>@category.CreationDate</td>
-                                            <td>
-                                                <a class="btn btn-warning pull-right m-rl-5"
-                                                   href="#showmodal=@Url.Page("./Index", "Edit", new { id = category.Id})">
-                                                    <i class="fa fa-edit"></i> ویرایش
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    }
+                                {
+                                    <tr>
+                                        <td>@category.Id</td>
+                                        <td>
+                                            <img src="@category.Picture" style="width: 70px; height: 70px" />
+                                        </td>
+                                        <td>@category.Name</td>
+                                        <td>@category.CreationDate</td>
+                                        <td>
+                                            <a class="btn btn-warning pull-right m-rl-5"
+                                               href="#showmodal=@Url.Page("./Index", "Edit",new {id = category.Id})">
+                                                <i class="fa fa-edit"></i> ویرایش
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
                             </tbody>
                         </table>
                     </div>

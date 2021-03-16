@@ -1,13 +1,26 @@
-﻿namespace ShopManagement.Application.Contracts.ProductCategoryAgg
+﻿using System.ComponentModel.DataAnnotations;
+using Framework.Application;
+
+namespace ShopManagement.Application.Contracts.ProductCategoryAgg
 {
     public class CreateProductCategoryVM
     {
+        [Required(ErrorMessage = ValidateMessage.IsRequired)]
         public string Name { get; set; }
         public string Description { get; set; }
+
+        [Required(ErrorMessage = ValidateMessage.IsRequired)]
+        public string KeyWords { get; set; }
         public string Picture { get; set; }
+
+        [Required(ErrorMessage = ValidateMessage.IsRequired)]
         public string PictureAlt { get; set; }
+
+        [Required(ErrorMessage = ValidateMessage.IsRequired)]
         public string PictureTitle { get; set; }
         public string MetaDescription { get; set; }
+
+        [Required(ErrorMessage = ValidateMessage.IsRequired)]
         public string Slug { get; set; }
     }
 

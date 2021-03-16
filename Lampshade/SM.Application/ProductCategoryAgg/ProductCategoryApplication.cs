@@ -18,7 +18,7 @@ namespace SM.Application.ProductCategoryAgg
             if (_productCategoryRepository.IsExist(c => c.Name == command.Name))
                 return operation.Failed("نام گروه تکراری است!");
 
-            var productCategory = new ProductCategory(command.Name, command.Description, command.Picture,
+            var productCategory = new ProductCategory(command.Name, command.Description,command.KeyWords, command.Picture,
                 command.PictureAlt, command.PictureTitle, command.MetaDescription,
                 command.Slug.Slugify());
 
@@ -32,15 +32,12 @@ namespace SM.Application.ProductCategoryAgg
         {
             OperationResult operation = new OperationResult();
 
-            if (_productCategoryRepository.IsExist(c => c.Id != command.Id))
-                return operation.Failed();
-
             if (_productCategoryRepository.IsExist(c => c.Name == command.Name && c.Id != command.Id))
                 return operation.Failed("نام گروه تکراری است!");
 
             var productCategory = _productCategoryRepository.Get(command.Id);
 
-            productCategory.Edit(command.Name, command.Description, command.Picture
+            productCategory.Edit(command.Name, command.Description,command.KeyWords, command.Picture
                 , command.PictureAlt, command.PictureTitle, command.MetaDescription, command.Slug.Slugify());
 
             _productCategoryRepository.SaveChanges();

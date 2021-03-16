@@ -43,6 +43,7 @@ namespace ShopManagement.Infrastructure.EfCore.Repository
                 Id = category.Id,
                 Name = category.Name,
                 Description = category.Description,
+                KeyWords = category.KeyWords,
                 MetaDescription = category.MetaDescription,
                 Picture = category.Picture,
                 PictureAlt = category.PictureAlt,
