@@ -64,12 +64,11 @@ namespace ShopManagement.Infrastructure.EfCore.Repository
                 CreationDate = p.CreationTime.ToString(CultureInfo.InvariantCulture)
             });
 
-            if (!string.IsNullOrWhiteSpace(search.Name) || !string.IsNullOrWhiteSpace(search.Code) ||
-                search.CategoryId != 0)
-            {
-                products = products.Where(p =>
-                    p.Name.Contains(search.Name) || p.Code.Contains(search.Code) || p.CategoryId == search.CategoryId);
-            }
+            if (!string.IsNullOrWhiteSpace(search.Name)) products = products.Where(p => p.Name.Contains(search.Name));
+
+            if (!string.IsNullOrWhiteSpace(search.Code)) products = products.Where(p => p.Code.Contains(search.Code));
+
+            if (search.CategoryId != 0) products = products.Where(p => p.CategoryId == search.CategoryId);
 
             return products.ToList();
         }

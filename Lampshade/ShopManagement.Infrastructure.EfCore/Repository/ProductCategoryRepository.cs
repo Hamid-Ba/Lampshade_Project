@@ -11,7 +11,7 @@ using ShopManagement.Domain.ProductCategoryAgg;
 
 namespace ShopManagement.Infrastructure.EfCore.Repository
 {
-    public class ProductCategoryRepository : RepositoryBase<long,ProductCategory> , IProductCategoryRepository
+    public class ProductCategoryRepository : RepositoryBase<long, ProductCategory>, IProductCategoryRepository
     {
         private readonly ShopContext _context;
 
@@ -59,6 +59,15 @@ namespace ShopManagement.Infrastructure.EfCore.Repository
                 Id = c.Id,
                 Name = c.Name
             }).FirstOrDefault();
+        }
+
+        public List<SearchProdcutCategoryForProductVM> GetCategoriesForSearchInProduct()
+        {
+            return _context.ProductCategories.Select(c => new SearchProdcutCategoryForProductVM()
+            {
+                Id = c.Id,
+                Name = c.Name
+            }).ToList();
         }
     }
 }

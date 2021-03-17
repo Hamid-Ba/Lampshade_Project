@@ -41,6 +41,8 @@ namespace SM.Application.ProductCategoryAgg
             return result.Succeeded("حذف با موفقیت انجام شد");
         }
 
+        public List<SearchProdcutCategoryForProductVM> GetCategoriesForSearchInProduct() => _productCategoryRepository.GetCategoriesForSearchInProduct();
+
         public OperationResult Edit(EditProductCategoryVM command)
         {
             OperationResult operation = new OperationResult();

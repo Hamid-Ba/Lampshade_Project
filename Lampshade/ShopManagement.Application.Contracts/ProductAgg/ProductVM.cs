@@ -14,7 +14,7 @@ namespace ShopManagement.Application.Contracts.ProductAgg
         public string Name { get;  set; }
         public string Code { get;  set; }
 
-        [Required(ErrorMessage = ValidateMessage.IsRequired)]
+        [Range(0,double.MaxValue,ErrorMessage = ValidateMessage.IsRequired)]
         public double Price { get; set; }
         public string ShortDescription { get;  set; }
         public string Description { get;  set; }
@@ -22,7 +22,7 @@ namespace ShopManagement.Application.Contracts.ProductAgg
         public string PictureAlt { get;  set; }
         public string PictureTitle { get;  set; }
 
-        [Required(ErrorMessage = ValidateMessage.IsRequired)]
+        [Range(1, double.MaxValue, ErrorMessage = ValidateMessage.IsRequired)]
         public long CategoryId { get;  set; }
 
         [Required(ErrorMessage = ValidateMessage.IsRequired)]

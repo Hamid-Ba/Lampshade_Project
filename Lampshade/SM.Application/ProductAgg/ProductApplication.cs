@@ -36,12 +36,12 @@ namespace SM.Application.ProductAgg
         {
             OperationResult result = new OperationResult();
 
-            if (_productRepository.IsExist(p => p.Id != command.Id)) return result.Failed(ValidateMessage.IsExist);
-
             if (_productRepository.IsExist(p => p.Name == command.Name && p.Id != command.Id))
                 return result.Failed(ValidateMessage.IsDuplicatedName);
 
             var product = _productRepository.Get(command.Id);
+
+            if (product == null) return result.Failed(ValidateMessage.IsExist);
 
             product.Edit(command.Name, command.Code, command.Price, command.ShortDescription,
                 command.Description, command.Picture, command.PictureAlt,
@@ -57,9 +57,9 @@ namespace SM.Application.ProductAgg
         {
             OperationResult result = new OperationResult();
 
-            if (_productRepository.IsExist(p => p.Id != command.Id)) return result.Failed(ValidateMessage.IsExist);
-
             var product = _productRepository.Get(command.Id);
+
+            if (product == null) return result.Failed(ValidateMessage.IsExist);
 
             product.Delete();
             _productRepository.SaveChanges();

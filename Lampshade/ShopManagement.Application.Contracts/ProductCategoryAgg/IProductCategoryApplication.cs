@@ -11,5 +11,6 @@ namespace ShopManagement.Application.Contracts.ProductCategoryAgg
         OperationResult Create(CreateProductCategoryVM command);
         OperationResult Edit(EditProductCategoryVM command);
         OperationResult DeleteCategory(long id);
+        List<SearchProdcutCategoryForProductVM> GetCategoriesForSearchInProduct();
     }
 }
