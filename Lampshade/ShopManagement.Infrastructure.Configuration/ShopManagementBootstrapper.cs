@@ -2,12 +2,15 @@
 using Microsoft.Extensions.DependencyInjection;
 using ShopManagement.Application.Contracts.ProductAgg;
 using ShopManagement.Application.Contracts.ProductCategoryAgg;
+using ShopManagement.Application.Contracts.ProductPictureAgg;
 using ShopManagement.Domain.ProductAgg;
 using ShopManagement.Domain.ProductCategoryAgg;
+using ShopManagement.Domain.ProductPictureAgg;
 using ShopManagement.Infrastructure.EfCore;
 using ShopManagement.Infrastructure.EfCore.Repository;
 using SM.Application.ProductAgg;
 using SM.Application.ProductCategoryAgg;
+using SM.Application.ProductPictureAgg;
 
 namespace ShopManagement.Infrastructure.Configuration
 {
@@ -27,6 +30,9 @@ namespace ShopManagement.Infrastructure.Configuration
             
             service.AddTransient<IProductRepository,ProductRepository>();
             service.AddTransient<IProductApplication, ProductApplication>();
+
+            service.AddTransient<IProductPictureRepository, ProductPictureRepository>();
+            service.AddTransient<IProductPictureApplication, ProductPictureApplication>();
         }
     }
 }

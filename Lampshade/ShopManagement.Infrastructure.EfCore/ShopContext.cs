@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query.Internal;
 using ShopManagement.Domain.ProductAgg;
 using ShopManagement.Domain.ProductCategoryAgg;
+using ShopManagement.Domain.ProductPictureAgg;
 using ShopManagement.Infrastructure.EfCore.Mapping;
 
 namespace ShopManagement.Infrastructure.EfCore
@@ -22,9 +23,11 @@ namespace ShopManagement.Infrastructure.EfCore
 
             modelBuilder.Entity<ProductCategory>().HasQueryFilter(c => !c.IsDeleted);
             modelBuilder.Entity<Product>().HasQueryFilter(p => !p.IsDeleted);
+            modelBuilder.Entity<ProductPicture>().HasQueryFilter(p => !p.IsDeleted);
         }
 
         public DbSet<ProductCategory> ProductCategories { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<ProductPicture> ProductPictures { get; set; }
     }
 }
