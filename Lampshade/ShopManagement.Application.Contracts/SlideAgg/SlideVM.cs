@@ -1,16 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Framework.Application;
 
 namespace ShopManagement.Application.Contracts.SlideAgg
 {
     public class CreateSlideVM
     {
+        [Required(ErrorMessage = ValidateMessage.IsRequired)]
         public string PictureName { get; set; }
+
+        [Required(ErrorMessage = ValidateMessage.IsRequired)]
         public string PictureAlt { get; set; }
+
+        [Required(ErrorMessage = ValidateMessage.IsRequired)]
         public string PictureTitle { get; set; }
+
         public string Header { get; set; }
         public string Title { get; set; }
         public string Text { get; set; }
@@ -28,6 +36,7 @@ namespace ShopManagement.Application.Contracts.SlideAgg
         public string PictureName { get; set; }
         public string Header { get; set; }
         public string Title { get; set; }
+        public string CreationDate { get; set; }
     }
 
     public class DeleteSlideVM

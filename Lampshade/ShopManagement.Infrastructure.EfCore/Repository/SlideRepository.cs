@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,7 +22,8 @@ namespace ShopManagement.Infrastructure.EfCore.Repository
                 Id = s.Id,
                 Header = s.Header,
                 PictureName = s.PictureName,
-                Title = s.Title
+                Title = s.Title,
+                CreationDate = s.CreationTime.ToString(CultureInfo.InvariantCulture)
             }).ToList();
 
         public EditSlideVM GetDetailForEdit(long id) => _context.Slides.Where(s => s.Id == id).Select(s =>

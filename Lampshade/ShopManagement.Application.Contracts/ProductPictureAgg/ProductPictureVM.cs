@@ -1,16 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Framework.Application;
 
 namespace ShopManagement.Application.Contracts.ProductPictureAgg
 {
     public class CreateProductPictureVM
     {
+        [Range(1, long.MaxValue, ErrorMessage = ValidateMessage.IsRequired)]
         public long ProductId { get; set; }
+
+        [Required(ErrorMessage = ValidateMessage.IsRequired)]
         public string PictureName { get; set; }
+
+        [Required(ErrorMessage = ValidateMessage.IsRequired)]
         public string PictureAlt { get; set; }
+
+        [Required(ErrorMessage = ValidateMessage.IsRequired)]
         public string PictureTitle { get; set; }
     }
 
@@ -35,5 +44,5 @@ namespace ShopManagement.Application.Contracts.ProductPictureAgg
         public string ProductName { get; set; }
     }
 
-    
+
 }
