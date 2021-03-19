@@ -25,6 +25,7 @@ namespace ShopManagement.Application.Contracts.ProductPictureAgg
         public long ProductId { get; set; }
         public string PictureName { get; set; }
         public string ProductName { get; set; }
+        public string CreationDate { get; set; }
     }
 
     public class DeleteProductPictureVM
@@ -33,4 +34,6 @@ namespace ShopManagement.Application.Contracts.ProductPictureAgg
         public string PictureName { get; set; }
         public string ProductName { get; set; }
     }
+
+    
 }

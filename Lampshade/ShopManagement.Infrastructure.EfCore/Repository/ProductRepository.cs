@@ -72,5 +72,12 @@ namespace ShopManagement.Infrastructure.EfCore.Repository
 
             return products.ToList();
         }
+
+        public List<SearchProductForPictureVM> GetProductForPictureSearch() => _context.Products.
+            Select(p => new SearchProductForPictureVM()
+            {
+                Id = p.Id,
+                Name = p.Name
+            }).ToList();
     }
 }

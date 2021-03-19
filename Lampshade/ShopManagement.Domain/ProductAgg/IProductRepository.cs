@@ -13,5 +13,6 @@ namespace ShopManagement.Domain.ProductAgg
         EditProductVM GetDetailForEdit(long id);
         DeleteProductVM GetDetailForDelete(long id);
         IEnumerable<AdminProductVM> GetAllProductForAdmin(SearchProductVM search);
+        List<SearchProductForPictureVM> GetProductForPictureSearch();
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,7 +24,8 @@ namespace ShopManagement.Infrastructure.EfCore.Repository
                 Id = p.Id,
                 PictureName = p.PictureName,
                 ProductId = p.ProductId,
-                ProductName = p.Product.Name
+                ProductName = p.Product.Name,
+                CreationDate = p.CreationTime.ToString(CultureInfo.InvariantCulture)
             });
 
             if (productId != 0) productPictures = productPictures.Where(p => p.ProductId == productId);

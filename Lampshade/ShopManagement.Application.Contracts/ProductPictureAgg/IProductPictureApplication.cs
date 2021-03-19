@@ -13,5 +13,7 @@ namespace ShopManagement.Application.Contracts.ProductPictureAgg
         OperationResult Edit(EditProductPictureVM command);
         OperationResult Delete(DeleteProductPictureVM command);
         List<AdminProductPictureVM> GetAllForAdmin(long productId);
+        EditProductPictureVM GetDetailForEdit(long id);
+        DeleteProductPictureVM GetDetailForDelete(long id);
     }
 }

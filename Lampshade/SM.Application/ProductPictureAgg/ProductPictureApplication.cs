@@ -64,5 +64,10 @@ namespace SM.Application.ProductPictureAgg
         }
 
         public List<AdminProductPictureVM> GetAllForAdmin(long productId) => _productPictureRepository.GetAllForAdmin(productId);
+        
+        public EditProductPictureVM GetDetailForEdit(long id) => _productPictureRepository.GetDetailForEdit(id);
+
+        public DeleteProductPictureVM GetDetailForDelete(long id) => _productPictureRepository.GetDetailForDelete(id);
+
     }
 }
