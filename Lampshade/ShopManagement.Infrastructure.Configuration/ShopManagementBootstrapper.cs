@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using LampshadeQuery.Contract.Slide;
+using LampshadeQuery.Query;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using ShopManagement.Application.Contracts.ProductAgg;
 using ShopManagement.Application.Contracts.ProductCategoryAgg;
@@ -39,6 +41,8 @@ namespace ShopManagement.Infrastructure.Configuration
 
             service.AddTransient<ISlideRepository, SlideRepository>();
             service.AddTransient<ISlideApplication, SlideApplication>();
+
+            service.AddTransient<ISlideQuery, SlideQuery>();
         }
     }
 }

@@ -21,3 +21,5 @@ C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lam
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ShopManagement.Infrastructure.Configuration\obj\Debug\net5.0\ShopManagement.Infrastructure.Configuration.dll
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ShopManagement.Infrastructure.Configuration\obj\Debug\net5.0\ref\ShopManagement.Infrastructure.Configuration.dll
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ShopManagement.Infrastructure.Configuration\obj\Debug\net5.0\ShopManagement.Infrastructure.Configuration.pdb
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\LampshadeQuery.dll
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\LampshadeQuery.pdb

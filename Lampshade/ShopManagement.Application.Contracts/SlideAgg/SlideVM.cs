@@ -19,6 +19,9 @@ namespace ShopManagement.Application.Contracts.SlideAgg
         [Required(ErrorMessage = ValidateMessage.IsRequired)]
         public string PictureTitle { get; set; }
 
+        [Required(ErrorMessage = ValidateMessage.IsRequired)]
+        public string Link { get; set; }
+
         public string Header { get; set; }
         public string Title { get; set; }
         public string Text { get; set; }

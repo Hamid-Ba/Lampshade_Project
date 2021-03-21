@@ -22,7 +22,7 @@ namespace SM.Application.SlideAgg
             if (_slideRepository.IsExist(s => s.PictureName == command.PictureName))
                 return result.Failed(ValidateMessage.IsDuplicatedName);
 
-            var slide = new Slide(command.PictureName, command.PictureAlt, command.PictureTitle, command.Header,
+            var slide = new Slide(command.PictureName, command.PictureAlt, command.PictureTitle, command.Link ,command.Header,
                 command.Title, command.Text, command.BtnText);
 
             _slideRepository.Create(slide);
@@ -42,7 +42,7 @@ namespace SM.Application.SlideAgg
 
             if (slide == null) return result.Failed(ValidateMessage.IsExist);
 
-            slide.Edit(command.PictureName, command.PictureAlt, command.PictureTitle, command.Header, command.Title, command.Text, command.BtnText);
+            slide.Edit(command.PictureName, command.PictureAlt, command.PictureTitle,command.Link, command.Header, command.Title, command.Text, command.BtnText);
             _slideRepository.SaveChanges();
 
             return result.Succeeded();

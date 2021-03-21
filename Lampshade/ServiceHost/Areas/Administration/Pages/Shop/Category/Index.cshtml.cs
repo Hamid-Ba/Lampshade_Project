@@ -1,7 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ShopManagement.Application.Contracts.ProductCategoryAgg;
@@ -19,15 +16,12 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.Category
 
         public IndexModel(IProductCategoryApplication categoryApplication) => _categoryApplication = categoryApplication;
 
-        public void OnGet(string searchName)
-        {
-            ProductCategories = _categoryApplication.GetAllForAdmin(searchName);
-        }
+        public void OnGet(string searchName) => ProductCategories = _categoryApplication.GetAllForAdmin(searchName);
 
-        public IActionResult OnGetCreate() => Partial("Create",new CreateProductCategoryVM());
+        public IActionResult OnGetCreate() => Partial("Create", new CreateProductCategoryVM());
 
         public IActionResult OnPostCreate(CreateProductCategoryVM command)
-        {
+        { 
             if (!ModelState.IsValid) return RedirectToPage("Index");
             var result = _categoryApplication.Create(command);
             return new JsonResult(result);
@@ -46,7 +40,7 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.Category
             return new JsonResult(result);
         }
 
-        public  IActionResult OnGetDelete(long id)
+        public IActionResult OnGetDelete(long id)
         {
             var deleteCategory = _categoryApplication.GetDetailForDelete(id);
             return Partial("Delete", deleteCategory);

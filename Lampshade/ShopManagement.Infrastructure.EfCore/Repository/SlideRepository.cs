@@ -36,7 +36,8 @@ namespace ShopManagement.Infrastructure.EfCore.Repository
                 BtnText = s.BtnText,
                 PictureAlt = s.PictureAlt,
                 PictureTitle = s.PictureTitle,
-                Text = s.Text
+                Text = s.Text,
+                Link = s.Link
             }).FirstOrDefault();
 
         public DeleteSlideVM GetDetailForDelete(long id) => _context.Slides.Where(s => s.Id == id).Select(s =>

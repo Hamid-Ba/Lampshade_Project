@@ -18,6 +18,7 @@ namespace ShopManagement.Infrastructure.EfCore.Mapping
             builder.Property(s => s.PictureName).IsRequired();
             builder.Property(s => s.PictureAlt).HasMaxLength(500).IsRequired();
             builder.Property(s => s.PictureTitle).HasMaxLength(1000).IsRequired();
+            builder.Property(s => s.Link).IsRequired();
             builder.Property(s => s.Header).HasMaxLength(225);
             builder.Property(s => s.Title).HasMaxLength(225);
             builder.Property(s => s.Text).HasMaxLength(500);

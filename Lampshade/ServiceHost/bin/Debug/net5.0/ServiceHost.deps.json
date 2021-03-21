@@ -1797,6 +1797,17 @@
           "Framework.dll": {}
         }
       },
+      "LampshadeQuery/1.0.0": {
+        "dependencies": {
+          "ShopManagement.Infrastructure.EfCore": "1.0.0"
+        },
+        "runtime": {
+          "LampshadeQuery.dll": {}
+        },
+        "compile": {
+          "LampshadeQuery.dll": {}
+        }
+      },
       "ShopManagement.Application.Contracts/1.0.0": {
         "dependencies": {
           "Framework": "1.0.0"
@@ -1822,6 +1833,7 @@
       },
       "ShopManagement.Infrastructure.Configuration/1.0.0": {
         "dependencies": {
+          "LampshadeQuery": "1.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0",
           "SM.Application": "1.0.0",
           "ShopManagement.Domain": "1.0.0",
@@ -4421,6 +4433,11 @@
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
     "Framework/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LampshadeQuery/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
