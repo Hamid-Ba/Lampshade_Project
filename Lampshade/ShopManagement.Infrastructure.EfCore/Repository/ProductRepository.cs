@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using _0_Framework.Application;
 using Framework.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using ShopManagement.Application.Contracts.ProductAgg;
@@ -61,7 +62,7 @@ namespace ShopManagement.Infrastructure.EfCore.Repository
                 Picture = p.Picture,
                 CategoryId = p.CategoryId,
                 CategoryName = p.Category.Name,
-                CreationDate = p.CreationTime.ToString(CultureInfo.InvariantCulture)
+                CreationDate = p.CreationTime.ToFarsi()
             });
 
             if (!string.IsNullOrWhiteSpace(search.Name)) products = products.Where(p => p.Name.Contains(search.Name));
@@ -73,7 +74,7 @@ namespace ShopManagement.Infrastructure.EfCore.Repository
             return products.ToList();
         }
 
-        public List<SearchProductForPictureVM> GetProductForPictureSearch() => _context.Products.
+        public List<SearchProductForPictureVM> GetProductModelForSearch() => _context.Products.
             Select(p => new SearchProductForPictureVM()
             {
                 Id = p.Id,

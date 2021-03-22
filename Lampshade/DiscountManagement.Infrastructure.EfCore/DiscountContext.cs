@@ -12,6 +12,7 @@ namespace DiscountManagement.Infrastructure.EfCore
         {
             var assembly = typeof(CustomerDiscountMapping).Assembly;
             modelBuilder.ApplyConfigurationsFromAssembly(assembly);
+            modelBuilder.Entity<CustomerDiscount>().HasQueryFilter(c => !c.IsDeleted);
         }
 
         public DbSet<CustomerDiscount> CustomerDiscounts { get; set; }

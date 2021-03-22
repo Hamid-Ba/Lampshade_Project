@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using _0_Framework.Application;
 using Framework.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using ShopManagement.Application.Contracts.ProductPictureAgg;
@@ -25,7 +26,7 @@ namespace ShopManagement.Infrastructure.EfCore.Repository
                 PictureName = p.PictureName,
                 ProductId = p.ProductId,
                 ProductName = p.Product.Name,
-                CreationDate = p.CreationTime.ToString(CultureInfo.InvariantCulture)
+                CreationDate = p.CreationTime.ToFarsi()
             });
 
             if (productId != 0) productPictures = productPictures.Where(p => p.ProductId == productId);

@@ -25,6 +25,7 @@ namespace DiscountManagement.Infrastructure.EfCore.Repository
 
         public IEnumerable<AdminCustomerDiscountVM> GetAllForAdmin(SearchCustomerDiscountVM search)
         {
+            var products = _shopContext.Products.Select(p => new { Id = p.Id, Name = p.Name }).ToList();
             var discounts = _context.CustomerDiscounts.Select(c => new AdminCustomerDiscountVM()
             {
                 Id = c.Id,
@@ -33,9 +34,10 @@ namespace DiscountManagement.Infrastructure.EfCore.Repository
                 Reason = c.Reason,
                 EndDate = c.EndDate.ToFarsi(),
                 EndDateGr = c.EndDate,
-                ProductName = _shopContext.Products.FirstOrDefault(p => p.Id == c.ProductId).Name,
+                // ProductName = products.FirstOrDefault(p => p.Id == c.ProductId).Name,
                 StartDate = c.StartDate.ToFarsi(),
-                StartDateGr = c.StartDate
+                StartDateGr = c.StartDate,
+                CreationDate = c.CreationTime.ToFarsi()
             });
 
             if (search.ProductId > 0) discounts = discounts.Where(c => c.ProductId == search.ProductId);
@@ -43,6 +45,10 @@ namespace DiscountManagement.Infrastructure.EfCore.Repository
                 discounts = discounts.Where(c => c.StartDateGr > search.StartDate.ToGeorgianDateTime());
             if (!string.IsNullOrWhiteSpace(search.EndDate))
                 discounts = discounts.Where(c => c.EndDateGr < search.EndDate.ToGeorgianDateTime());
+
+            foreach (var discount in discounts)
+                discount.ProductName = products.FirstOrDefault(p => p.Id == discount.ProductId)?.Name;
+
 
             return discounts.ToList();
         }
@@ -58,13 +64,22 @@ namespace DiscountManagement.Infrastructure.EfCore.Repository
                 StartDate = c.StartDate.ToFarsi()
             }).FirstOrDefault();
 
-        public DeleteCustomerDiscountVM GetDetailForDelete(long id) => _context.CustomerDiscounts.Where(c => c.Id == id)
-            .Select(c => new DeleteCustomerDiscountVM()
-            {
-                DiscountRate = c.DiscountRate,
-                Id = c.Id,
-                ProductId = c.ProductId,
-                ProductName = _shopContext.Products.FirstOrDefault(p => p.Id == c.ProductId).Name
-            }).FirstOrDefault();
+        public DeleteCustomerDiscountVM GetDetailForDelete(long id)
+        {
+            var products = _shopContext.Products.Select(p => new { Id = p.Id, Name = p.Name }).ToList();
+
+            var discount = _context.CustomerDiscounts.Where(c => c.Id == id)
+                  .Select(c => new DeleteCustomerDiscountVM()
+                  {
+                      DiscountRate = c.DiscountRate,
+                      Id = c.Id,
+                      ProductId = c.ProductId,
+                      //        ProductName = _shopContext.Products.FirstOrDefault(p => p.Id == c.ProductId).Name
+                  }).FirstOrDefault();
+
+            if (discount != null) { discount.ProductName = products.FirstOrDefault(p => p.Id == discount.ProductId)?.Name; }
+
+            return discount;
+        }
     }
 }

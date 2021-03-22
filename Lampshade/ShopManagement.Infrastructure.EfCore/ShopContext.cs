@@ -23,7 +23,7 @@ namespace ShopManagement.Infrastructure.EfCore
             modelBuilder.ApplyConfigurationsFromAssembly(assembly);
 
             modelBuilder.Entity<ProductCategory>().HasQueryFilter(c => !c.IsDeleted);
-            modelBuilder.Entity<Product>().HasQueryFilter(p => !p.IsDeleted);
+            modelBuilder.Entity<Product>().HasQueryFilter(p => !p.IsDeleted || p.Category == null);
             modelBuilder.Entity<ProductPicture>().HasQueryFilter(p => !p.IsDeleted);
             modelBuilder.Entity<Slide>().HasQueryFilter(s => !s.IsDeleted);
         }

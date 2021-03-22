@@ -5,6 +5,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using _0_Framework.Application;
 using Framework.Infrastructure;
 using ShopManagement.Application.Contracts.ProductCategoryAgg;
 using ShopManagement.Domain.ProductCategoryAgg;
@@ -23,7 +24,7 @@ namespace ShopManagement.Infrastructure.EfCore.Repository
             {
                 Id = c.Id,
                 Name = c.Name,
-                CreationDate = c.CreationTime.ToString(CultureInfo.InvariantCulture),
+                CreationDate = c.CreationTime.ToFarsi(),
                 Description = c.Description,
                 Picture = c.Picture,
                 ProductCount = 0

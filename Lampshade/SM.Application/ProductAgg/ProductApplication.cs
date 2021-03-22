@@ -73,7 +73,7 @@ namespace SM.Application.ProductAgg
 
         public IEnumerable<AdminProductVM> GetAllForAdmin(SearchProductVM search) => _productRepository.GetAllProductForAdmin(search);
 
-        public List<SearchProductForPictureVM> GetProductForPictureSearch() => _productRepository.GetProductForPictureSearch();
+        public List<SearchProductForPictureVM> GetProductModelForSearch() => _productRepository.GetProductModelForSearch();
 
     }
 }

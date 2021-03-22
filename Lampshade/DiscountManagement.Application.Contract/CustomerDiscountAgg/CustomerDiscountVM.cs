@@ -38,6 +38,7 @@ namespace DiscountManagement.Application.Contract.CustomerDiscountAgg
         public string ProductName { get; set; }
         public DateTime StartDateGr { get; set; }
         public DateTime EndDateGr { get; set; }
+        public string CreationDate { get; set; }
     }
 
     public class SearchCustomerDiscountVM

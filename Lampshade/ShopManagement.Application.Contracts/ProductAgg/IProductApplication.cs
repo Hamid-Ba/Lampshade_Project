@@ -15,7 +15,7 @@ namespace ShopManagement.Application.Contracts.ProductAgg
         EditProductVM GetDetailForEdit(long id);
         DeleteProductVM GetDetailForDelete(long id);
         IEnumerable<AdminProductVM> GetAllForAdmin(SearchProductVM search);
-        List<SearchProductForPictureVM> GetProductForPictureSearch();
+        List<SearchProductForPictureVM> GetProductModelForSearch();
 
     }
 }

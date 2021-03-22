@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using _0_Framework.Application;
 using Framework.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using ShopManagement.Application.Contracts.SlideAgg;
@@ -23,7 +24,7 @@ namespace ShopManagement.Infrastructure.EfCore.Repository
                 Header = s.Header,
                 PictureName = s.PictureName,
                 Title = s.Title,
-                CreationDate = s.CreationTime.ToString(CultureInfo.InvariantCulture)
+                CreationDate = s.CreationTime.ToFarsi()
             }).ToList();
 
         public EditSlideVM GetDetailForEdit(long id) => _context.Slides.Where(s => s.Id == id).Select(s =>
