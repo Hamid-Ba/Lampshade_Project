@@ -1,0 +1,615 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\DiscountManagement.Infrastructure.Configuration\\DiscountManagement.Infrastructure.Configuration.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\DiscountManagement.Application.Contract\\DiscountManagement.Application.Contract.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\DiscountManagement.Application.Contract\\DiscountManagement.Application.Contract.csproj",
+        "projectName": "DiscountManagement.Application.Contract",
+        "projectPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\DiscountManagement.Application.Contract\\DiscountManagement.Application.Contract.csproj",
+        "packagesPath": "C:\\Users\\Danesh\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\DiscountManagement.Application.Contract\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Danesh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\Framework\\Framework.csproj": {
+                "projectPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\Framework\\Framework.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\DiscountManagement.Application\\DiscountManagement.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\DiscountManagement.Application\\DiscountManagement.Application.csproj",
+        "projectName": "DiscountManagement.Application",
+        "projectPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\DiscountManagement.Application\\DiscountManagement.Application.csproj",
+        "packagesPath": "C:\\Users\\Danesh\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\DiscountManagement.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Danesh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\DiscountManagement.Application.Contract\\DiscountManagement.Application.Contract.csproj": {
+                "projectPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\DiscountManagement.Application.Contract\\DiscountManagement.Application.Contract.csproj"
+              },
+              "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\DiscountManagment.Domain\\DiscountManagement.Domain.csproj": {
+                "projectPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\DiscountManagment.Domain\\DiscountManagement.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\DiscountManagement.Infrastructure.Configuration\\DiscountManagement.Infrastructure.Configuration.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\DiscountManagement.Infrastructure.Configuration\\DiscountManagement.Infrastructure.Configuration.csproj",
+        "projectName": "DiscountManagement.Infrastructure.Configuration",
+        "projectPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\DiscountManagement.Infrastructure.Configuration\\DiscountManagement.Infrastructure.Configuration.csproj",
+        "packagesPath": "C:\\Users\\Danesh\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\DiscountManagement.Infrastructure.Configuration\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Danesh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\DiscountManagement.Application\\DiscountManagement.Application.csproj": {
+                "projectPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\DiscountManagement.Application\\DiscountManagement.Application.csproj"
+              },
+              "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\DiscountManagement.Infrastructure.EfCore\\DiscountManagement.Infrastructure.EfCore.csproj": {
+                "projectPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\DiscountManagement.Infrastructure.EfCore\\DiscountManagement.Infrastructure.EfCore.csproj"
+              },
+              "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\DiscountManagment.Domain\\DiscountManagement.Domain.csproj": {
+                "projectPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\DiscountManagment.Domain\\DiscountManagement.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\DiscountManagement.Infrastructure.EfCore\\DiscountManagement.Infrastructure.EfCore.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\DiscountManagement.Infrastructure.EfCore\\DiscountManagement.Infrastructure.EfCore.csproj",
+        "projectName": "DiscountManagement.Infrastructure.EfCore",
+        "projectPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\DiscountManagement.Infrastructure.EfCore\\DiscountManagement.Infrastructure.EfCore.csproj",
+        "packagesPath": "C:\\Users\\Danesh\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\DiscountManagement.Infrastructure.EfCore\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Danesh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\DiscountManagment.Domain\\DiscountManagement.Domain.csproj": {
+                "projectPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\DiscountManagment.Domain\\DiscountManagement.Domain.csproj"
+              },
+              "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\ShopManagement.Infrastructure.EfCore\\ShopManagement.Infrastructure.EfCore.csproj": {
+                "projectPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\ShopManagement.Infrastructure.EfCore\\ShopManagement.Infrastructure.EfCore.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\DiscountManagment.Domain\\DiscountManagement.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\DiscountManagment.Domain\\DiscountManagement.Domain.csproj",
+        "projectName": "DiscountManagement.Domain",
+        "projectPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\DiscountManagment.Domain\\DiscountManagement.Domain.csproj",
+        "packagesPath": "C:\\Users\\Danesh\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\DiscountManagment.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Danesh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\DiscountManagement.Application.Contract\\DiscountManagement.Application.Contract.csproj": {
+                "projectPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\DiscountManagement.Application.Contract\\DiscountManagement.Application.Contract.csproj"
+              },
+              "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\Framework\\Framework.csproj": {
+                "projectPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\Framework\\Framework.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\Framework\\Framework.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\Framework\\Framework.csproj",
+        "projectName": "Framework",
+        "projectPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\Framework\\Framework.csproj",
+        "packagesPath": "C:\\Users\\Danesh\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\Framework\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Danesh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\ShopManagement.Application.Contracts\\ShopManagement.Application.Contracts.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\ShopManagement.Application.Contracts\\ShopManagement.Application.Contracts.csproj",
+        "projectName": "ShopManagement.Application.Contracts",
+        "projectPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\ShopManagement.Application.Contracts\\ShopManagement.Application.Contracts.csproj",
+        "packagesPath": "C:\\Users\\Danesh\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\ShopManagement.Application.Contracts\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Danesh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\Framework\\Framework.csproj": {
+                "projectPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\Framework\\Framework.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\ShopManagement.Domain\\ShopManagement.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\ShopManagement.Domain\\ShopManagement.Domain.csproj",
+        "projectName": "ShopManagement.Domain",
+        "projectPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\ShopManagement.Domain\\ShopManagement.Domain.csproj",
+        "packagesPath": "C:\\Users\\Danesh\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\ShopManagement.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Danesh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\Framework\\Framework.csproj": {
+                "projectPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\Framework\\Framework.csproj"
+              },
+              "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\ShopManagement.Application.Contracts\\ShopManagement.Application.Contracts.csproj": {
+                "projectPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\ShopManagement.Application.Contracts\\ShopManagement.Application.Contracts.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\ShopManagement.Infrastructure.EfCore\\ShopManagement.Infrastructure.EfCore.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\ShopManagement.Infrastructure.EfCore\\ShopManagement.Infrastructure.EfCore.csproj",
+        "projectName": "ShopManagement.Infrastructure.EfCore",
+        "projectPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\ShopManagement.Infrastructure.EfCore\\ShopManagement.Infrastructure.EfCore.csproj",
+        "packagesPath": "C:\\Users\\Danesh\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\ShopManagement.Infrastructure.EfCore\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Danesh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\ShopManagement.Domain\\ShopManagement.Domain.csproj": {
+                "projectPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\ShopManagement.Domain\\ShopManagement.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

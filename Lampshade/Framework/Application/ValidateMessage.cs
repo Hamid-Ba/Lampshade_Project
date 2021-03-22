@@ -10,6 +10,7 @@ namespace Framework.Application
     {
         public const string IsRequired = "این مقدار نمی تواند خالی باشد";
         public const string IsDuplicatedName = "این نام وجود دارد";
+        public const string IsDuplicated = "این رکورد وجود دارد";
         public const string IsExist = "این رکورد در سرور وجود ندارد";
     }
 }

@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DiscountManagement.Infrastructure.Configuration;
 using ShopManagement.Infrastructure.Configuration;
 
 namespace ServiceHost
@@ -26,6 +27,7 @@ namespace ServiceHost
         {
             var connectionString = Configuration.GetConnectionString("LampShade");
             ShopManagementBootstrapper.Configuration(services,connectionString);
+            DiscountManagementBootstrapper.Configuration(services,connectionString);
 
             services.AddRazorPages();
         }
