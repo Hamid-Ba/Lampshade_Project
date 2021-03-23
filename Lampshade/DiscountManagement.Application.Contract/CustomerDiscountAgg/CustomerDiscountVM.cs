@@ -10,10 +10,10 @@ namespace DiscountManagement.Application.Contract.CustomerDiscountAgg
 {
     public class CreateCustomerDiscountVM
     {
-        [Required(ErrorMessage = ValidateMessage.IsRequired)]
+        [Range(1,long.MaxValue,ErrorMessage = ValidateMessage.IsRequired)]
         public long ProductId { get; set; }
 
-        [Range(0,100,ErrorMessage = ValidateMessage.IsRequired)]
+        [Range(1,100,ErrorMessage = ValidateMessage.IsRequired)]
         public int DiscountRate { get; set; }
         public string StartDate { get; set; }
         public string EndDate { get; set; }

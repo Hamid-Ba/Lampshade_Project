@@ -16,7 +16,7 @@ namespace ServiceHost.Areas.Administration.Pages.Discount.CustomerDiscount
         private readonly IProductApplication _productApplication;
 
         public IEnumerable<AdminCustomerDiscountVM> Discounts { get; set; }
-        public SearchCustomerDiscountVM Search { get; set; }
+        public SearchCustomerDiscountVM Search;
 
         [ViewData(Key = "Products")]
         public SelectList Products { get; set; }
@@ -50,7 +50,7 @@ namespace ServiceHost.Areas.Administration.Pages.Discount.CustomerDiscount
         public IActionResult OnGetEdit(long id)
         {
             Products = new SelectList(_productApplication.GetProductModelForSearch(), "Id", "Name");
-            return Partial("Edit", new EditCustomerDiscountVM());
+            return Partial("Edit", _customerDiscountApplication.GetDetailForEdit(id));
         }
 
         public IActionResult OnPostEdit(EditCustomerDiscountVM command)
@@ -61,7 +61,7 @@ namespace ServiceHost.Areas.Administration.Pages.Discount.CustomerDiscount
             return new JsonResult(result);
         }
 
-        public IActionResult OnGetDelete(long id) => Partial("Delete", new DeleteCustomerDiscountVM());
+        public IActionResult OnGetDelete(long id) => Partial("Delete", _customerDiscountApplication.GetDetailForDelete(id));
 
         public IActionResult OnPostDelete(DeleteCustomerDiscountVM command)
         {

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,7 +27,7 @@ namespace DiscountManagement.Infrastructure.EfCore.Repository
         public IEnumerable<AdminCustomerDiscountVM> GetAllForAdmin(SearchCustomerDiscountVM search)
         {
             var products = _shopContext.Products.Select(p => new { Id = p.Id, Name = p.Name }).ToList();
-            var discounts = _context.CustomerDiscounts.Select(c => new AdminCustomerDiscountVM()
+            var query = _context.CustomerDiscounts.Select(c => new AdminCustomerDiscountVM()
             {
                 Id = c.Id,
                 ProductId = c.ProductId,
@@ -38,30 +39,38 @@ namespace DiscountManagement.Infrastructure.EfCore.Repository
                 StartDate = c.StartDate.ToFarsi(),
                 StartDateGr = c.StartDate,
                 CreationDate = c.CreationTime.ToFarsi()
-            });
+            }).AsQueryable();
 
-            if (search.ProductId > 0) discounts = discounts.Where(c => c.ProductId == search.ProductId);
+            if (search.ProductId != 0) query = query.Where(x => x.ProductId == search.ProductId).AsQueryable();
+
             if (!string.IsNullOrWhiteSpace(search.StartDate))
-                discounts = discounts.Where(c => c.StartDateGr > search.StartDate.ToGeorgianDateTime());
+            {
+                query = query.Where(x => x.StartDateGr > search.StartDate.ToGeorgianDateTime()).AsQueryable();
+            }
+
             if (!string.IsNullOrWhiteSpace(search.EndDate))
-                discounts = discounts.Where(c => c.EndDateGr < search.EndDate.ToGeorgianDateTime());
+            {
+                query = query.Where(x => x.EndDateGr < search.EndDate.ToGeorgianDateTime()).AsQueryable();
+            }
+
+            var discounts = query.ToList();
 
             foreach (var discount in discounts)
-                discount.ProductName = products.FirstOrDefault(p => p.Id == discount.ProductId)?.Name;
+                discount.ProductName = products.Find(p => p.Id == discount.ProductId)?.Name;
 
 
-            return discounts.ToList();
+            return discounts;
         }
 
         public EditCustomerDiscountVM GetDetailForEdit(long id) => _context.CustomerDiscounts.Where(c => c.Id == id)
             .Select(c => new EditCustomerDiscountVM()
             {
                 DiscountRate = c.DiscountRate,
-                EndDate = c.EndDate.ToFarsi(),
+                EndDate = c.EndDate.ToString(CultureInfo.InvariantCulture),
                 Id = c.Id,
                 ProductId = c.ProductId,
                 Reason = c.Reason,
-                StartDate = c.StartDate.ToFarsi()
+                StartDate = c.StartDate.ToString(CultureInfo.InvariantCulture)
             }).FirstOrDefault();
 
         public DeleteCustomerDiscountVM GetDetailForDelete(long id)
@@ -77,7 +86,7 @@ namespace DiscountManagement.Infrastructure.EfCore.Repository
                       //        ProductName = _shopContext.Products.FirstOrDefault(p => p.Id == c.ProductId).Name
                   }).FirstOrDefault();
 
-            if (discount != null) { discount.ProductName = products.FirstOrDefault(p => p.Id == discount.ProductId)?.Name; }
+            if (discount != null) { discount.ProductName = products.Find(p => p.Id == discount.ProductId)?.Name; }
 
             return discount;
         }
