@@ -195,3 +195,7 @@ C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lam
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Discount\CustomerDiscount\Create.cshtml.g.cs
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Discount\CustomerDiscount\Delete.cshtml.g.cs
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Discount\CustomerDiscount\Edit.cshtml.g.cs
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Discount\ColleagueDiscount\Create.cshtml.g.cs
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Discount\ColleagueDiscount\Delete.cshtml.g.cs
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Discount\ColleagueDiscount\Edit.cshtml.g.cs
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Discount\ColleagueDiscount\Index.cshtml.g.cs
