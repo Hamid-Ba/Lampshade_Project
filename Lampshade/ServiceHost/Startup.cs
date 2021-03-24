@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DiscountManagement.Infrastructure.Configuration;
+using InventoryManagement.Infrastructure.Configuration;
 using ShopManagement.Infrastructure.Configuration;
 
 namespace ServiceHost
@@ -26,8 +27,9 @@ namespace ServiceHost
         public void ConfigureServices(IServiceCollection services)
         {
             var connectionString = Configuration.GetConnectionString("LampShade");
-            ShopManagementBootstrapper.Configuration(services,connectionString);
-            DiscountManagementBootstrapper.Configuration(services,connectionString);
+            ShopManagementBootstrapper.Configuration(services, connectionString);
+            DiscountManagementBootstrapper.Configuration(services, connectionString);
+            InventoryManagementBootstrapper.Configuration(services, connectionString);
 
             services.AddRazorPages();
         }
