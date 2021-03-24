@@ -1,6 +1,9 @@
 ﻿using System;
+using DiscountManagement.Application.ColleagueDiscountAgg;
+using DiscountManagement.Application.Contract.ColleagueDiscountAgg;
 using DiscountManagement.Application.Contract.CustomerDiscountAgg;
 using DiscountManagement.Application.CustomerDiscountAgg;
+using DiscountManagement.Domain.ColleagueDiscountAgg;
 using DiscountManagement.Domain.CustomerDiscountAgg;
 using DiscountManagement.Infrastructure.EfCore;
 using DiscountManagement.Infrastructure.EfCore.Repository;
@@ -19,9 +22,11 @@ namespace DiscountManagement.Infrastructure.Configuration
 
             #endregion
 
-
             service.AddTransient<ICustomerDiscountRepository, CustomerDiscountRepository>();
             service.AddTransient<ICustomerDiscountApplication, CustomerDiscountApplication>();
+
+            service.AddTransient<IColleagueDiscountRepository, ColleagueDiscountRepository>();
+            service.AddTransient<IColleagueDiscountApplication, ColleagueDiscountApplication>();
         }
     }
 }

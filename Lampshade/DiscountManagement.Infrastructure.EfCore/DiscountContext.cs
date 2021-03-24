@@ -1,4 +1,5 @@
-﻿using DiscountManagement.Domain.CustomerDiscountAgg;
+﻿using DiscountManagement.Domain.ColleagueDiscountAgg;
+using DiscountManagement.Domain.CustomerDiscountAgg;
 using DiscountManagement.Infrastructure.EfCore.Mapping;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,8 +14,10 @@ namespace DiscountManagement.Infrastructure.EfCore
             var assembly = typeof(CustomerDiscountMapping).Assembly;
             modelBuilder.ApplyConfigurationsFromAssembly(assembly);
             modelBuilder.Entity<CustomerDiscount>().HasQueryFilter(c => !c.IsDeleted);
+            modelBuilder.Entity<ColleagueDiscount>().HasQueryFilter(c => !c.IsDeleted);
         }
 
         public DbSet<CustomerDiscount> CustomerDiscounts { get; set; }
+        public DbSet<ColleagueDiscount> ColleagueDiscounts { get; set; }
     }
 }
