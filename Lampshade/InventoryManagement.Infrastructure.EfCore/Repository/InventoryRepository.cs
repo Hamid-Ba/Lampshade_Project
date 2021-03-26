@@ -34,7 +34,7 @@ namespace InventoryManagement.Infrastructure.EfCore.Repository
             });
 
             if (search.ProductId > 0) query = query.Where(v => v.ProductId == search.ProductId);
-            if (!search.IsInStock) query = query.Where(v => !v.IsInStock);
+            if (search.IsInStock) query = query.Where(v => !v.IsInStock);
 
             var inventories = query.ToList();
 

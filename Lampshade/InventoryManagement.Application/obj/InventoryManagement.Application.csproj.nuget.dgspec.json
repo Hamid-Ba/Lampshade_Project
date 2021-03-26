@@ -1,0 +1,260 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\InventoryManagement.Application\\InventoryManagement.Application.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\Framework\\Framework.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\Framework\\Framework.csproj",
+        "projectName": "Framework",
+        "projectPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\Framework\\Framework.csproj",
+        "packagesPath": "C:\\Users\\Danesh\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\Framework\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Danesh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\InventoryManagement.Application.Contract\\InventoryManagement.Application.Contract.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\InventoryManagement.Application.Contract\\InventoryManagement.Application.Contract.csproj",
+        "projectName": "InventoryManagement.Application.Contract",
+        "projectPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\InventoryManagement.Application.Contract\\InventoryManagement.Application.Contract.csproj",
+        "packagesPath": "C:\\Users\\Danesh\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\InventoryManagement.Application.Contract\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Danesh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\Framework\\Framework.csproj": {
+                "projectPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\Framework\\Framework.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\InventoryManagement.Application\\InventoryManagement.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\InventoryManagement.Application\\InventoryManagement.Application.csproj",
+        "projectName": "InventoryManagement.Application",
+        "projectPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\InventoryManagement.Application\\InventoryManagement.Application.csproj",
+        "packagesPath": "C:\\Users\\Danesh\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\InventoryManagement.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Danesh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\InventoryManagement.Application.Contract\\InventoryManagement.Application.Contract.csproj": {
+                "projectPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\InventoryManagement.Application.Contract\\InventoryManagement.Application.Contract.csproj"
+              },
+              "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\InventoryManagement.Domain\\InventoryManagement.Domain.csproj": {
+                "projectPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\InventoryManagement.Domain\\InventoryManagement.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\InventoryManagement.Domain\\InventoryManagement.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\InventoryManagement.Domain\\InventoryManagement.Domain.csproj",
+        "projectName": "InventoryManagement.Domain",
+        "projectPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\InventoryManagement.Domain\\InventoryManagement.Domain.csproj",
+        "packagesPath": "C:\\Users\\Danesh\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\InventoryManagement.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Danesh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\Framework\\Framework.csproj": {
+                "projectPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\Framework\\Framework.csproj"
+              },
+              "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\InventoryManagement.Application.Contract\\InventoryManagement.Application.Contract.csproj": {
+                "projectPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\InventoryManagement.Application.Contract\\InventoryManagement.Application.Contract.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

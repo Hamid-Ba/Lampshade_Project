@@ -12,6 +12,8 @@ namespace InventoryManagement.Infrastructure.EfCore
         {
             var assembly = typeof(InventoryMapping).Assembly;
             modelBuilder.ApplyConfigurationsFromAssembly(assembly);
+
+            modelBuilder.Entity<Inventory>().HasQueryFilter(i => !i.IsDeleted);
         }
 
         public DbSet<Inventory> Inventories { get; set; }

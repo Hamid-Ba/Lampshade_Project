@@ -11,10 +11,10 @@ namespace InventoryManagement.Domain.InventoryAgg
         public long ProductId { get; private set; }
         public double Price { get; private set; }
         public bool IsInStock { get; private set; }
-      
+
         public List<InventoryOperation> InventoryOperations { get; private set; }
 
-        public Inventory(long productId, double price, bool isInStock)
+        public Inventory(long productId, double price)
         {
             ProductId = productId;
             Price = price;
@@ -31,8 +31,8 @@ namespace InventoryManagement.Domain.InventoryAgg
 
         public long CalculateStock()
         {
-            var plus = InventoryOperations.Where(o => o.Operation).Sum(o => o.CurrentCount);
-            var minus = InventoryOperations.Where(o => !o.Operation).Sum(o => o.CurrentCount);
+            var plus = InventoryOperations.Where(o => o.Operation).Sum(o => o.Count);
+            var minus = InventoryOperations.Where(o => !o.Operation).Sum(o => o.Count);
 
             return plus - minus;
         }
@@ -51,11 +51,13 @@ namespace InventoryManagement.Domain.InventoryAgg
         public void Decrease(long count, long operatorId, long orderId, string description)
         {
             var currentCount = CalculateStock() - count;
+
             var operation = new InventoryOperation(Id, false, count, currentCount, orderId, operatorId,
                 description);
             InventoryOperations.Add(operation);
 
             IsInStock = currentCount > 0;
+
         }
     }
 }

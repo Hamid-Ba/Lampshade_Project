@@ -1862,6 +1862,18 @@
           "Framework.dll": {}
         }
       },
+      "InventoryManagement.Application/1.0.0": {
+        "dependencies": {
+          "InventoryManagement.Application.Contract": "1.0.0",
+          "InventoryManagement.Domain": "1.0.0"
+        },
+        "runtime": {
+          "InventoryManagement.Application.dll": {}
+        },
+        "compile": {
+          "InventoryManagement.Application.dll": {}
+        }
+      },
       "InventoryManagement.Application.Contract/1.0.0": {
         "dependencies": {
           "Framework": "1.0.0"
@@ -1887,6 +1899,7 @@
       },
       "InventoryManagement.Infrastructure.Configuration/1.0.0": {
         "dependencies": {
+          "InventoryManagement.Application": "1.0.0",
           "InventoryManagement.Application.Contract": "1.0.0",
           "InventoryManagement.Domain": "1.0.0",
           "InventoryManagement.Infrastructure.EfCore": "1.0.0",
@@ -4574,6 +4587,11 @@
       "sha512": ""
     },
     "Framework/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "InventoryManagement.Application/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
