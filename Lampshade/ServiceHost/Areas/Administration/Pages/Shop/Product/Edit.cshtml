@@ -33,14 +33,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label asp-for="Price" class="control-label">قیمت</label>
-                    <input type="number" class="form-control" asp-for="Price">
-                    <span asp-validation-for="Price" class="error"></span>
-                </div>
-            </div>
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="form-group">
                     <label asp-for="CategoryId" class="control-label">گروه محصول</label>
                     <select class="form-control" asp-for="CategoryId" asp-items='@ViewData["Categories"] as IEnumerable<SelectListItem>'>

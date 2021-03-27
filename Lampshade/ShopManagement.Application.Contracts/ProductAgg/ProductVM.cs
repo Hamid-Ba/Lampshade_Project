@@ -13,9 +13,6 @@ namespace ShopManagement.Application.Contracts.ProductAgg
         [Required(ErrorMessage = ValidateMessage.IsRequired)]
         public string Name { get;  set; }
         public string Code { get;  set; }
-
-        [Range(0,double.MaxValue,ErrorMessage = ValidateMessage.IsRequired)]
-        public double Price { get; set; }
         public string ShortDescription { get;  set; }
         public string Description { get;  set; }
         public string Picture { get;  set; }
@@ -45,7 +42,6 @@ namespace ShopManagement.Application.Contracts.ProductAgg
         public long Id { get; set; }
         public string Name { get;  set; }
         public string Code { get;  set; }
-        public double Price { get; set; }
         public string Picture { get; set; }
         public long CategoryId { get; set; }
         public string CategoryName { get; set; }

@@ -13,7 +13,6 @@ namespace ShopManagement.Domain.ProductAgg
     {
         public string Name { get;  private set; }
         public string Code { get;  private set; }
-        public double Price { get; private set; }
         public string ShortDescription { get;  private set; }
         public string Description { get;  private set; }
         public string Picture { get;  private set; }
@@ -26,11 +25,10 @@ namespace ShopManagement.Domain.ProductAgg
         public ProductCategory Category { get;  private set; }
         public List<ProductPicture> ProductPictures { get; private set; }
 
-        public Product(string name, string code,double price, string shortDescription, string description, string picture, string pictureAlt, string pictureTitle, long categoryId, string slug, string keywords, string metaDescription)
+        public Product(string name, string code, string shortDescription, string description, string picture, string pictureAlt, string pictureTitle, long categoryId, string slug, string keywords, string metaDescription)
         {
             Name = name;
             Code = code;
-            Price = price;
             ShortDescription = shortDescription;
             Description = description;
             Picture = picture;
@@ -42,11 +40,10 @@ namespace ShopManagement.Domain.ProductAgg
             MetaDescription = metaDescription;
         }
 
-        public void Edit(string name, string code,double price, string shortDescription, string description, string picture, string pictureAlt, string pictureTitle, long categoryId, string slug, string keywords, string metaDescription)
+        public void Edit(string name, string code, string shortDescription, string description, string picture, string pictureAlt, string pictureTitle, long categoryId, string slug, string keywords, string metaDescription)
         {
             Name = name;
             Code = code;
-            Price = price;
             ShortDescription = shortDescription;
             Description = description;
             Picture = picture;

@@ -21,7 +21,7 @@ namespace SM.Application.ProductAgg
 
             if (_productRepository.IsExist(p => p.Name == command.Name)) return result.Failed(ValidateMessage.IsDuplicatedName);
 
-            var product = new Product(command.Name, command.Code, command.Price, command.ShortDescription,
+            var product = new Product(command.Name, command.Code, command.ShortDescription,
                 command.Description, command.Picture, command.PictureAlt,
                 command.PictureTitle, command.CategoryId, command.Slug.Slugify(), command.Keywords,
                 command.MetaDescription);
@@ -43,7 +43,7 @@ namespace SM.Application.ProductAgg
 
             if (product == null) return result.Failed(ValidateMessage.IsExist);
 
-            product.Edit(command.Name, command.Code, command.Price, command.ShortDescription,
+            product.Edit(command.Name, command.Code, command.ShortDescription,
                 command.Description, command.Picture, command.PictureAlt,
                 command.PictureTitle, command.CategoryId, command.Slug.Slugify(), command.Keywords,
                 command.MetaDescription);

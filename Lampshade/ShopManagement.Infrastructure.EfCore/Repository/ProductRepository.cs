@@ -33,7 +33,6 @@ namespace ShopManagement.Infrastructure.EfCore.Repository
                 Picture = product.Picture,
                 PictureAlt = product.PictureAlt,
                 PictureTitle = product.PictureTitle,
-                Price = product.Price,
                 ShortDescription = product.ShortDescription,
                 Slug = product.Slug
             };
@@ -58,7 +57,6 @@ namespace ShopManagement.Infrastructure.EfCore.Repository
                 Id = p.Id,
                 Code = p.Code,
                 Name = p.Name,
-                Price = p.Price,
                 Picture = p.Picture,
                 CategoryId = p.CategoryId,
                 CategoryName = p.Category.Name,
