@@ -70,5 +70,23 @@ namespace InventoryManagement.Infrastructure.EfCore.Repository
         }
 
         public Inventory GetBy(long productId) => _context.Inventories.FirstOrDefault(i => i.ProductId == productId);
+
+        public IEnumerable<InventoryOperationsVM> GetAllOperations(long inventoryId)
+        {
+            var inventory = _context.Inventories.Find(inventoryId);
+
+            return inventory.InventoryOperations.Select(o => new InventoryOperationsVM()
+            {
+                Id = o.Id,
+                Description = o.Description,
+                Count = o.Count,
+                CurrentCount = o.CurrentCount,
+                Operation = o.Operation,
+                OperationDate = o.OperationDate.ToFarsi(),
+                OperatorId = o.OperatorId,
+                OperatorName = "مدیر سیستم",
+                OrderId = o.OrderId
+            }).ToList();
+        }
     }
 }

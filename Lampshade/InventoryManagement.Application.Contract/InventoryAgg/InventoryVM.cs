@@ -10,7 +10,7 @@ namespace InventoryManagement.Application.Contract.InventoryAgg
 {
     public class CreateInventoryVM
     {
-        [Range(1,long.MaxValue,ErrorMessage = ValidateMessage.IsRequired)]
+        [Range(1, long.MaxValue, ErrorMessage = ValidateMessage.IsRequired)]
         public long ProductId { get; set; }
         public double Price { get; set; }
     }
@@ -55,6 +55,19 @@ namespace InventoryManagement.Application.Contract.InventoryAgg
         [Range(1, long.MaxValue, ErrorMessage = ValidateMessage.IsRequired)]
         public long Count { get; set; }
         public long OrderId { get; set; }
+        public string Description { get; set; }
+    }
+
+    public class InventoryOperationsVM
+    {
+        public long Id { get; set; }
+        public bool Operation { get; set; }
+        public long Count { get; set; }
+        public long CurrentCount { get; set; }
+        public long OrderId { get; set; }
+        public long OperatorId { get; set; }
+        public string OperatorName { get; set; }
+        public string OperationDate { get; set; }
         public string Description { get; set; }
     }
 }

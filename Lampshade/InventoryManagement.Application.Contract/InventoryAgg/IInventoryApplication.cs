@@ -18,5 +18,6 @@ namespace InventoryManagement.Application.Contract.InventoryAgg
         IEnumerable<AdminInventoryVM> GetAllForAdmin(SearchInventoryVM search);
         EditInventoryVM GetDetailForEdit(long id);
         DeleteInventoryVM GetDetailForDelete(long id);
+        IEnumerable<InventoryOperationsVM> GetAllOperations(long inventoryId);
     }
 }

@@ -14,5 +14,6 @@ namespace InventoryManagement.Domain.InventoryAgg
         EditInventoryVM GetDetailForEdit(long id);
         DeleteInventoryVM GetDetailForDelete(long id);
         Inventory GetBy(long productId);
+        IEnumerable<InventoryOperationsVM> GetAllOperations(long inventoryId);
     }
 }

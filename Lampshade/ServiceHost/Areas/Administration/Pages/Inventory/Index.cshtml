@@ -74,7 +74,7 @@
                                         <td>@inventory.CurrentCount</td>
                                         <td>@inventory.CreationDate</td>
                                         <td>
-                                            <a class="btn btn-primary pull-right m-rl-5"
+                                            <a class="btn btn-success pull-right m-rl-5"
                                                href="#showmodal=@Url.Page("./Index", "Increase",new {id = inventory.Id})">
                                                 <i class="fa fa-plus"></i> افزایش موجودی
                                             </a>
@@ -84,14 +84,19 @@
                                                 <i class="fa fa-minus"></i> کاهش موجودی
                                             </a>
 
+                                            <a class="btn btn-primary pull-right m-rl-5"
+                                               href="#showmodal=@Url.Page("./Index", "Log",new {id = inventory.Id})">
+                                                <i class="fa fa-recycle"></i> گردش انبار
+                                            </a>
+
                                             <a class="btn btn-warning pull-right m-rl-5"
                                                href="#showmodal=@Url.Page("./Index", "Edit", new {id = inventory.Id})">
-                                                <i class="fa fa-edit"></i> ویرایش
+                                                <i class="fa fa-edit"></i>
                                             </a>
 
                                             <a class="btn btn-danger pull-right m-rl-5"
                                                href="#showmodal=@Url.Page("./Index", "Delete", new {id = inventory.Id})">
-                                                <i class="fa fa-trash"></i> حذف
+                                                <i class="fa fa-trash"></i>
                                             </a>
                                         </td>
                                     </tr>

@@ -118,5 +118,7 @@ namespace InventoryManagement.Application.InventoryAgg
         public EditInventoryVM GetDetailForEdit(long id) => _inventoryRepository.GetDetailForEdit(id);
 
         public DeleteInventoryVM GetDetailForDelete(long id) => _inventoryRepository.GetDetailForDelete(id);
+
+        public IEnumerable<InventoryOperationsVM> GetAllOperations(long inventoryId) => _inventoryRepository.GetAllOperations(inventoryId);
     }
 }
