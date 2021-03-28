@@ -781,6 +781,12 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
+              "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\DiscountManagement.Infrastructure.EfCore\\DiscountManagement.Infrastructure.EfCore.csproj": {
+                "projectPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\DiscountManagement.Infrastructure.EfCore\\DiscountManagement.Infrastructure.EfCore.csproj"
+              },
+              "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\InventoryManagement.Infrastructure.EfCore\\InventoryManagement.Infrastructure.EfCore.csproj": {
+                "projectPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\InventoryManagement.Infrastructure.EfCore\\InventoryManagement.Infrastructure.EfCore.csproj"
+              },
               "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\ShopManagement.Infrastructure.EfCore\\ShopManagement.Infrastructure.EfCore.csproj": {
                 "projectPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\ShopManagement.Infrastructure.EfCore\\ShopManagement.Infrastructure.EfCore.csproj"
               }

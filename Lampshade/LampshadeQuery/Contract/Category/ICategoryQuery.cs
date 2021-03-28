@@ -9,5 +9,6 @@ namespace LampshadeQuery.Contract.Category
     public interface ICategoryQuery
     {
         IEnumerable<CategoryQueryVM> GetAllCategory();
+        IEnumerable<CategoryWithProductsQueryVM> GetCategoryWithProducts();
     }
 }
