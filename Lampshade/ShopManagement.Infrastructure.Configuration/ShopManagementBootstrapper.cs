@@ -1,4 +1,5 @@
 ﻿using LampshadeQuery.Contract.Category;
+using LampshadeQuery.Contract.Product;
 using LampshadeQuery.Contract.Slide;
 using LampshadeQuery.Query;
 using Microsoft.EntityFrameworkCore;
@@ -45,6 +46,7 @@ namespace ShopManagement.Infrastructure.Configuration
 
             service.AddTransient<ISlideQuery, SlideQuery>();
             service.AddTransient<ICategoryQuery, CategoryQuery>();
+            service.AddTransient<IProductQuery, ProductQuery>();
         }
     }
 }

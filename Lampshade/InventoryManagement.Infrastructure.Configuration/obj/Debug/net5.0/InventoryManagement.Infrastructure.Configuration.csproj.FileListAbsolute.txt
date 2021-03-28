@@ -4,12 +4,14 @@ C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lam
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\InventoryManagement.Infrastructure.Configuration\bin\Debug\net5.0\InventoryManagement.Infrastructure.Configuration.pdb
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\InventoryManagement.Infrastructure.Configuration\bin\Debug\net5.0\Framework.dll
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\InventoryManagement.Infrastructure.Configuration\bin\Debug\net5.0\InventoryManagement.Application.Contract.dll
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\InventoryManagement.Infrastructure.Configuration\bin\Debug\net5.0\InventoryManagement.Application.dll
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\InventoryManagement.Infrastructure.Configuration\bin\Debug\net5.0\InventoryManagement.Domain.dll
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\InventoryManagement.Infrastructure.Configuration\bin\Debug\net5.0\InventoryManagement.Infrastructure.EfCore.dll
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\InventoryManagement.Infrastructure.Configuration\bin\Debug\net5.0\ShopManagement.Application.Contracts.dll
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\InventoryManagement.Infrastructure.Configuration\bin\Debug\net5.0\ShopManagement.Domain.dll
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\InventoryManagement.Infrastructure.Configuration\bin\Debug\net5.0\ShopManagement.Infrastructure.EfCore.dll
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\InventoryManagement.Infrastructure.Configuration\bin\Debug\net5.0\InventoryManagement.Application.Contract.pdb
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\InventoryManagement.Infrastructure.Configuration\bin\Debug\net5.0\InventoryManagement.Application.pdb
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\InventoryManagement.Infrastructure.Configuration\bin\Debug\net5.0\InventoryManagement.Domain.pdb
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\InventoryManagement.Infrastructure.Configuration\bin\Debug\net5.0\InventoryManagement.Infrastructure.EfCore.pdb
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\InventoryManagement.Infrastructure.Configuration\bin\Debug\net5.0\Framework.pdb
@@ -25,5 +27,3 @@ C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lam
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\InventoryManagement.Infrastructure.Configuration\obj\Debug\net5.0\InventoryManagement.Infrastructure.Configuration.dll
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\InventoryManagement.Infrastructure.Configuration\obj\Debug\net5.0\ref\InventoryManagement.Infrastructure.Configuration.dll
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\InventoryManagement.Infrastructure.Configuration\obj\Debug\net5.0\InventoryManagement.Infrastructure.Configuration.pdb
-C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\InventoryManagement.Infrastructure.Configuration\bin\Debug\net5.0\InventoryManagement.Application.dll
-C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\InventoryManagement.Infrastructure.Configuration\bin\Debug\net5.0\InventoryManagement.Application.pdb

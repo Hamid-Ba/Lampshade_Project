@@ -49,7 +49,8 @@ namespace LampshadeQuery.Query
                 {
                     Id = c.Id,
                     Name = c.Name,
-                    Products = MapProduct(c.Products)
+                    Slug = c.Slug,
+                    Products = MapProduct(c.Products, 4)
                 }).ToList();
 
             foreach (var category in categories)
@@ -81,7 +82,56 @@ namespace LampshadeQuery.Query
             return categories;
         }
 
-        private static List<ProductQueryVM> MapProduct(List<Product> Products)
+        public CategoryWithProductsQueryVM GetCategoryAndProductsBy(string slug)
+        {
+            var discount = _discountContext.CustomerDiscounts
+                .Where(c => c.StartDate < DateTime.Now && DateTime.Now < c.EndDate)
+                .Select(c => new { c.ProductId, c.DiscountRate, c.EndDate }).ToList();
+
+            var inventory = _inventoryContext.Inventories.Select(i => new { i.ProductId, i.Price }).ToList();
+
+            var category = _context.ProductCategories.Where(c => c.Slug == slug)
+                .Include(p => p.Products)
+                .ThenInclude(c => c.Category).Select(c => new CategoryWithProductsQueryVM()
+                {
+                    Id = c.Id,
+                    Name = c.Name,
+                    Slug = c.Slug,
+                    Products = MapProduct(c.Products, c.Products.Count)
+                }).AsNoTracking().FirstOrDefault();
+
+
+            if (category != null)
+            {
+                foreach (var product in category.Products)
+                {
+                    product.HasDiscount = discount.Exists(d => d.ProductId == product.Id);
+
+                    if (!inventory.Exists(p => p.ProductId == product.Id)) continue;
+
+                    // ReSharper disable once PossibleNullReferenceException
+                    var price = inventory.Find(i => i.ProductId == product.Id).Price;
+
+                    product.Price = price.ToMoney();
+
+                    if (!product.HasDiscount) continue;
+
+                    // ReSharper disable once PossibleNullReferenceException
+                    product.DiscountRate = discount.Find(p => p.ProductId == product.Id).DiscountRate;
+
+                    var discountRate = product.DiscountRate;
+                    var discountMoney = Math.Round(price * discountRate) / 100;
+
+                    product.PriceWithDiscount = (price - discountMoney).ToMoney();
+                    product.DiscountExpired = discount.Find(d => d.ProductId == product.Id)?.EndDate.ToDiscountFormat();
+                }
+
+
+            }
+            return category;
+        }
+
+        private static List<ProductQueryVM> MapProduct(List<Product> Products, int count)
         {
             if (Products == null) throw new ArgumentNullException(nameof(Products));
 
@@ -92,8 +142,11 @@ namespace LampshadeQuery.Query
                 Name = p.Name,
                 Picture = p.Picture,
                 PictureAlt = p.PictureAlt,
-                PictureTitle = p.PictureTitle
-            }).ToList();
+                PictureTitle = p.PictureTitle,
+                Slug = p.Slug,
+                CategoryId = p.CategoryId,
+                CategorySlug = p.Category.Slug
+            }).OrderByDescending(p => p.Id).Take(count).ToList();
         }
     }
 }

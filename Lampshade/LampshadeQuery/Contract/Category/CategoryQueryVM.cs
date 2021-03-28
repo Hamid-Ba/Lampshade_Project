@@ -21,6 +21,7 @@ namespace LampshadeQuery.Contract.Category
     {
         public long Id { get; set; }
         public string Name { get; set; }
+        public string Slug { get; set; }
         public List<ProductQueryVM> Products { get; set; }
     }
 }
