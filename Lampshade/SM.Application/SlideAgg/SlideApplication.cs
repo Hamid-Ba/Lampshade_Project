@@ -19,10 +19,13 @@ namespace SM.Application.SlideAgg
         {
             OperationResult result = new OperationResult();
 
-            if (_slideRepository.IsExist(s => s.PictureName == command.PictureName))
-                return result.Failed(ValidateMessage.IsDuplicatedName);
+            //if (_slideRepository.IsExist(s => s.PictureName == command.PictureName))
+            //    return result.Failed(ValidateMessage.IsDuplicatedName);
 
-            var slide = new Slide(command.PictureName, command.PictureAlt, command.PictureTitle, command.Link ,command.Header,
+            var folderName = "slide";
+            var pictureName = Uploader.ImageUploader(command.PictureName, folderName);
+
+            var slide = new Slide(pictureName, command.PictureAlt, command.PictureTitle, command.Link, command.Header,
                 command.Title, command.Text, command.BtnText);
 
             _slideRepository.Create(slide);
@@ -35,14 +38,17 @@ namespace SM.Application.SlideAgg
         {
             OperationResult result = new OperationResult();
 
-            if (_slideRepository.IsExist(s => s.PictureName == command.PictureName && s.Id != command.Id))
-                return result.Failed(ValidateMessage.IsDuplicatedName);
+            //if (_slideRepository.IsExist(s => s.PictureName == command.PictureName && s.Id != command.Id))
+            //    return result.Failed(ValidateMessage.IsDuplicatedName);
 
             var slide = _slideRepository.Get(command.Id);
 
             if (slide == null) return result.Failed(ValidateMessage.IsExist);
 
-            slide.Edit(command.PictureName, command.PictureAlt, command.PictureTitle,command.Link, command.Header, command.Title, command.Text, command.BtnText);
+            var folderName = "slide";
+            var pictureName = Uploader.ImageUploader(command.PictureName, folderName);
+
+            slide.Edit(pictureName, command.PictureAlt, command.PictureTitle, command.Link, command.Header, command.Title, command.Text, command.BtnText);
             _slideRepository.SaveChanges();
 
             return result.Succeeded();

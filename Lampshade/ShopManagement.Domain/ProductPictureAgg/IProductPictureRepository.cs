@@ -13,5 +13,6 @@ namespace ShopManagement.Domain.ProductPictureAgg
         List<AdminProductPictureVM> GetAllForAdmin(long productId);
         EditProductPictureVM GetDetailForEdit(long id);
         DeleteProductPictureVM GetDetailForDelete(long id);
+        ProductPicture GetWithProductAndCategoryBy(long id);
     }
 }

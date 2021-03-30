@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Framework.Application;
+using Microsoft.AspNetCore.Http;
 
 namespace ShopManagement.Application.Contracts.ProductAgg
 {
@@ -15,7 +16,7 @@ namespace ShopManagement.Application.Contracts.ProductAgg
         public string Code { get;  set; }
         public string ShortDescription { get;  set; }
         public string Description { get;  set; }
-        public string Picture { get;  set; }
+        public IFormFile Picture { get;  set; }
         public string PictureAlt { get;  set; }
         public string PictureTitle { get;  set; }
 

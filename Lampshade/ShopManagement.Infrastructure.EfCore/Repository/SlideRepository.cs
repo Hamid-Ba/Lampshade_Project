@@ -32,7 +32,6 @@ namespace ShopManagement.Infrastructure.EfCore.Repository
             {
                 Id = s.Id,
                 Title = s.Title,
-                PictureName = s.PictureName,
                 Header = s.Header,
                 BtnText = s.BtnText,
                 PictureAlt = s.PictureAlt,

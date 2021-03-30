@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Framework.Application;
+using Microsoft.AspNetCore.Http;
 
 namespace ShopManagement.Application.Contracts.ProductCategoryAgg
 {
@@ -11,7 +12,7 @@ namespace ShopManagement.Application.Contracts.ProductCategoryAgg
 
         [Required(ErrorMessage = ValidateMessage.IsRequired)]
         public string KeyWords { get; set; }
-        public string Picture { get; set; }
+        public IFormFile Picture { get; set; }
 
         [Required(ErrorMessage = ValidateMessage.IsRequired)]
         public string PictureAlt { get; set; }

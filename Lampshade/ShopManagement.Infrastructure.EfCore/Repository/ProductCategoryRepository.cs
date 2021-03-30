@@ -46,7 +46,6 @@ namespace ShopManagement.Infrastructure.EfCore.Repository
                 Description = category.Description,
                 KeyWords = category.KeyWords,
                 MetaDescription = category.MetaDescription,
-                Picture = category.Picture,
                 PictureAlt = category.PictureAlt,
                 PictureTitle = category.PictureTitle,
                 Slug = category.Slug
@@ -70,5 +69,8 @@ namespace ShopManagement.Infrastructure.EfCore.Repository
                 Name = c.Name
             }).ToList();
         }
+
+        public string GetCategorySlugBy(long id) => _context.Find<ProductCategory>(id).Slug;
+
     }
 }

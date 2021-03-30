@@ -31,7 +31,7 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <label asp-for="PictureName" class="control-label">عکس</label>
-                    <input class="form-control" asp-for="PictureName" accept="image/*">
+                    <input type="file" class="form-control" asp-for="PictureName" accept="image/*">
                     <span asp-validation-for="PictureName" class="error"></span>
                 </div>
             </div>

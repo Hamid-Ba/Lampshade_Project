@@ -1,5 +1,6 @@
 ﻿using ShopManagement.Domain.ProductCategoryAgg;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using Framework.Application;
 using ShopManagement.Application.Contracts.ProductCategoryAgg;
 
@@ -18,9 +19,14 @@ namespace SM.Application.ProductCategoryAgg
             if (_productCategoryRepository.IsExist(c => c.Name == command.Name))
                 return operation.Failed("نام گروه تکراری است!");
 
-            var productCategory = new ProductCategory(command.Name, command.Description, command.KeyWords, command.Picture,
+            var slug = command.Slug.Slugify();
+            var folderName = slug;
+
+            var pictureName = Uploader.ImageUploader(command.Picture, folderName);
+
+            var productCategory = new ProductCategory(command.Name, command.Description, command.KeyWords, pictureName,
                 command.PictureAlt, command.PictureTitle, command.MetaDescription,
-                command.Slug.Slugify());
+                slug);
 
             _productCategoryRepository.Create(productCategory);
             _productCategoryRepository.SaveChanges();
@@ -52,8 +58,13 @@ namespace SM.Application.ProductCategoryAgg
 
             var productCategory = _productCategoryRepository.Get(command.Id);
 
-            productCategory.Edit(command.Name, command.Description, command.KeyWords, command.Picture
-                , command.PictureAlt, command.PictureTitle, command.MetaDescription, command.Slug.Slugify());
+            var slug = command.Slug.Slugify();
+            var folderName = slug;
+
+            var pictureName = Uploader.ImageUploader(command.Picture, folderName);
+
+            productCategory.Edit(command.Name, command.Description, command.KeyWords, pictureName
+                , command.PictureAlt, command.PictureTitle, command.MetaDescription, slug);
 
             _productCategoryRepository.SaveChanges();
 

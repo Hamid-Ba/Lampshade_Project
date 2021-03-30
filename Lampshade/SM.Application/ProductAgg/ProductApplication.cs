@@ -6,14 +6,20 @@ using System.Threading.Tasks;
 using Framework.Application;
 using ShopManagement.Application.Contracts.ProductAgg;
 using ShopManagement.Domain.ProductAgg;
+using ShopManagement.Domain.ProductCategoryAgg;
 
 namespace SM.Application.ProductAgg
 {
     public class ProductApplication : IProductApplication
     {
         private readonly IProductRepository _productRepository;
+        private readonly IProductCategoryRepository _categoryRepository;
 
-        public ProductApplication(IProductRepository productRepository) => _productRepository = productRepository;
+        public ProductApplication(IProductRepository productRepository, IProductCategoryRepository categoryRepository)
+        {
+            _productRepository = productRepository;
+            _categoryRepository = categoryRepository;
+        }
 
         public OperationResult Create(CreateProductVM command)
         {
@@ -21,9 +27,15 @@ namespace SM.Application.ProductAgg
 
             if (_productRepository.IsExist(p => p.Name == command.Name)) return result.Failed(ValidateMessage.IsDuplicatedName);
 
+            var slug = command.Slug.Slugify();
+            var categorySlug = _categoryRepository.GetCategorySlugBy(command.CategoryId);
+            var folderName = $"{categorySlug}\\{slug}";
+
+            var pictureName = Uploader.ImageUploader(command.Picture, folderName);
+
             var product = new Product(command.Name, command.Code, command.ShortDescription,
-                command.Description, command.Picture, command.PictureAlt,
-                command.PictureTitle, command.CategoryId, command.Slug.Slugify(), command.Keywords,
+                command.Description, pictureName, command.PictureAlt,
+                command.PictureTitle, command.CategoryId, slug, command.Keywords,
                 command.MetaDescription);
 
             _productRepository.Create(product);
@@ -39,13 +51,19 @@ namespace SM.Application.ProductAgg
             if (_productRepository.IsExist(p => p.Name == command.Name && p.Id != command.Id))
                 return result.Failed(ValidateMessage.IsDuplicatedName);
 
-            var product = _productRepository.Get(command.Id);
+            var product = _productRepository.GetProductWithCategoryBy(command.Id);
 
             if (product == null) return result.Failed(ValidateMessage.IsExist);
 
+            var slug = command.Slug.Slugify();
+            var categorySlug = _categoryRepository.GetCategorySlugBy(command.CategoryId);
+            var folderName = $"{categorySlug}\\{slug}";
+
+            var pictureName = Uploader.ImageUploader(command.Picture, folderName);
+
             product.Edit(command.Name, command.Code, command.ShortDescription,
-                command.Description, command.Picture, command.PictureAlt,
-                command.PictureTitle, command.CategoryId, command.Slug.Slugify(), command.Keywords,
+                command.Description, pictureName, command.PictureAlt,
+                command.PictureTitle, command.CategoryId, slug, command.Keywords,
                 command.MetaDescription);
 
             _productRepository.SaveChanges();

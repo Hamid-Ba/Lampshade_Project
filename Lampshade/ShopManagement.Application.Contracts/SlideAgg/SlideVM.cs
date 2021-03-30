@@ -5,13 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Framework.Application;
+using Microsoft.AspNetCore.Http;
 
 namespace ShopManagement.Application.Contracts.SlideAgg
 {
     public class CreateSlideVM
     {
         [Required(ErrorMessage = ValidateMessage.IsRequired)]
-        public string PictureName { get; set; }
+        public IFormFile PictureName { get; set; }
 
         [Required(ErrorMessage = ValidateMessage.IsRequired)]
         public string PictureAlt { get; set; }

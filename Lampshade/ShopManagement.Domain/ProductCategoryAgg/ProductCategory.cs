@@ -37,7 +37,10 @@ namespace ShopManagement.Domain.ProductCategoryAgg
             Name = name;
             Description = description;
             KeyWords = keyWords;
-            Picture = picture;
+
+            if (!string.IsNullOrWhiteSpace(picture))
+                Picture = picture;
+
             PictureAlt = pictureAlt;
             PictureTitle = pictureTitle;
             MetaDescription = metaDescription;
@@ -45,6 +48,6 @@ namespace ShopManagement.Domain.ProductCategoryAgg
         }
 
         public void Delete() => IsDeleted = true;
-        
+
     }
 }

@@ -14,5 +14,6 @@ namespace ShopManagement.Domain.ProductAgg
         DeleteProductVM GetDetailForDelete(long id);
         IEnumerable<AdminProductVM> GetAllProductForAdmin(SearchProductVM search);
         List<SearchProductForPictureVM> GetProductModelForSearch();
+        Product GetProductWithCategoryBy(long id);
     }
 }

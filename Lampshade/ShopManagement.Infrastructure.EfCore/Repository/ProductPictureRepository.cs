@@ -39,7 +39,6 @@ namespace ShopManagement.Infrastructure.EfCore.Repository
             {
                 Id = p.Id,
                 ProductId = p.ProductId,
-                PictureName = p.PictureName,
                 PictureAlt = p.PictureAlt,
                 PictureTitle = p.PictureTitle
             }).FirstOrDefault();
@@ -52,5 +51,9 @@ namespace ShopManagement.Infrastructure.EfCore.Repository
                     PictureName = p.PictureName,
                     ProductName = p.Product.Name
                 }).FirstOrDefault();
+
+        public ProductPicture GetWithProductAndCategoryBy(long id) => _context.ProductPictures.Include(p => p.Product)
+            .ThenInclude(c => c.Category).FirstOrDefault(p => p.Id == id);
+
     }
 }

@@ -13,5 +13,6 @@ namespace ShopManagement.Domain.ProductCategoryAgg
         EditProductCategoryVM GetDetail(long id);
         DeleteProductCategoryVM GetDetailForDelete(long id);
         List<SearchProdcutCategoryForProductVM> GetCategoriesForSearchInProduct();
+        string GetCategorySlugBy(long id);
     }
 }

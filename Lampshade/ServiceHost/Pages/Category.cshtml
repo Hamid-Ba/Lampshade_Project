@@ -80,7 +80,7 @@
 
                                                         </div>
                                                         <a asp-page="/ProductDetails" asp-route-id="@product.Slug">
-                                                            <img src="@product.Picture" class="img-fluid"
+                                                            <img src="~/Pictures/@product.Picture" class="img-fluid"
                                                                  alt="@product.PictureAlt" title="@product.PictureTitle">
                                                         </a>
                                                     </div>
@@ -129,7 +129,7 @@
                                     </div>
 
                                 </div>
-
+                                
                                 <div class="pagination-area">
                                     <div class="pagination-area__left">
                                         Showing 1 to 9 of 11 (2 Pages)
