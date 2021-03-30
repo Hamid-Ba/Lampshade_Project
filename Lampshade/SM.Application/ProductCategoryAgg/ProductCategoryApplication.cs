@@ -22,7 +22,7 @@ namespace SM.Application.ProductCategoryAgg
             var slug = command.Slug.Slugify();
             var folderName = slug;
 
-            var pictureName = Uploader.ImageUploader(command.Picture, folderName);
+            var pictureName = Uploader.ImageUploader(command.Picture, folderName,null!);
 
             var productCategory = new ProductCategory(command.Name, command.Description, command.KeyWords, pictureName,
                 command.PictureAlt, command.PictureTitle, command.MetaDescription,
@@ -43,6 +43,10 @@ namespace SM.Application.ProductCategoryAgg
             if (category == null || category.IsDeleted) return result.Failed();
 
             category.Delete();
+
+            var slug = category.Slug;
+            Uploader.DirectoryRemover(slug);
+
             _productCategoryRepository.SaveChanges();
             return result.Succeeded("حذف با موفقیت انجام شد");
         }
@@ -61,7 +65,7 @@ namespace SM.Application.ProductCategoryAgg
             var slug = command.Slug.Slugify();
             var folderName = slug;
 
-            var pictureName = Uploader.ImageUploader(command.Picture, folderName);
+            var pictureName = Uploader.ImageUploader(command.Picture, folderName,productCategory.Picture);
 
             productCategory.Edit(command.Name, command.Description, command.KeyWords, pictureName
                 , command.PictureAlt, command.PictureTitle, command.MetaDescription, slug);

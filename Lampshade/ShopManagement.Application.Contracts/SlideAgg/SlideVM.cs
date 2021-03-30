@@ -12,6 +12,7 @@ namespace ShopManagement.Application.Contracts.SlideAgg
     public class CreateSlideVM
     {
         [Required(ErrorMessage = ValidateMessage.IsRequired)]
+        [MaxFileSize(3 * 1024 * 1024, ErrorMessage = ValidateMessage.InvalidFileSize)]
         public IFormFile PictureName { get; set; }
 
         [Required(ErrorMessage = ValidateMessage.IsRequired)]

@@ -15,6 +15,7 @@ namespace ShopManagement.Application.Contracts.ProductPictureAgg
         public long ProductId { get; set; }
 
         [Required(ErrorMessage = ValidateMessage.IsRequired)]
+        [MaxFileSize(3 * 1024 * 1024, ErrorMessage = ValidateMessage.InvalidFileSize)]
         public IFormFile PictureName { get; set; }
 
         [Required(ErrorMessage = ValidateMessage.IsRequired)]

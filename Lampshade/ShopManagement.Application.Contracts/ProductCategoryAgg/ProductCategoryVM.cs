@@ -12,6 +12,8 @@ namespace ShopManagement.Application.Contracts.ProductCategoryAgg
 
         [Required(ErrorMessage = ValidateMessage.IsRequired)]
         public string KeyWords { get; set; }
+
+        [MaxFileSize(3 * 1024 * 1024, ErrorMessage = ValidateMessage.InvalidFileSize)]
         public IFormFile Picture { get; set; }
 
         [Required(ErrorMessage = ValidateMessage.IsRequired)]
@@ -46,5 +48,5 @@ namespace ShopManagement.Application.Contracts.ProductCategoryAgg
         public string Name { get; set; }
     }
 
-    public  class  SearchProdcutCategoryForProductVM : DeleteProductCategoryVM { }
+    public class SearchProdcutCategoryForProductVM : DeleteProductCategoryVM { }
 }

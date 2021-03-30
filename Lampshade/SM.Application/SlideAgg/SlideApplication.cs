@@ -23,7 +23,7 @@ namespace SM.Application.SlideAgg
             //    return result.Failed(ValidateMessage.IsDuplicatedName);
 
             var folderName = "slide";
-            var pictureName = Uploader.ImageUploader(command.PictureName, folderName);
+            var pictureName = Uploader.ImageUploader(command.PictureName, folderName,null!);
 
             var slide = new Slide(pictureName, command.PictureAlt, command.PictureTitle, command.Link, command.Header,
                 command.Title, command.Text, command.BtnText);
@@ -46,7 +46,7 @@ namespace SM.Application.SlideAgg
             if (slide == null) return result.Failed(ValidateMessage.IsExist);
 
             var folderName = "slide";
-            var pictureName = Uploader.ImageUploader(command.PictureName, folderName);
+            var pictureName = Uploader.ImageUploader(command.PictureName, folderName,slide.PictureName);
 
             slide.Edit(pictureName, command.PictureAlt, command.PictureTitle, command.Link, command.Header, command.Title, command.Text, command.BtnText);
             _slideRepository.SaveChanges();

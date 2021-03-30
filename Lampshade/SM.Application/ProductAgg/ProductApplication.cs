@@ -31,7 +31,7 @@ namespace SM.Application.ProductAgg
             var categorySlug = _categoryRepository.GetCategorySlugBy(command.CategoryId);
             var folderName = $"{categorySlug}\\{slug}";
 
-            var pictureName = Uploader.ImageUploader(command.Picture, folderName);
+            var pictureName = Uploader.ImageUploader(command.Picture, folderName,null!);
 
             var product = new Product(command.Name, command.Code, command.ShortDescription,
                 command.Description, pictureName, command.PictureAlt,
@@ -59,7 +59,7 @@ namespace SM.Application.ProductAgg
             var categorySlug = _categoryRepository.GetCategorySlugBy(command.CategoryId);
             var folderName = $"{categorySlug}\\{slug}";
 
-            var pictureName = Uploader.ImageUploader(command.Picture, folderName);
+            var pictureName = Uploader.ImageUploader(command.Picture, folderName,product.Picture);
 
             product.Edit(command.Name, command.Code, command.ShortDescription,
                 command.Description, pictureName, command.PictureAlt,
@@ -75,11 +75,17 @@ namespace SM.Application.ProductAgg
         {
             OperationResult result = new OperationResult();
 
-            var product = _productRepository.Get(command.Id);
+            var product = _productRepository.GetProductWithCategoryBy(command.Id);
 
             if (product == null) return result.Failed(ValidateMessage.IsExist);
 
             product.Delete();
+
+            var slug = product.Slug;
+            var categorySlug = product.Category.Slug;
+            var folderName = $"{categorySlug}\\{slug}";
+            Uploader.DirectoryRemover(folderName);
+
             _productRepository.SaveChanges();
 
             return result.Succeeded();

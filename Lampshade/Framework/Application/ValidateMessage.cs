@@ -12,5 +12,6 @@ namespace Framework.Application
         public const string IsDuplicatedName = "این نام وجود دارد";
         public const string IsDuplicated = "این رکورد وجود دارد";
         public const string IsExist = "این رکورد در سرور وجود ندارد";
+        public const string InvalidFileSize = "تصویر انتخاب شده بیشتر از حجم مجاز می باشد!";
     }
 }

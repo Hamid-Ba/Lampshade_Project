@@ -35,7 +35,7 @@ namespace SM.Application.ProductPictureAgg
             var categorySlug = product.Category.Slug;
 
             var folderName = $"{categorySlug}\\{productSlug}";
-            var pictureName = Uploader.ImageUploader(command.PictureName, folderName);
+            var pictureName = Uploader.ImageUploader(command.PictureName, folderName,null!);
 
             var productPicture = new ProductPicture(command.ProductId, pictureName, command.PictureAlt,
                 command.PictureTitle);
@@ -63,7 +63,7 @@ namespace SM.Application.ProductPictureAgg
             var categorySlug = productPicture.Product.Category.Slug;
 
             var folderName = $"{categorySlug}\\{productSlug}";
-            var pictureName = Uploader.ImageUploader(command.PictureName, folderName);
+            var pictureName = Uploader.ImageUploader(command.PictureName, folderName,productPicture.PictureName);
 
             productPicture.Edit(command.ProductId, pictureName, command.PictureAlt, command.PictureTitle);
             _productPictureRepository.SaveChanges();
