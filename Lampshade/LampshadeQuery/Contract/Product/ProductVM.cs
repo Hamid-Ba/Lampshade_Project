@@ -22,5 +22,22 @@ namespace LampshadeQuery.Contract.Product
         public string CategorySlug { get; set; }
         public string Slug { get; set; }
         public string DiscountExpired { get; set; }
+        public string Code { get; set; }
+        public bool IsInStock { get; set; }
+        public string ShortDescription { get; set; }
+        public string Description { get; set; }
+        public string Tags { get; set; }
+        public string MetaDescription { get; set; }
+        public List<PictureQueryVM> Pictures { get; set; }
     }
+
+    public class PictureQueryVM
+    {
+        public long Id { get; set; }
+        public string PictureName { get; set; }
+        public string PictureAlt { get; set; }
+        public string PictureTitle { get; set; }
+    }
+
+
 }

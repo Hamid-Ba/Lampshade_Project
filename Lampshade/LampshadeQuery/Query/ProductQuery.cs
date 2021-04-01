@@ -7,6 +7,7 @@ using InventoryManagement.Infrastructure.EfCore;
 using LampshadeQuery.Contract.Category;
 using LampshadeQuery.Contract.Product;
 using Microsoft.EntityFrameworkCore;
+using ShopManagement.Domain.ProductPictureAgg;
 using ShopManagement.Infrastructure.EfCore;
 
 namespace LampshadeQuery.Query
@@ -120,6 +121,75 @@ namespace LampshadeQuery.Query
             }
 
             return products;
+        }
+
+        public ProductQueryVM GetDetailsBy(string slug)
+        {
+            var discount = _discountContext.CustomerDiscounts
+                .Where(c => c.StartDate < DateTime.Now && DateTime.Now < c.EndDate)
+                .Select(c => new { c.ProductId, c.DiscountRate, c.EndDate }).ToList();
+
+            var inventory = _inventoryContext.Inventories.Select(i => new { i.ProductId, i.Price, i.IsInStock }).ToList();
+
+            var product = _context.Products.Where(p => p.Slug == slug)
+                .Include(p => p.Category).Include(p => p.ProductPictures)
+                .Select(p => new ProductQueryVM()
+                {
+                    Id = p.Id,
+                    CategoryName = p.Category.Name,
+                    Name = p.Name,
+                    Picture = p.Picture,
+                    PictureAlt = p.PictureAlt,
+                    PictureTitle = p.PictureTitle,
+                    Slug = p.Slug,
+                    CategoryId = p.CategoryId,
+                    CategorySlug = p.Category.Slug,
+                    Code = p.Code,
+                    Description = p.Description,
+                    MetaDescription = p.MetaDescription,
+                    ShortDescription = p.ShortDescription,
+                    Tags = p.Slug,
+                    Pictures = MapPictures(p.ProductPictures)
+                }).AsNoTracking().FirstOrDefault();
+
+
+            if (product == null) return new ProductQueryVM();
+
+            product.HasDiscount = discount.Exists(d => d.ProductId == product.Id);
+
+            if (!inventory.Exists(p => p.ProductId == product.Id)) return product;
+
+            // ReSharper disable once PossibleNullReferenceException
+            var price = inventory.Find(i => i.ProductId == product.Id).Price;
+
+            // ReSharper disable once PossibleNullReferenceException
+            product.IsInStock = inventory.Find(i => i.ProductId == product.Id).IsInStock;
+            
+            product.Price = price.ToMoney();
+
+            if (!product.HasDiscount) return product;
+
+            // ReSharper disable once PossibleNullReferenceException
+            product.DiscountRate = discount.Find(p => p.ProductId == product.Id).DiscountRate;
+
+            var discountRate = product.DiscountRate;
+            var discountMoney = Math.Round(price * discountRate) / 100;
+
+            product.PriceWithDiscount = (price - discountMoney).ToMoney();
+            product.DiscountExpired = discount.Find(d => d.ProductId == product.Id)?.EndDate.ToDiscountFormat();
+
+            return product;
+        }
+
+        private static List<PictureQueryVM> MapPictures(List<ProductPicture> productPictures)
+        {
+            return productPictures.Select(p => new PictureQueryVM()
+            {
+                Id = p.Id,
+                PictureAlt = p.PictureAlt,
+                PictureName = p.PictureName,
+                PictureTitle = p.PictureTitle
+            }).ToList();
         }
     }
 }

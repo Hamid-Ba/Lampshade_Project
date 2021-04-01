@@ -10,5 +10,6 @@ namespace LampshadeQuery.Contract.Product
     {
         IEnumerable<ProductQueryVM> GetLatestArrival(int count);
         IEnumerable<ProductQueryVM> Search(string search);
+        ProductQueryVM GetDetailsBy(string slug);
     }
 }
