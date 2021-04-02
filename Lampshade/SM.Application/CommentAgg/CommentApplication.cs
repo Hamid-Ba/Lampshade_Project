@@ -55,6 +55,22 @@ namespace SM.Application.CommentAgg
             return result.Succeeded();
         }
 
+        public OperationResult DisConfirmedComment(long id)
+        {
+            OperationResult result = new OperationResult();
+
+            var comment = _commentRepository.Get(id);
+
+            if (comment == null) return result.Failed(ValidateMessage.IsExist);
+
+            comment.DisConfirmedComment();
+            _commentRepository.SaveChanges();
+
+            return result.Succeeded();
+        }
+
+        public DeleteCommentVM GetDetailForDelete(long id) => _commentRepository.GetDetailForDelete(id);
+
         public IEnumerable<AdminCommentVM> GetAllForAdmin(SearchCommentVM search) => _commentRepository.GetAllForAdmin(search);
     }
 }

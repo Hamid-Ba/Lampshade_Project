@@ -12,6 +12,8 @@ namespace ShopManagement.Application.Contracts.CommentAgg
         OperationResult CreateComment(CreateCommentVM command);
         OperationResult DeleteComment(DeleteCommentVM command);
         OperationResult ConfirmedComment(long id);
+        OperationResult DisConfirmedComment(long id);
+        DeleteCommentVM GetDetailForDelete(long id);
         IEnumerable<AdminCommentVM> GetAllForAdmin(SearchCommentVM search);
     }
 }

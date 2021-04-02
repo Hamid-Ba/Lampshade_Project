@@ -7,6 +7,7 @@ using InventoryManagement.Infrastructure.EfCore;
 using LampshadeQuery.Contract.Category;
 using LampshadeQuery.Contract.Product;
 using Microsoft.EntityFrameworkCore;
+using ShopManagement.Domain.CommentAgg;
 using ShopManagement.Domain.ProductPictureAgg;
 using ShopManagement.Infrastructure.EfCore;
 
@@ -133,7 +134,7 @@ namespace LampshadeQuery.Query
 
             var product = _context.Products.Where(p => p.Slug == slug)
                 .Include(p => p.Category).Include(p => p.ProductPictures)
-                .Select(p => new ProductQueryVM()
+                .Include(c => c.Comments).Select(p => new ProductQueryVM()
                 {
                     Id = p.Id,
                     CategoryName = p.Category.Name,
@@ -149,7 +150,8 @@ namespace LampshadeQuery.Query
                     MetaDescription = p.MetaDescription,
                     ShortDescription = p.ShortDescription,
                     Tags = p.Slug,
-                    Pictures = MapPictures(p.ProductPictures)
+                    Pictures = MapPictures(p.ProductPictures),
+                    Comments = MapComments(p.Comments)
                 }).AsNoTracking().FirstOrDefault();
 
 
@@ -164,7 +166,7 @@ namespace LampshadeQuery.Query
 
             // ReSharper disable once PossibleNullReferenceException
             product.IsInStock = inventory.Find(i => i.ProductId == product.Id).IsInStock;
-            
+
             product.Price = price.ToMoney();
 
             if (!product.HasDiscount) return product;
@@ -179,6 +181,19 @@ namespace LampshadeQuery.Query
             product.DiscountExpired = discount.Find(d => d.ProductId == product.Id)?.EndDate.ToDiscountFormat();
 
             return product;
+        }
+
+        private static List<CommentQueryVM> MapComments(List<Comment> comments)
+        {
+            if (comments == null) throw new ArgumentNullException(nameof(comments));
+
+            return comments.Where(c => c.IsConfirmed).Select(c => new CommentQueryVM()
+            {
+                Id = c.Id,
+                Message = c.Message,
+                Name = c.Name,
+                CreationDate = c.CreationTime.ToFarsi()
+            }).OrderByDescending(c => c.Id).ToList();
         }
 
         private static List<PictureQueryVM> MapPictures(List<ProductPicture> productPictures)

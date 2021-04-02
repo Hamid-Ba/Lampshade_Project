@@ -34,6 +34,7 @@ namespace ShopManagement.Application.Contracts.CommentAgg
 
     public class AdminCommentVM : CreateCommentVM
     {
+        public long Id { get; set; }
         public string ProductName { get; set; }
         public string CreationDate { get; set; }
         public bool IsConfirmed { get; set; }

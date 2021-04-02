@@ -30,6 +30,7 @@ namespace ShopManagement.Infrastructure.EfCore.Repository
         {
             var query = _context.Comments.Include(p => p.Product).Select(c => new AdminCommentVM()
             {
+                Id = c.Id,
                 ProductName = c.Product.Name,
                 ProductId = c.ProductId,
                 Name = c.Name,

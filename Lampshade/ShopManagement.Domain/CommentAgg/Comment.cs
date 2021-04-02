@@ -23,7 +23,7 @@ namespace ShopManagement.Domain.CommentAgg
         }
 
         public void ConfirmedComment() => IsConfirmed = true;
-
+        public void DisConfirmedComment() => IsConfirmed = false;
         public void Delete() => IsDeleted = true;
     }
 }

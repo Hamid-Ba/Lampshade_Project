@@ -29,6 +29,7 @@ namespace LampshadeQuery.Contract.Product
         public string Tags { get; set; }
         public string MetaDescription { get; set; }
         public List<PictureQueryVM> Pictures { get; set; }
+        public List<CommentQueryVM> Comments { get; set; }
     }
 
     public class PictureQueryVM
@@ -39,5 +40,12 @@ namespace LampshadeQuery.Contract.Product
         public string PictureTitle { get; set; }
     }
 
+    public class CommentQueryVM
+    {
+        public long Id { get; set; }
+        public string Name { get; set; }
+        public string Message { get; set; }
+        public string CreationDate { get; set; }
+    }
 
 }
