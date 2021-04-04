@@ -1,0 +1,15 @@
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\BlogManagement.Application.Contract\bin\Debug\net5.0\BlogManagement.Application.Contract.deps.json
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\BlogManagement.Application.Contract\bin\Debug\net5.0\BlogManagement.Application.Contract.dll
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\BlogManagement.Application.Contract\bin\Debug\net5.0\ref\BlogManagement.Application.Contract.dll
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\BlogManagement.Application.Contract\bin\Debug\net5.0\BlogManagement.Application.Contract.pdb
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\BlogManagement.Application.Contract\bin\Debug\net5.0\Framework.dll
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\BlogManagement.Application.Contract\bin\Debug\net5.0\Framework.pdb
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\BlogManagement.Application.Contract\obj\Debug\net5.0\BlogManagement.Application.Contract.csprojAssemblyReference.cache
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\BlogManagement.Application.Contract\obj\Debug\net5.0\BlogManagement.Application.Contract.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\BlogManagement.Application.Contract\obj\Debug\net5.0\BlogManagement.Application.Contract.AssemblyInfoInputs.cache
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\BlogManagement.Application.Contract\obj\Debug\net5.0\BlogManagement.Application.Contract.AssemblyInfo.cs
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\BlogManagement.Application.Contract\obj\Debug\net5.0\BlogManagement.Application.Contract.csproj.CoreCompileInputs.cache
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\BlogManagement.Application.Contract\obj\Debug\net5.0\BlogManagement.Application.Contract.csproj.CopyComplete
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\BlogManagement.Application.Contract\obj\Debug\net5.0\BlogManagement.Application.Contract.dll
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\BlogManagement.Application.Contract\obj\Debug\net5.0\ref\BlogManagement.Application.Contract.dll
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\BlogManagement.Application.Contract\obj\Debug\net5.0\BlogManagement.Application.Contract.pdb
