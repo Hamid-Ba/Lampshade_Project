@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BlogManagement.Domain.ArticleAgg;
 using BlogManagement.Domain.ArticleCategoryAgg;
 using BlogManagement.Infrastructure.EfCore.Mapping;
 using Microsoft.EntityFrameworkCore;
@@ -19,8 +15,10 @@ namespace BlogManagement.Infrastructure.EfCore
             modelBuilder.ApplyConfigurationsFromAssembly(assembly);
 
             modelBuilder.Entity<ArticleCategory>().HasQueryFilter(c => !c.IsDeleted);
+            modelBuilder.Entity<Article>().HasQueryFilter(a => !a.IsDeleted || a.ArticleCategory != null);
         }
 
         public DbSet<ArticleCategory> ArticleCategories { get; set; }
+        public DbSet<Article> Articles { get; set; }
     }
 }

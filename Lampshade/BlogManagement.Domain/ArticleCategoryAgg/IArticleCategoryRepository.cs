@@ -12,5 +12,6 @@ namespace BlogManagement.Domain.ArticleCategoryAgg
     {
         IEnumerable<AdminArticleCategoryVM> GetAllForAdmin(SearchArticleCategoryVM search);
         EditArticleCategoryVM GetDetailForEdit(long id);
+        string GetCategorySlugBy(long id);
     }
 }

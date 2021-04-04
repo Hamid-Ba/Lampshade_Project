@@ -50,5 +50,8 @@ namespace BlogManagement.Infrastructure.EfCore.Repository
                 PictureTitle = c.PictureTitle,
                 ShowOrder = c.ShowOrder
             }).AsNoTracking().FirstOrDefault(c => c.Id == id);
+
+        public string GetCategorySlugBy(long id) => _context.ArticleCategories.FirstOrDefault(c => c.Id == id)?.Slug;
+
     }
 }
