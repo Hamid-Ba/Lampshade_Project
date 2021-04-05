@@ -32,7 +32,7 @@ namespace ServiceHost.Areas.Administration.Pages.Blog.Article
 
         public IActionResult OnGetDelete(long id)
         {
-            _articleApplication.Delete(id);
+            var result = _articleApplication.Delete(id);
             return RedirectToPage("Index");
         }
     }

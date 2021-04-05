@@ -1,4 +1,132 @@
 ﻿@page
 @model ServiceHost.Areas.Administration.Pages.Blog.Article.CreateModel
 @{
+    ViewData["Title"] = "ایجاد مقاله";
 }
+
+<div class="container">
+    <div class="card">
+
+        <div class="card-header">
+            <h4 class="title">ایجاد مقاله جدید</h4>
+        </div>
+
+        <div class="card-body">
+            <form asp-page="./Create" method="post" enctype="multipart/form-data">
+                <div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="Model.Title" class="control-label">عنوان</label>
+                                <input type="text" class="form-control" asp-for="Model.Title" onchange="makeSlug('Model_Title', 'Model_Slug')">
+                                <span asp-validation-for="Model.Title" class="error"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="Model.Slug" class="control-label">اسلاگ</label>
+                                <input type="text" class="form-control" asp-for="Model.Slug">
+                                <span asp-validation-for="Model.Slug" class="error"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="Model.PublishDate" class="control-label">تاریخ انتشار</label>
+                                <input class="form-control persianDateInput" asp-for="Model.PublishDate">
+                                <span asp-validation-for="Model.PublishDate" class="error"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="Model.CategoryId" class="control-label">گروه</label>
+                                <select class="form-control" asp-for="Model.CategoryId" asp-items="Model.Categories">
+                                    <option value="0">گروه...</option>
+                                </select>
+                                <span asp-validation-for="Model.CategoryId" class="error"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="Model.PictureName" class="control-label">عکس</label>
+                                <input type="file" class="form-control" asp-for="Model.PictureName" accept="image/*">
+                                <span asp-validation-for="Model.PictureName" class="error"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="Model.PictureAlt" class="control-label">Picture Alt</label>
+                                <input type="text" class="form-control" asp-for="Model.PictureAlt">
+                                <span asp-validation-for="Model.PictureAlt" class="error"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="Model.PictureTitle" class="control-label">عنوان عکس</label>
+                                <input type="text" class="form-control" asp-for="Model.PictureTitle">
+                                <span asp-validation-for="Model.PictureTitle" class="error"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="Model.Keywords" class="control-label">کلمات کلیدی</label>
+                                <input type="text" class="form-control" asp-for="Model.Keywords">
+                                <span asp-validation-for="Model.Keywords" class="error"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group no-margin">
+                                <label asp-for="Model.ShortDescription" class="control-label">خلاصه</label>
+                                <textarea class="form-control autogrow" asp-for="Model.ShortDescription" onchange="fillField('Model_ShortDescription', 'Model_MetaDescription')"
+                                          style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 104px;"></textarea>
+                                <span asp-validation-for="Model.ShortDescription" class="error"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group no-margin">
+                                <label asp-for="Model.Description" class="control-label">توضیحات</label>
+                                <textarea id="TinyArea" class="form-control autogrow" asp-for="Model.Description"
+                                          style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 104px;"></textarea>
+                                <span asp-validation-for="Model.Description" class="error"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group no-margin">
+                                <label asp-for="Model.MetaDescription" class="control-label">توضیحات متا</label>
+                                <textarea class="form-control autogrow" asp-for="Model.MetaDescription"
+                                          style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 104px;"></textarea>
+                                <span asp-validation-for="Model.MetaDescription" class="error"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group no-margin">
+                                <label asp-for="Model.CanonicalUrl" class="control-label">CanonicalUrl</label>
+                                <input type="text" class="form-control" asp-for="Model.CanonicalUrl" />
+                                <span asp-validation-for="Model.CanonicalUrl" class="error"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="modal-footer">
+                    <a asp-page="Index" type="button" class="btn btn-default waves-effect">بازگشت</a>
+                    <button type="submit" class="btn btn-info waves-effect waves-light">ایجاد</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

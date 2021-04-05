@@ -17,7 +17,6 @@ namespace BlogManagement.Application.Contract.ArticleAgg
         [Range(1,int.MaxValue,ErrorMessage = ValidateMessage.IsRequired)]
         public long CategoryId { get; set; }
 
-        [Required(ErrorMessage = ValidateMessage.IsRequired)]
         [MaxFileSize(3 * 1024 *1024,ErrorMessage = ValidateMessage.InvalidFileSize)]
         public IFormFile PictureName { get; set; }
 

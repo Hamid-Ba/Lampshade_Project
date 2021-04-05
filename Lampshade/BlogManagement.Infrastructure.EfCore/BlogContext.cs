@@ -15,7 +15,7 @@ namespace BlogManagement.Infrastructure.EfCore
             modelBuilder.ApplyConfigurationsFromAssembly(assembly);
 
             modelBuilder.Entity<ArticleCategory>().HasQueryFilter(c => !c.IsDeleted);
-            modelBuilder.Entity<Article>().HasQueryFilter(a => !a.IsDeleted || a.ArticleCategory != null);
+            modelBuilder.Entity<Article>().HasQueryFilter(a => !a.IsDeleted && a.ArticleCategory != null);
         }
 
         public DbSet<ArticleCategory> ArticleCategories { get; set; }
