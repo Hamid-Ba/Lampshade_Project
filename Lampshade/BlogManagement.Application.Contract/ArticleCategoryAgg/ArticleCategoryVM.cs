@@ -50,6 +50,7 @@ namespace BlogManagement.Application.Contract.ArticleCategoryAgg
 
     public class SearchArticleCategoryVM
     {
+        public long Id { get; set; }
         public string Name { get; set; }
     }
 }

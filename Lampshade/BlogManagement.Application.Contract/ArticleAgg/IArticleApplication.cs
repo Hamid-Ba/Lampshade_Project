@@ -11,6 +11,7 @@ namespace BlogManagement.Application.Contract.ArticleAgg
     {
         OperationResult Create(CreateArticleVM command);
         OperationResult Edit(EditArticleVM command);
+        OperationResult Delete(long id);
         IEnumerable<AdminArticleVM> GetAllForAdmin(SearchArticleVM search);
         EditArticleVM GetDetailsForEdit(long id);
 

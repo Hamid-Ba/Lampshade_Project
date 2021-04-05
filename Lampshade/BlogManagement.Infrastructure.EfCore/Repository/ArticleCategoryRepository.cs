@@ -22,7 +22,7 @@ namespace BlogManagement.Infrastructure.EfCore.Repository
         {
             var query = _context.ArticleCategories.Select(c => new AdminArticleCategoryVM()
             {
-                ArticleCount = 0,
+                ArticleCount = c.Articles.Count,
                 CreationDate = c.CreationTime.ToFarsi(),
                 Description = c.Description,
                 Id = c.Id,
@@ -35,6 +35,13 @@ namespace BlogManagement.Infrastructure.EfCore.Repository
 
             return query.ToList();
         }
+
+        public IEnumerable<SearchArticleCategoryVM> GetAllForSearch() => _context.ArticleCategories.Select(c =>
+            new SearchArticleCategoryVM()
+            {
+                Id = c.Id,
+                Name = c.Name
+            }).ToList();
 
         public EditArticleCategoryVM GetDetailForEdit(long id) => _context.ArticleCategories.Select(c =>
             new EditArticleCategoryVM()

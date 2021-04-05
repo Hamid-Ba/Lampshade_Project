@@ -38,7 +38,7 @@ namespace BlogManagement.Domain.ArticleCategoryAgg
             Name = name;
             Description = description;
 
-            if (!string.IsNullOrWhiteSpace(PictureName))
+            if (!string.IsNullOrWhiteSpace(pictureName))
                 PictureName = pictureName;
 
             PictureAlt = pictureAlt;

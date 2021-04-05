@@ -173,6 +173,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="wwwroot\Pictures\اخبار-شرکت\" />
     <Folder Include="wwwroot\Pictures\دکور\کوسن\" />
   </ItemGroup>
 

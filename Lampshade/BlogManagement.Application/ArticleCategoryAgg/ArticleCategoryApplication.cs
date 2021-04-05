@@ -56,8 +56,26 @@ namespace BlogManagement.Application.ArticleCategoryAgg
             return result.Succeeded();
         }
 
-        public IEnumerable<AdminArticleCategoryVM> GetAllForAdmin(SearchArticleCategoryVM search) => _articleCategoryRepository.GetAllForAdmin(search);
+        public OperationResult Delete(long id)
+        {
+            OperationResult result = new OperationResult();
 
+            var category = _articleCategoryRepository.Get(id);
+            if (category == null) return result.Failed(ValidateMessage.IsExist);
+
+            var slug = category.Slug;
+
+            category.Delete();
+
+            Uploader.DirectoryRemover(slug);
+
+            _articleCategoryRepository.SaveChanges();
+
+            return result.Succeeded();
+        }
+
+        public IEnumerable<AdminArticleCategoryVM> GetAllForAdmin(SearchArticleCategoryVM search) => _articleCategoryRepository.GetAllForAdmin(search);
+        public IEnumerable<SearchArticleCategoryVM> GetAllForSearch() => _articleCategoryRepository.GetAllForSearch();
         public EditArticleCategoryVM GetDetailForEdit(long id) => _articleCategoryRepository.GetDetailForEdit(id);
     }
 }

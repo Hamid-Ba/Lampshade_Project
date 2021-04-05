@@ -11,6 +11,7 @@ namespace BlogManagement.Domain.ArticleCategoryAgg
     public interface IArticleCategoryRepository : IRepository<long, ArticleCategory>
     {
         IEnumerable<AdminArticleCategoryVM> GetAllForAdmin(SearchArticleCategoryVM search);
+        IEnumerable<SearchArticleCategoryVM> GetAllForSearch();
         EditArticleCategoryVM GetDetailForEdit(long id);
         string GetCategorySlugBy(long id);
     }

@@ -11,7 +11,9 @@ namespace BlogManagement.Application.Contract.ArticleCategoryAgg
     {
         OperationResult Create(CreateArticleCategoryVM command);
         OperationResult Edit(EditArticleCategoryVM command);
+        OperationResult Delete(long id);
         IEnumerable<AdminArticleCategoryVM> GetAllForAdmin(SearchArticleCategoryVM search);
+        IEnumerable<SearchArticleCategoryVM> GetAllForSearch();
         EditArticleCategoryVM GetDetailForEdit(long id);
     }
 }
