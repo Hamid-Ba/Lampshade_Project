@@ -1573,6 +1573,48 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "BlogManagement.Application.Contract/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Framework": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BlogManagement.Application.Contract.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BlogManagement.Application.Contract.dll": {}
+        }
+      },
+      "BlogManagement.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "BlogManagement.Application.Contract": "1.0.0",
+          "Framework": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BlogManagement.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BlogManagement.Domain.dll": {}
+        }
+      },
+      "BlogManagement.Infrastructure.EfCore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "BlogManagement.Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "5.0.1",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.1"
+        },
+        "compile": {
+          "bin/placeholder/BlogManagement.Infrastructure.EfCore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BlogManagement.Infrastructure.EfCore.dll": {}
+        }
+      },
       "DiscountManagement.Application.Contract/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -6074,6 +6116,21 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "BlogManagement.Application.Contract/1.0.0": {
+      "type": "project",
+      "path": "../BlogManagement.Application.Contract/BlogManagement.Application.Contract.csproj",
+      "msbuildProject": "../BlogManagement.Application.Contract/BlogManagement.Application.Contract.csproj"
+    },
+    "BlogManagement.Domain/1.0.0": {
+      "type": "project",
+      "path": "../BlogManagement.Domain/BlogManagement.Domain.csproj",
+      "msbuildProject": "../BlogManagement.Domain/BlogManagement.Domain.csproj"
+    },
+    "BlogManagement.Infrastructure.EfCore/1.0.0": {
+      "type": "project",
+      "path": "../BlogManagement.Infrastructure.EfCore/BlogManagement.Infrastructure.EfCore.csproj",
+      "msbuildProject": "../BlogManagement.Infrastructure.EfCore/BlogManagement.Infrastructure.EfCore.csproj"
+    },
     "DiscountManagement.Application.Contract/1.0.0": {
       "type": "project",
       "path": "../DiscountManagement.Application.Contract/DiscountManagement.Application.Contract.csproj",
@@ -6127,6 +6184,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "BlogManagement.Infrastructure.EfCore >= 1.0.0",
       "DiscountManagement.Infrastructure.EfCore >= 1.0.0",
       "InventoryManagement.Infrastructure.EfCore >= 1.0.0",
       "ShopManagement.Infrastructure.EfCore >= 1.0.0"
@@ -6163,6 +6221,9 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
+            "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\BlogManagement.Infrastructure.EfCore\\BlogManagement.Infrastructure.EfCore.csproj": {
+              "projectPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\BlogManagement.Infrastructure.EfCore\\BlogManagement.Infrastructure.EfCore.csproj"
+            },
             "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\DiscountManagement.Infrastructure.EfCore\\DiscountManagement.Infrastructure.EfCore.csproj": {
               "projectPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\DiscountManagement.Infrastructure.EfCore\\DiscountManagement.Infrastructure.EfCore.csproj"
             },

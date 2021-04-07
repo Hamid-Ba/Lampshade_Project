@@ -10,6 +10,7 @@ namespace LampshadeQuery.Contract.Category
     {
         IEnumerable<CategoryQueryVM> GetAllCategory();
         IEnumerable<CategoryWithProductsQueryVM> GetCategoryWithProducts();
+        IEnumerable<CategoryQueryVM> GetAllProductCategoriesForMenu();
         CategoryWithProductsQueryVM GetCategoryAndProductsBy(string slug);
     }
 }

@@ -228,6 +228,9 @@
               },
               "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\BlogManagement.Infrastructure.EfCore\\BlogManagement.Infrastructure.EfCore.csproj": {
                 "projectPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\BlogManagement.Infrastructure.EfCore\\BlogManagement.Infrastructure.EfCore.csproj"
+              },
+              "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\LampshadeQuery\\LampshadeQuery.csproj": {
+                "projectPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\LampshadeQuery\\LampshadeQuery.csproj"
               }
             }
           }
@@ -1122,6 +1125,9 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
+              "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\BlogManagement.Infrastructure.EfCore\\BlogManagement.Infrastructure.EfCore.csproj": {
+                "projectPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\BlogManagement.Infrastructure.EfCore\\BlogManagement.Infrastructure.EfCore.csproj"
+              },
               "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\DiscountManagement.Infrastructure.EfCore\\DiscountManagement.Infrastructure.EfCore.csproj": {
                 "projectPath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\DiscountManagement.Infrastructure.EfCore\\DiscountManagement.Infrastructure.EfCore.csproj"
               },

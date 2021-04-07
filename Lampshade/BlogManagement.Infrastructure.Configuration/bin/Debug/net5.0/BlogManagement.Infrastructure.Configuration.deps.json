@@ -10,7 +10,8 @@
         "dependencies": {
           "BlogManagement.Application": "1.0.0",
           "BlogManagement.Domain": "1.0.0",
-          "BlogManagement.Infrastructure.EfCore": "1.0.0"
+          "BlogManagement.Infrastructure.EfCore": "1.0.0",
+          "LampshadeQuery": "1.0.0"
         },
         "runtime": {
           "BlogManagement.Infrastructure.Configuration.dll": {}
@@ -1139,6 +1140,34 @@
           "BlogManagement.Infrastructure.EfCore.dll": {}
         }
       },
+      "DiscountManagement.Application.Contract/1.0.0": {
+        "dependencies": {
+          "Framework": "1.0.0"
+        },
+        "runtime": {
+          "DiscountManagement.Application.Contract.dll": {}
+        }
+      },
+      "DiscountManagement.Domain/1.0.0": {
+        "dependencies": {
+          "DiscountManagement.Application.Contract": "1.0.0",
+          "Framework": "1.0.0"
+        },
+        "runtime": {
+          "DiscountManagement.Domain.dll": {}
+        }
+      },
+      "DiscountManagement.Infrastructure.EfCore/1.0.0": {
+        "dependencies": {
+          "DiscountManagement.Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "5.0.1",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.1",
+          "ShopManagement.Infrastructure.EfCore": "1.0.0"
+        },
+        "runtime": {
+          "DiscountManagement.Infrastructure.EfCore.dll": {}
+        }
+      },
       "Framework/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Http.Features": "5.0.1",
@@ -1147,6 +1176,73 @@
         },
         "runtime": {
           "Framework.dll": {}
+        }
+      },
+      "InventoryManagement.Application.Contract/1.0.0": {
+        "dependencies": {
+          "Framework": "1.0.0"
+        },
+        "runtime": {
+          "InventoryManagement.Application.Contract.dll": {}
+        }
+      },
+      "InventoryManagement.Domain/1.0.0": {
+        "dependencies": {
+          "Framework": "1.0.0",
+          "InventoryManagement.Application.Contract": "1.0.0"
+        },
+        "runtime": {
+          "InventoryManagement.Domain.dll": {}
+        }
+      },
+      "InventoryManagement.Infrastructure.EfCore/1.0.0": {
+        "dependencies": {
+          "InventoryManagement.Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "5.0.1",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.1",
+          "ShopManagement.Infrastructure.EfCore": "1.0.0"
+        },
+        "runtime": {
+          "InventoryManagement.Infrastructure.EfCore.dll": {}
+        }
+      },
+      "LampshadeQuery/1.0.0": {
+        "dependencies": {
+          "BlogManagement.Infrastructure.EfCore": "1.0.0",
+          "DiscountManagement.Infrastructure.EfCore": "1.0.0",
+          "InventoryManagement.Infrastructure.EfCore": "1.0.0",
+          "ShopManagement.Infrastructure.EfCore": "1.0.0"
+        },
+        "runtime": {
+          "LampshadeQuery.dll": {}
+        }
+      },
+      "ShopManagement.Application.Contracts/1.0.0": {
+        "dependencies": {
+          "Framework": "1.0.0",
+          "Microsoft.AspNetCore.Http.Features": "5.0.1"
+        },
+        "runtime": {
+          "ShopManagement.Application.Contracts.dll": {}
+        }
+      },
+      "ShopManagement.Domain/1.0.0": {
+        "dependencies": {
+          "Framework": "1.0.0",
+          "ShopManagement.Application.Contracts": "1.0.0"
+        },
+        "runtime": {
+          "ShopManagement.Domain.dll": {}
+        }
+      },
+      "ShopManagement.Infrastructure.EfCore/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "5.0.1",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.1",
+          "ShopManagement.Domain": "1.0.0"
+        },
+        "runtime": {
+          "ShopManagement.Infrastructure.EfCore.dll": {}
         }
       }
     }
@@ -1891,7 +1987,57 @@
       "serviceable": false,
       "sha512": ""
     },
+    "DiscountManagement.Application.Contract/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DiscountManagement.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DiscountManagement.Infrastructure.EfCore/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Framework/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "InventoryManagement.Application.Contract/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "InventoryManagement.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "InventoryManagement.Infrastructure.EfCore/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LampshadeQuery/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ShopManagement.Application.Contracts/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ShopManagement.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ShopManagement.Infrastructure.EfCore/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

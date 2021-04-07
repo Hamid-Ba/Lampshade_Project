@@ -1,0 +1,18 @@
+﻿@model IEnumerable<LampshadeQuery.Contract.ArticleCategory.ArticleCategoryQueryVM>
+
+<div class="single-sidebar-widget">
+
+    <h4 class="single-sidebar-widget__title">گروه مقالات</h4>
+    <ul class="single-sidebar-widget__category-list">
+
+        @foreach (var category in Model)
+        {
+            <li>
+                <a asp-page="ArticleCategory" asp-route-id="@category.Slug" class="@((category.Slug == ViewBag.Slug)? "active" : "")">
+                    @category.Name <span class="counter">@category.ArticlesCount</span>
+                </a>
+            </li>
+        }
+
+    </ul>
+</div>

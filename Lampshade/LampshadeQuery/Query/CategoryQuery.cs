@@ -82,6 +82,13 @@ namespace LampshadeQuery.Query
             return categories;
         }
 
+        public IEnumerable<CategoryQueryVM> GetAllProductCategoriesForMenu() => _context.ProductCategories.Select(c =>
+            new CategoryQueryVM
+            {
+                Name = c.Name,
+                Slug = c.Slug
+            }).ToList();
+
         public CategoryWithProductsQueryVM GetCategoryAndProductsBy(string slug)
         {
             var discount = _discountContext.CustomerDiscounts
