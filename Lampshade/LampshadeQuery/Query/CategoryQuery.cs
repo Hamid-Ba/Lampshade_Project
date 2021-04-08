@@ -50,6 +50,8 @@ namespace LampshadeQuery.Query
                     Id = c.Id,
                     Name = c.Name,
                     Slug = c.Slug,
+                    KeyWords = c.KeyWords,
+                    MetaDescription = c.MetaDescription,
                     Products = MapProduct(c.Products, 4)
                 }).ToList();
 
@@ -104,6 +106,8 @@ namespace LampshadeQuery.Query
                     Id = c.Id,
                     Name = c.Name,
                     Slug = c.Slug,
+                    KeyWords = c.KeyWords,
+                    MetaDescription = c.MetaDescription,
                     Products = MapProduct(c.Products, c.Products.Count)
                 }).AsNoTracking().FirstOrDefault();
 

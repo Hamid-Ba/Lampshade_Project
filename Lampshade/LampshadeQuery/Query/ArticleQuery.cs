@@ -55,5 +55,25 @@ namespace LampshadeQuery.Query
                 PictureTitle = a.PictureTitle,
                 PublishDate = a.PublishDate.ToFarsi()
             });
+
+        public ArticleQueryVM GetArticleBy(string slug) => _blogContext.Articles.Include(c => c.ArticleCategory).Where(a => a.Slug == slug).Select(a => new ArticleQueryVM
+        {
+            Id = a.Id,
+            Title = a.Title,
+            Slug = a.Slug,
+            ShortDescription = a.ShortDescription,
+            CanonicalUrl = a.CanonicalUrl,
+            CategoryId = a.CategoryId,
+            CategoryName = a.ArticleCategory.Name,
+            CategorySlug = a.ArticleCategory.Slug,
+            Description = a.Description,
+            Keywords = a.Keywords,
+            MetaDescription = a.MetaDescription,
+            PictureAlt = a.PictureAlt,
+            PictureName = a.PictureName,
+            PictureTitle = a.PictureTitle,
+            PublishDate = a.PublishDate.ToFarsi()
+        }).AsNoTracking().FirstOrDefault();
+
     }
 }

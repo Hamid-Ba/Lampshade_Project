@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace LampshadeQuery.Contract.Article
 {
@@ -10,5 +6,6 @@ namespace LampshadeQuery.Contract.Article
     {
         IEnumerable<ArticleQueryVM> GetLatestBlogs(int count);
         IEnumerable<ArticleQueryVM> GetArticlesForSideBar(int count);
+        ArticleQueryVM GetArticleBy(string slug);
     }
 }

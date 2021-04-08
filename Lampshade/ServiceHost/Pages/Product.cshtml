@@ -1,7 +1,9 @@
 ﻿@page "{id}"
 @model ServiceHost.Pages.ProductModel
 @{
-    ViewData["Title"] = "مشخصات محصول";
+    ViewData["Title"] = Model.Product.Name;
+    ViewData["Keyword"] = Model.Product.Tags;
+    ViewData["MetaDescription"] = Model.Product.MetaDescription;
 }
 
 <div class="breadcrumb-area section-space--half">
@@ -276,7 +278,7 @@
                                                         {
                                                             <div class="sin-ratings">
                                                                 <div class="rating-author">
-                                                                    <h3>@comment.Name</h3><br/>
+                                                                    <h3>@comment.Name</h3><br />
                                                                     <h4>@comment.CreationDate</h4>
                                                                 </div>
                                                                 <p>
@@ -305,7 +307,7 @@
                                                                               placeholder="نظر خود را بنویسید"></textarea>
                                                                 </div>
                                                                 <div class="col-12">
-                                                                    <input type="hidden" name ="productId" value="@Model.Product.Id" />
+                                                                    <input type="hidden" name="productId" value="@Model.Product.Id" />
                                                                     <input type="hidden" name="slug" value="@Model.Product.Slug" />
                                                                     <input value="ارسال نظر" type="submit">
                                                                 </div>

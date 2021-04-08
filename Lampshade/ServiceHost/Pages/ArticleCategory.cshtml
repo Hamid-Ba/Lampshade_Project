@@ -3,6 +3,8 @@
 @model ServiceHost.Pages.ArticleCategoryModel
 @{
     ViewData["Title"] = Model.Category.Name;
+    ViewData["Keyword"] = Model.Category.Keywords;
+    ViewData["MetaDescription"] = Model.Category.MetaDescription;
 }
 
 <div class="breadcrumb-area section-space--half">
