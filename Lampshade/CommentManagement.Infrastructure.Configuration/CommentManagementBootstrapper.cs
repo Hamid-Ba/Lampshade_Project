@@ -8,6 +8,8 @@ using CommentManagement.Application.Contract.CommentAgg;
 using CommentManagement.Domain.CommentAgg;
 using CommentManagement.Infrastructure.EfCore;
 using CommentManagement.Infrastructure.EfCore.Repository;
+using LampshadeQuery.Contract.Comment;
+using LampshadeQuery.Query;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -15,7 +17,7 @@ namespace CommentManagement.Infrastructure.Configuration
 {
     public class CommentManagementBootstrapper
     {
-        public static  void Configure(IServiceCollection service,string connectionString)
+        public static void Configure(IServiceCollection service, string connectionString)
         {
             #region ConfigDbContext
 
@@ -25,6 +27,8 @@ namespace CommentManagement.Infrastructure.Configuration
 
             service.AddTransient<ICommentRepository, CommentRepository>();
             service.AddTransient<ICommentApplication, CommentApplication>();
+
+            service.AddTransient<ICommentQuery, CommentQuery>();
         }
     }
 }

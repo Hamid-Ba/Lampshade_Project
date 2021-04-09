@@ -1,0 +1,30 @@
+﻿@model IEnumerable<LampshadeQuery.Contract.Comment.CommentQueryVM>
+
+@if (Model.Any())
+{
+    foreach (var child in Model)
+    {
+        <div class="single-comment reply-comment">
+            <span class="reply-btn">
+                <a href="#commentForm" onclick='$("#parentId").val(@child.Id)'>پاسخ</a>
+            </span>
+
+            <div class="image">
+                <img src="~/Theme/assets/img/blog/comment-icon.png" alt="">
+            </div>
+            <div class="content">
+                <h3 class="user">
+                    @child.Name<span class="comment-time">
+                        @child.CreationDate
+                    </span>
+                </h3>
+                <p class="comment-text">
+                    @child.Message
+                </p>
+            </div>
+
+        </div>
+
+        @await Component.InvokeAsync("CommentChildren", child.Id);
+    }
+}

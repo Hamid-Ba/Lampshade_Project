@@ -54,7 +54,7 @@
                                     <th>نام کاربر</th>
                                     <th>پست الکترونیک</th>
                                     <th>تاریخ تولید</th>
-                                    <th>آیا تایید شده؟</th>
+                                    <th>متن نظر</th>
                                     <th>عملیات</th>
                                 </tr>
                             </thead>
@@ -78,16 +78,7 @@
                                         <td>@comment.Email</td>
                                         <td>@comment.CreationDate</td>
 
-                                        <td class="text-center">
-                                            @if (comment.IsConfirmed)
-                                            {
-                                                <span class="text-success"><i class="fa fa-check"></i></span>
-                                            }
-                                            else
-                                            {
-                                                <span class="text-danger"><i class="fa fa-close"></i></span>
-                                            }
-                                        </td>
+                                        <td class="text-center"> @comment.Message </td>
 
                                         <td>
                                             @if (comment.IsConfirmed)

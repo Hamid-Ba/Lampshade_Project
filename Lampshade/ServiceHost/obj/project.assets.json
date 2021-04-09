@@ -2212,6 +2212,7 @@
         "dependencies": {
           "CommentManagement.Application": "1.0.0",
           "CommentManagement.Infrastructure.EfCore": "1.0.0",
+          "LampshadeQuery": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.1",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0"
         },
