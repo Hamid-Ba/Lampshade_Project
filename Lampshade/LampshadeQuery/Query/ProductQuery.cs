@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using _0_Framework.Application;
+using CommentManagement.Infrastructure.EfCore;
 using DiscountManagement.Infrastructure.EfCore;
 using InventoryManagement.Infrastructure.EfCore;
-using LampshadeQuery.Contract.Category;
+using LampshadeQuery.Contract.Comment;
 using LampshadeQuery.Contract.Product;
 using Microsoft.EntityFrameworkCore;
-using ShopManagement.Domain.CommentAgg;
 using ShopManagement.Domain.ProductPictureAgg;
 using ShopManagement.Infrastructure.EfCore;
 
@@ -18,12 +18,14 @@ namespace LampshadeQuery.Query
         private readonly ShopContext _context;
         private readonly DiscountContext _discountContext;
         private readonly InventoryContext _inventoryContext;
+        private readonly CommentContext _commentContext;
 
-        public ProductQuery(ShopContext context, DiscountContext discountContext, InventoryContext inventoryContext)
+        public ProductQuery(ShopContext context, DiscountContext discountContext, InventoryContext inventoryContext, CommentContext commentContext)
         {
             _context = context;
             _discountContext = discountContext;
             _inventoryContext = inventoryContext;
+            _commentContext = commentContext;
         }
 
         public IEnumerable<ProductQueryVM> GetLatestArrival(int count)
@@ -132,9 +134,10 @@ namespace LampshadeQuery.Query
 
             var inventory = _inventoryContext.Inventories.Select(i => new { i.ProductId, i.Price, i.IsInStock }).ToList();
 
+
             var product = _context.Products.Where(p => p.Slug == slug)
                 .Include(p => p.Category).Include(p => p.ProductPictures)
-                .Include(c => c.Comments).Select(p => new ProductQueryVM()
+                .Select(p => new ProductQueryVM()
                 {
                     Id = p.Id,
                     CategoryName = p.Category.Name,
@@ -151,11 +154,23 @@ namespace LampshadeQuery.Query
                     ShortDescription = p.ShortDescription,
                     Tags = p.Slug,
                     Pictures = MapPictures(p.ProductPictures),
-                    Comments = MapComments(p.Comments)
                 }).AsNoTracking().FirstOrDefault();
 
+            var comments = _commentContext.Comments.Where(c => c.Type == CommentOwnerType.ProductType && c.OwnerId == product.Id && c.IsConfirmed)
+                .Select(c => new CommentQueryVM()
+                {
+                    Id = c.Id,
+                    Name = c.Name,
+                    Message = c.Message,
+                    CreationDate = c.CreationTime.ToFarsi(),
+                    OwnerId = c.OwnerId
+                }).OrderByDescending(c => c.Id).ToList();
 
             if (product == null) return new ProductQueryVM();
+
+
+
+            product.Comments = MapComments(comments);
 
             product.HasDiscount = discount.Exists(d => d.ProductId == product.Id);
 
@@ -183,21 +198,23 @@ namespace LampshadeQuery.Query
             return product;
         }
 
-        private static List<CommentQueryVM> MapComments(List<Comment> comments)
+        private static List<CommentQueryVM> MapComments(List<CommentQueryVM> comments)
         {
             if (comments == null) throw new ArgumentNullException(nameof(comments));
 
-            return comments.Where(c => c.IsConfirmed).Select(c => new CommentQueryVM()
+            return comments.Select(c => new CommentQueryVM()
             {
                 Id = c.Id,
                 Message = c.Message,
                 Name = c.Name,
-                CreationDate = c.CreationTime.ToFarsi()
+                CreationDate = c.CreationDate,
+                OwnerId = c.OwnerId
             }).OrderByDescending(c => c.Id).ToList();
         }
 
         private static List<PictureQueryVM> MapPictures(List<ProductPicture> productPictures)
         {
+            if (productPictures == null) throw new ArgumentNullException(nameof(productPictures));
             return productPictures.Select(p => new PictureQueryVM()
             {
                 Id = p.Id,

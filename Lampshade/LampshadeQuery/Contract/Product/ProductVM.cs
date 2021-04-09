@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LampshadeQuery.Contract.Comment;
 
 namespace LampshadeQuery.Contract.Product
 {
@@ -39,13 +40,4 @@ namespace LampshadeQuery.Contract.Product
         public string PictureAlt { get; set; }
         public string PictureTitle { get; set; }
     }
-
-    public class CommentQueryVM
-    {
-        public long Id { get; set; }
-        public string Name { get; set; }
-        public string Message { get; set; }
-        public string CreationDate { get; set; }
-    }
-
 }

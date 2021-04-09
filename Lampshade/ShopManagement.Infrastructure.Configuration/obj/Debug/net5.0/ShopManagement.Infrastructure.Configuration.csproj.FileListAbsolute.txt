@@ -2,6 +2,12 @@ C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lam
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\ShopManagement.Infrastructure.Configuration.dll
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\ref\ShopManagement.Infrastructure.Configuration.dll
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\ShopManagement.Infrastructure.Configuration.pdb
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\BlogManagement.Application.Contract.dll
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\BlogManagement.Domain.dll
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\BlogManagement.Infrastructure.EfCore.dll
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\CommentManagement.Application.Contract.dll
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\CommentManagement.Domain.dll
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\CommentManagement.Infrastructure.EfCore.dll
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\DiscountManagement.Application.Contract.dll
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\DiscountManagement.Domain.dll
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\DiscountManagement.Infrastructure.EfCore.dll
@@ -18,6 +24,12 @@ C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lam
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\ShopManagement.Domain.pdb
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\ShopManagement.Infrastructure.EfCore.pdb
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\SM.Application.pdb
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\BlogManagement.Application.Contract.pdb
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\BlogManagement.Domain.pdb
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\BlogManagement.Infrastructure.EfCore.pdb
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\CommentManagement.Application.Contract.pdb
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\CommentManagement.Domain.pdb
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\CommentManagement.Infrastructure.EfCore.pdb
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\DiscountManagement.Application.Contract.pdb
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\DiscountManagement.Domain.pdb
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\DiscountManagement.Infrastructure.EfCore.pdb
@@ -35,9 +47,3 @@ C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lam
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ShopManagement.Infrastructure.Configuration\obj\Debug\net5.0\ShopManagement.Infrastructure.Configuration.dll
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ShopManagement.Infrastructure.Configuration\obj\Debug\net5.0\ref\ShopManagement.Infrastructure.Configuration.dll
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ShopManagement.Infrastructure.Configuration\obj\Debug\net5.0\ShopManagement.Infrastructure.Configuration.pdb
-C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\BlogManagement.Application.Contract.dll
-C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\BlogManagement.Domain.dll
-C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\BlogManagement.Infrastructure.EfCore.dll
-C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\BlogManagement.Application.Contract.pdb
-C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\BlogManagement.Domain.pdb
-C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\BlogManagement.Infrastructure.EfCore.pdb

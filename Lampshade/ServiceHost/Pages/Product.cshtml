@@ -21,13 +21,24 @@
                                 <a asp-page="/Category" asp-route-id="@Model.Product.CategorySlug">@Model.Product.CategoryName</a>
                             </li>
                             <li class="active">@Model.Product.Name</li>
+
                         </ul>
+                        @if (!string.IsNullOrWhiteSpace(Model.Message))
+                        {
+                            <div class="alert alert-@Model.MessageColor alert-dismissible fade show" style="text-align: center; width: 35%;margin: auto">
+                                <span> @Model.Message </span>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        }
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 <div class="page-content-area">
     <div class="container">
         <div class="row">
@@ -307,8 +318,9 @@
                                                                               placeholder="نظر خود را بنویسید"></textarea>
                                                                 </div>
                                                                 <div class="col-12">
-                                                                    <input type="hidden" name="productId" value="@Model.Product.Id" />
+                                                                    <input type="hidden" name="ownerId" value="@Model.Product.Id" />
                                                                     <input type="hidden" name="slug" value="@Model.Product.Slug" />
+                                                                    <input type="hidden" name="ownerName" value="@Model.Product.Name" />
                                                                     <input value="ارسال نظر" type="submit">
                                                                 </div>
                                                             </div>

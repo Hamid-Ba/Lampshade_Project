@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Framework.Application;
 using ShopManagement.Application.Contracts.ProductAgg;
 using ShopManagement.Domain.ProductAgg;

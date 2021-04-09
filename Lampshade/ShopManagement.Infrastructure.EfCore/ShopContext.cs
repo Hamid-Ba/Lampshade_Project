@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Query.Internal;
-using ShopManagement.Domain.CommentAgg;
+﻿using Microsoft.EntityFrameworkCore;
 using ShopManagement.Domain.ProductAgg;
 using ShopManagement.Domain.ProductCategoryAgg;
 using ShopManagement.Domain.ProductPictureAgg;
@@ -27,13 +20,11 @@ namespace ShopManagement.Infrastructure.EfCore
             modelBuilder.Entity<Product>().HasQueryFilter(p => !p.IsDeleted || p.Category == null);
             modelBuilder.Entity<ProductPicture>().HasQueryFilter(p => !p.IsDeleted);
             modelBuilder.Entity<Slide>().HasQueryFilter(s => !s.IsDeleted);
-            modelBuilder.Entity<Comment>().HasQueryFilter(c => !c.IsDeleted);
         }
 
         public DbSet<ProductCategory> ProductCategories { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductPicture> ProductPictures { get; set; }
         public DbSet<Slide> Slides { get; set; }
-        public DbSet<Comment> Comments { get; set; }
     }
 }

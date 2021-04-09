@@ -9,6 +9,7 @@ using InventoryManagement.Infrastructure.Configuration;
 using ShopManagement.Infrastructure.Configuration;
 using System.Text.Encodings.Web;
 using System.Text.Unicode;
+using CommentManagement.Infrastructure.Configuration;
 
 namespace ServiceHost
 {
@@ -29,6 +30,7 @@ namespace ServiceHost
             DiscountManagementBootstrapper.Configuration(services, connectionString);
             InventoryManagementBootstrapper.Configuration(services, connectionString);
             BlogManagementBootstrapper.Configuration(services, connectionString);
+            CommentManagementBootstrapper.Configure(services, connectionString);
 
             services.AddSingleton(HtmlEncoder.Create(UnicodeRanges.BasicLatin, UnicodeRanges.Arabic));
 
