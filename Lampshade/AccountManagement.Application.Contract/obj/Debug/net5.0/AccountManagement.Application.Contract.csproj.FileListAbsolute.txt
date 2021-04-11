@@ -1,0 +1,15 @@
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\AccountManagement.Application.Contract\bin\Debug\net5.0\AccountManagement.Application.Contract.deps.json
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\AccountManagement.Application.Contract\bin\Debug\net5.0\AccountManagement.Application.Contract.dll
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\AccountManagement.Application.Contract\bin\Debug\net5.0\ref\AccountManagement.Application.Contract.dll
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\AccountManagement.Application.Contract\bin\Debug\net5.0\AccountManagement.Application.Contract.pdb
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\AccountManagement.Application.Contract\bin\Debug\net5.0\Framework.dll
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\AccountManagement.Application.Contract\bin\Debug\net5.0\Framework.pdb
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\AccountManagement.Application.Contract\obj\Debug\net5.0\AccountManagement.Application.Contract.csprojAssemblyReference.cache
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\AccountManagement.Application.Contract\obj\Debug\net5.0\AccountManagement.Application.Contract.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\AccountManagement.Application.Contract\obj\Debug\net5.0\AccountManagement.Application.Contract.AssemblyInfoInputs.cache
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\AccountManagement.Application.Contract\obj\Debug\net5.0\AccountManagement.Application.Contract.AssemblyInfo.cs
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\AccountManagement.Application.Contract\obj\Debug\net5.0\AccountManagement.Application.Contract.csproj.CoreCompileInputs.cache
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\AccountManagement.Application.Contract\obj\Debug\net5.0\AccountManagement.Application.Contract.csproj.CopyComplete
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\AccountManagement.Application.Contract\obj\Debug\net5.0\AccountManagement.Application.Contract.dll
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\AccountManagement.Application.Contract\obj\Debug\net5.0\ref\AccountManagement.Application.Contract.dll
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\AccountManagement.Application.Contract\obj\Debug\net5.0\AccountManagement.Application.Contract.pdb

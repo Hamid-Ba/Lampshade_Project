@@ -9,7 +9,9 @@ using InventoryManagement.Infrastructure.Configuration;
 using ShopManagement.Infrastructure.Configuration;
 using System.Text.Encodings.Web;
 using System.Text.Unicode;
+using AccountManagement.Infrastructure.Configuration;
 using CommentManagement.Infrastructure.Configuration;
+using Framework.Application.Hashing;
 
 namespace ServiceHost
 {
@@ -30,9 +32,11 @@ namespace ServiceHost
             DiscountManagementBootstrapper.Configuration(services, connectionString);
             InventoryManagementBootstrapper.Configuration(services, connectionString);
             BlogManagementBootstrapper.Configuration(services, connectionString);
-            CommentManagementBootstrapper.Configure(services, connectionString);
+            CommentManagementBootstrapper.Configuration(services, connectionString);
+            AccountManagementBootstrapper.Configuration(services, connectionString);
 
             services.AddSingleton(HtmlEncoder.Create(UnicodeRanges.BasicLatin, UnicodeRanges.Arabic));
+            services.AddSingleton<IPasswordHasher, PasswordHasher>();
 
             services.AddRazorPages();
         }

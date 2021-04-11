@@ -17,7 +17,7 @@ namespace CommentManagement.Infrastructure.Configuration
 {
     public class CommentManagementBootstrapper
     {
-        public static void Configure(IServiceCollection service, string connectionString)
+        public static void Configuration(IServiceCollection service, string connectionString)
         {
             #region ConfigDbContext
 

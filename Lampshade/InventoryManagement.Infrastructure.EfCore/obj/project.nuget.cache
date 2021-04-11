@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "j2aSN0M3nshvbpXW8F7IdhAZmVUHj/AGPq19fOHitpg66NHb6gW3s7k3fqxHgGitdvsaKLeUTiXl0tPzJZbUsA==",
+  "dgSpecHash": "v5z9v6fV9VYUhUsU2PDhcYakM/zvZvxWalWDi2stqUDviB5KP7qul1oWFXnYT8g6T4DIc3rYzHNA4gtcxTpn5Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\InventoryManagement.Infrastructure.EfCore\\InventoryManagement.Infrastructure.EfCore.csproj",
   "expectedPackageFiles": [
