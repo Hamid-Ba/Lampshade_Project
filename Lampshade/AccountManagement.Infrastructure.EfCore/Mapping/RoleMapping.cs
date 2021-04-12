@@ -11,6 +11,7 @@ namespace AccountManagement.Infrastructure.EfCore.Mapping
             builder.HasKey(r => r.Id);
 
             builder.Property(p => p.Name).HasMaxLength(100).IsRequired();
+            builder.Property(p => p.Description).HasMaxLength(250);
 
             builder.HasMany(u => u.Users).WithOne(r => r.Role).HasForeignKey(f => f.RoleId);
         }

@@ -18,7 +18,7 @@ namespace AccountManagement.Application.RoleAgg
             if (_roleRepository.IsExist(r => r.Name == command.Name))
                 return result.Failed(ValidateMessage.IsDuplicatedName);
 
-            var role = new Role(command.Name);
+            var role = new Role(command.Name, command.Description);
             _roleRepository.Create(role);
             _roleRepository.SaveChanges();
 
@@ -36,7 +36,7 @@ namespace AccountManagement.Application.RoleAgg
             if (_roleRepository.IsExist(r => r.Name == command.Name && r.Id != command.Id))
                 return result.Failed(ValidateMessage.IsDuplicatedName);
 
-            role.Edit(command.Name);
+            role.Edit(command.Name, command.Description);
             _roleRepository.SaveChanges();
 
             return result.Succeeded();

@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using _0_Framework.Application;
 using AccountManagement.Application.Contract.RoleAgg;
 using AccountManagement.Domain.RoleAgg;
 using Framework.Infrastructure;
-using Microsoft.EntityFrameworkCore;
 
 namespace AccountManagement.Infrastructure.EfCore.Repository
 {
@@ -19,13 +16,16 @@ namespace AccountManagement.Infrastructure.EfCore.Repository
         public IEnumerable<AdminRoleVM> GetAllForAdmin() => _context.Roles.Select(r => new AdminRoleVM()
         {
             Id = r.Id,
-            Name = r.Name
+            Name = r.Name,
+            Description = r.Description,
+            CreationDate = r.CreationTime.ToFarsi()
         }).ToList();
 
         public EditRoleVM GetDetailForEdit(long id) => _context.Roles.Select(r => new EditRoleVM()
         {
             Id = r.Id,
-            Name = r.Name
+            Name = r.Name,
+            Description = r.Description
         }).FirstOrDefault(r => r.Id == id);
 
 

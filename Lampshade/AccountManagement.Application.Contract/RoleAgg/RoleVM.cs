@@ -9,6 +9,7 @@ namespace AccountManagement.Application.Contract.RoleAgg
     public class CreateRoleVM
     {
         public string Name { get; set; }
+        public string Description { get; set; }
     }
 
     public class EditRoleVM : CreateRoleVM
@@ -22,5 +23,7 @@ namespace AccountManagement.Application.Contract.RoleAgg
     {
         public long Id { get; set; }
         public string Name { get; set; }
+        public string Description { get; set; }
+        public string CreationDate { get; set; }
     }
 }

@@ -29,7 +29,7 @@ namespace AccountManagement.Application.UserAgg
                 u.Username == command.Username || u.Email == command.Email || u.Mobile == command.Mobile))
                 return result.Failed(ValidateMessage.IsDuplicated);
 
-            var path = $"UserProfile";
+            var path = "UserProfile";
             var picture = Uploader.ImageUploader(command.Picture, path, null!);
 
             var password = _passwordHasher.Hash(command.Password);
@@ -54,7 +54,7 @@ namespace AccountManagement.Application.UserAgg
                 (u.Username == command.Username || u.Email == command.Email || u.Mobile == command.Mobile) && u.Id != command.Id))
                 return result.Failed(ValidateMessage.IsDuplicated);
 
-            var path = $"UserProfile";
+            var path = "UserProfile";
             var picture = Uploader.ImageUploader(command.Picture, path, user.Picture);
 
             user.Edit(command.Fullname, command.Username, command.Email, command.Mobile, picture, command.RoleId);

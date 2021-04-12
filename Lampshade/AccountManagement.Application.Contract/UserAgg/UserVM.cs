@@ -25,9 +25,23 @@ namespace AccountManagement.Application.Contract.UserAgg
         public long RoleId { get; set; }
     }
 
-    public class EditUserVM : CreateUserVM
+    public class EditUserVM
     {
         public long Id { get; set; }
+        [Required(ErrorMessage = ValidateMessage.IsRequired)]
+        public string Fullname { get; set; }
+
+        [Required(ErrorMessage = ValidateMessage.IsRequired)]
+        public string Username { get; set; }
+
+        [Required(ErrorMessage = ValidateMessage.IsRequired)]
+        [EmailAddress(ErrorMessage = "فرمت درست نیست!")]
+        public string Email { get; set; }
+        public string Mobile { get; set; }
+        public IFormFile Picture { get; set; }
+
+        [Range(1, int.MaxValue, ErrorMessage = ValidateMessage.IsRequired)]
+        public long RoleId { get; set; }
     }
 
     public class DeleteUserVM
