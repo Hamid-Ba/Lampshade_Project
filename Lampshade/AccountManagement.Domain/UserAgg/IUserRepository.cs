@@ -8,6 +8,7 @@ namespace AccountManagement.Domain.UserAgg
     {
         EditUserVM GetDetailForEdit(long id);
         DeleteUserVM GetDetailForDelete(long id);
+        User GetUserBy(string userName);
         IEnumerable<AdminUserVM> GetAllForAdmin(SearchUserVM search);
     }
 }

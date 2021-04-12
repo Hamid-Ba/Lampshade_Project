@@ -1,3 +1,4 @@
+using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -11,7 +12,10 @@ using System.Text.Encodings.Web;
 using System.Text.Unicode;
 using AccountManagement.Infrastructure.Configuration;
 using CommentManagement.Infrastructure.Configuration;
+using Framework.Application.Authentication;
 using Framework.Application.Hashing;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Http;
 
 namespace ServiceHost
 {
@@ -27,6 +31,7 @@ namespace ServiceHost
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddHttpContextAccessor();
             var connectionString = Configuration.GetConnectionString("LampShade");
             ShopManagementBootstrapper.Configuration(services, connectionString);
             DiscountManagementBootstrapper.Configuration(services, connectionString);
@@ -37,6 +42,16 @@ namespace ServiceHost
 
             services.AddSingleton(HtmlEncoder.Create(UnicodeRanges.BasicLatin, UnicodeRanges.Arabic));
             services.AddSingleton<IPasswordHasher, PasswordHasher>();
+            services.AddTransient<IAuthHelper, AuthHelper>();
+
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, o =>
+                {
+                    o.LoginPath = "/";
+                    o.LogoutPath = "/Account/Logout";
+                    o.AccessDeniedPath = new PathString("/AccessDenied");
+                    o.ExpireTimeSpan = TimeSpan.FromMinutes(43200);
+                });
 
             services.AddRazorPages();
         }
@@ -54,6 +69,8 @@ namespace ServiceHost
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            app.UseAuthentication();
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();

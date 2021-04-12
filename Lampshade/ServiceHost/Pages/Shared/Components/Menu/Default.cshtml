@@ -46,6 +46,18 @@
                                 <li>
                                     <a href="/ContactUs">تماس با ما</a>
                                 </li>
+
+                                <li>
+                                    @if (User.Identity.IsAuthenticated)
+                                    {
+                                        <a asp-page="Account" asp-page-handler="Logout">خروج</a>
+                                    }
+                                    else
+                                    {
+                                        <a asp-page="Account">ورود و ثبت نام</a>
+                                    }
+
+                                </li>
                             </ul>
                         </nav>
                     </div>
@@ -163,12 +175,22 @@
                                         <div class="single-settings-block">
                                             <h4 class="title"> پروفایل من </h4>
                                             <ul>
-                                                <li>
-                                                    <a href="login-register.html">ثبت نام</a>
-                                                </li>
-                                                <li>
-                                                    <a href="login-register.html">ورود</a>
-                                                </li>
+                                                @if (User.Identity.IsAuthenticated)
+                                                {
+                                                    <li>
+                                                        <a>@User.Identity.Name خوش آمدی</a>
+                                                    </li>
+                                                }
+                                                else
+                                                {
+                                                    <li>
+                                                        <a asp-page="Account">ثبت نام</a>
+                                                    </li>
+                                                    <li>
+                                                        <a asp-page="Account">ورود</a>
+                                                    </li>
+                                                }
+                                                
                                             </ul>
                                         </div>
                                     </div>

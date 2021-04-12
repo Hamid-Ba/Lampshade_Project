@@ -30,6 +30,8 @@ namespace AccountManagement.Infrastructure.EfCore.Repository
             Fullname = u.Fullname
         }).FirstOrDefault(u => u.Id == id);
 
+        public User GetUserBy(string userName) => _context.Users.Include(r => r.Role).FirstOrDefault(u => u.Username == userName);
+
         public IEnumerable<AdminUserVM> GetAllForAdmin(SearchUserVM search)
         {
             var query = _context.Users.Include(r => r.Role).Select(u => new AdminUserVM()
