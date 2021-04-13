@@ -23,7 +23,9 @@ namespace AccountManagement.Domain.UserAgg
             Password = password;
             Mobile = mobile;
             Picture = picture;
-            RoleId = roleId;
+
+            if (roleId == 0) RoleId = 2;
+            else RoleId = roleId;
         }
 
         public void Edit(string fullname, string username, string email, string mobile, string picture, long roleId)
@@ -36,7 +38,9 @@ namespace AccountManagement.Domain.UserAgg
                 Picture = picture;
 
             Mobile = mobile;
-            RoleId = roleId;
+
+            if (roleId == 0) RoleId = 2;
+            else RoleId = roleId;
         }
 
         public void ChangePassword(string password) => Password = password;

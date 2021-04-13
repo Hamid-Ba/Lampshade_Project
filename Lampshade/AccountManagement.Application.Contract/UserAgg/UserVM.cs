@@ -21,7 +21,7 @@ namespace AccountManagement.Application.Contract.UserAgg
         public string Mobile { get; set; }
         public IFormFile Picture { get; set; }
 
-        [Range(1, int.MaxValue, ErrorMessage = ValidateMessage.IsRequired)]
+        //[Range(1, int.MaxValue, ErrorMessage = ValidateMessage.IsRequired)]
         public long RoleId { get; set; }
     }
 

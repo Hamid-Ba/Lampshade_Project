@@ -29,7 +29,7 @@ namespace AccountManagement.Application.UserAgg
             OperationResult result = new OperationResult();
 
             if (_userRepository.IsExist(u =>
-                u.Username == command.Username.ToLower() || u.Email == command.Email || u.Mobile == command.Mobile))
+                u.Username == command.Username.ToLower() || u.Email == command.Email || (!string.IsNullOrWhiteSpace(command.Mobile) &&  u.Mobile == command.Mobile)))
                 return result.Failed(ValidateMessage.IsDuplicated);
 
             var path = "UserProfile";
@@ -54,7 +54,7 @@ namespace AccountManagement.Application.UserAgg
             if (user == null) return result.Failed(ValidateMessage.IsExist);
 
             if (_userRepository.IsExist(u =>
-                (u.Username == command.Username.ToLower() || u.Email == command.Email || u.Mobile == command.Mobile) && u.Id != command.Id))
+                (u.Username == command.Username.ToLower() || u.Email == command.Email || (!string.IsNullOrWhiteSpace(command.Mobile) && u.Mobile == command.Mobile)) && u.Id != command.Id))
                 return result.Failed(ValidateMessage.IsDuplicated);
 
             var path = "UserProfile";
@@ -92,7 +92,7 @@ namespace AccountManagement.Application.UserAgg
             if (!passwordResult.Verified)
                 return result.Failed("رمز عبور اشتباه می باشد!");
 
-            if (!(user.Username == command.UserName && user.Email == command.Email))
+            if (!(user.Username == command.UserName.ToLower() && user.Email == command.Email))
                 return result.Failed("نام کاربری یا پست الکترونیک صحیح نمی باشد!");
 
             var authVM = new AuthViewModel(user.Id, user.RoleId, user.Role.Name, user.Fullname, user.Username,

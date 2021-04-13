@@ -17,7 +17,7 @@
                         </ul>
                         @if (!string.IsNullOrWhiteSpace(ViewData["Message"] as string))
                         {
-                            <div class="alert alert-danger alert-dismissible fade show" style="text-align: center; width: 35%;margin: auto">
+                            <div class="alert alert-@ViewData["MessageColor"] alert-dismissible fade show" style="text-align: center; width: 35%;margin: auto">
                                 <span> @ViewData["Message"] </span>
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
@@ -59,7 +59,7 @@
                                             <div class="col-sm-6">
 
                                                 <div class="check-box d-inline-block ml-0 ml-md-2">
-                                                    <input  type="checkbox" asp-for="IsKeep" id="remember_me">
+                                                    <input type="checkbox" asp-for="IsKeep" id="remember_me">
                                                     <label for="remember_me">مرا به خاطر بسپار</label>
                                                 </div>
 
@@ -79,7 +79,7 @@
                                 </form>
                             </div>
                             <div class="col-sm-12 col-md-12 col-lg-6 col-xs-12">
-                                <form action="#">
+                                <form asp-page-handler="Register" method="post">
 
                                     <div class="login-form">
                                         <h4 class="login-title">ثبت نام</h4>
@@ -87,30 +87,32 @@
                                         <div class="row">
                                             <div class="col-md-6 col-12 mb-20">
                                                 <label>نام کامل</label>
-                                                <input type="text" placeholder="First Name">
+                                                <input name="fullName" type="text" placeholder="نام کامل">
                                             </div>
                                             <div class="col-md-6 col-12 mb-20">
                                                 <label>نام کاربری</label>
-                                                <input type="text" placeholder="Last Name">
+                                                <input type="text" name="userName" placeholder="نام کاربری">
                                             </div>
                                             <div class="col-md-12 mb-20">
                                                 <label>پست الکترونیک*</label>
-                                                <input type="email" placeholder="Email Address">
+                                                <input type="email" name="email" placeholder="پست الکترونیک">
                                             </div>
-                                            <div class="col-md-6 mb-20">
+
+                                            <div class="col-md-6 col-12 mb-20">
                                                 <label>رمز عبور</label>
-                                                <input type="password" placeholder="Password">
+                                                <input type="password" name="password" placeholder="رمزعبور">
                                             </div>
-                                            <div class="col-md-6 mb-20">
+
+                                            <div class="col-md-6 col-12 mb-20">
                                                 <label>تکرار رمز عبور</label>
-                                                <input type="password" placeholder="Confirm Password">
+                                                <input type="password" name="rePassword" placeholder="تکرار رمزعبور">
                                             </div>
+
                                             <div class="col-12">
-                                                <button class="register-button mt-0">ثبت نام</button>
+                                                <button type="submit" class="register-button mt-0">ثبت نام</button>
                                             </div>
                                         </div>
                                     </div>
-
                                 </form>
                             </div>
                         </div>
