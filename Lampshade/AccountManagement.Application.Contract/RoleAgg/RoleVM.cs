@@ -17,8 +17,6 @@ namespace AccountManagement.Application.Contract.RoleAgg
         public long Id { get; set; }
     }
 
-    public class DeleteRoleVM : EditRoleVM { }
-
     public class AdminRoleVM
     {
         public long Id { get; set; }

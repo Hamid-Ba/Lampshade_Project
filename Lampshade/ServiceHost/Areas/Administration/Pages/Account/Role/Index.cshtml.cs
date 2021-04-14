@@ -36,17 +36,5 @@ namespace ServiceHost.Areas.Administration.Pages.Account.Role
             var result = _roleApplication.Edit(command);
             return new JsonResult(result);
         }
-
-        public IActionResult OnGetDelete(long id)
-        {
-            var roleProduct = _roleApplication.GetDetailForDelete(id);
-            return Partial("Delete", roleProduct);
-        }
-
-        public IActionResult OnPostDelete(DeleteRoleVM command)
-        {
-            var result = _roleApplication.Delete(command);
-            return new JsonResult(result);
-        }
     }
 }

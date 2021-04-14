@@ -33,7 +33,7 @@ namespace Framework.Application.Authentication
             {
                 new Claim("UserId", account.Id.ToString()),
                 new Claim(ClaimTypes.Name, account.Fullname),
-                new Claim(ClaimTypes.Role, account.RoleId.ToString()),
+              //  new Claim(ClaimTypes.Role, account.RoleId.ToString()),
                 new Claim("Username", account.Username), // Or Use ClaimTypes.NameIdentifier
               //  new Claim("Mobile", account.Mobile)
             };

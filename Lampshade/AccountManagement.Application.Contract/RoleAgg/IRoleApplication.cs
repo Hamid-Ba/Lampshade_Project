@@ -11,9 +11,7 @@ namespace AccountManagement.Application.Contract.RoleAgg
     {
         OperationResult Create(CreateRoleVM command);
         OperationResult Edit(EditRoleVM command);
-        OperationResult Delete(DeleteRoleVM command);
         EditRoleVM GetDetailForEdit(long id);
-        DeleteRoleVM GetDetailForDelete(long id);
         IEnumerable<AdminRoleVM> GetAllForAdmin();
     }
 }

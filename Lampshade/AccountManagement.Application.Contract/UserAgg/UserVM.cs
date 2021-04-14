@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using Framework.Application;
 using Microsoft.AspNetCore.Http;
 
@@ -22,7 +23,7 @@ namespace AccountManagement.Application.Contract.UserAgg
         public IFormFile Picture { get; set; }
 
         //[Range(1, int.MaxValue, ErrorMessage = ValidateMessage.IsRequired)]
-        public long RoleId { get; set; }
+        public List<long> RolesId { get; set; }
     }
 
     public class EditUserVM
@@ -40,8 +41,8 @@ namespace AccountManagement.Application.Contract.UserAgg
         public string Mobile { get; set; }
         public IFormFile Picture { get; set; }
 
-        [Range(1, int.MaxValue, ErrorMessage = ValidateMessage.IsRequired)]
-        public long RoleId { get; set; }
+        //[Range(1, int.MaxValue, ErrorMessage = ValidateMessage.IsRequired)]
+        public List<long> RolesId { get; set; }
     }
 
     public class DeleteUserVM
@@ -58,7 +59,7 @@ namespace AccountManagement.Application.Contract.UserAgg
         public string Email { get; set; }
         public string Mobile { get; set; }
         public string Picture { get; set; }
-        public long RoleId { get; set; }
+        public long[] RolesId { get; set; }
         public string RoleName { get; set; }
         public string CreationDate { get; set; }
     }

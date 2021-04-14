@@ -13,6 +13,7 @@ namespace Framework.Domain
         T Get(TKey id);
         void Create(T entity);
         bool IsExist(Expression<Func<T, bool>> expression);
+        void DeleteEntity(T entity);
         void SaveChanges();
     }
 }

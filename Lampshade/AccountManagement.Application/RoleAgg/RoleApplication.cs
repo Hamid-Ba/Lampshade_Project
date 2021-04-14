@@ -42,23 +42,7 @@ namespace AccountManagement.Application.RoleAgg
             return result.Succeeded();
         }
 
-        public OperationResult Delete(DeleteRoleVM command)
-        {
-            OperationResult result = new OperationResult();
-
-            var role = _roleRepository.Get(command.Id);
-
-            if (role == null) return result.Failed(ValidateMessage.IsExist);
-
-            role.Delete();
-            _roleRepository.SaveChanges();
-
-            return result.Succeeded();
-        }
-
         public EditRoleVM GetDetailForEdit(long id) => _roleRepository.GetDetailForEdit(id);
-
-        public DeleteRoleVM GetDetailForDelete(long id) => _roleRepository.GetDetailForDelete(id);
 
         public IEnumerable<AdminRoleVM> GetAllForAdmin() => _roleRepository.GetAllForAdmin();
 

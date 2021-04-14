@@ -27,12 +27,5 @@ namespace AccountManagement.Infrastructure.EfCore.Repository
             Name = r.Name,
             Description = r.Description
         }).FirstOrDefault(r => r.Id == id);
-
-
-        public DeleteRoleVM GetDetailForDelete(long id) => _context.Roles.Select(r => new DeleteRoleVM()
-        {
-            Id = r.Id,
-            Name = r.Name
-        }).FirstOrDefault(r => r.Id == id);
     }
 }

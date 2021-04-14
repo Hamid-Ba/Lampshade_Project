@@ -42,11 +42,11 @@
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label asp-for="RoleId" class="control-label">نقش</label>
-                    <select class="form-control" asp-for="RoleId" asp-items='@ViewData["Roles"] as IEnumerable<SelectListItem>'>
+                    <label asp-for="RolesId" class="control-label">نقش</label>
+                    <select class="form-control" multiple asp-for="RolesId" asp-items='@ViewData["Roles"] as IEnumerable<SelectListItem>'>
                         <option value="0">نقش...</option>
                     </select>
-                    <span asp-validation-for="RoleId" class="error"></span>
+                    <span asp-validation-for="RolesId" class="error"></span>
                 </div>
             </div>
         </div>

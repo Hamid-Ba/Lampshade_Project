@@ -1,9 +1,12 @@
 ﻿using AccountManagement.Application.Contract.RoleAgg;
 using AccountManagement.Application.Contract.UserAgg;
+using AccountManagement.Application.Contract.UserRoleAgg;
 using AccountManagement.Application.RoleAgg;
 using AccountManagement.Application.UserAgg;
+using AccountManagement.Application.UserRoleAgg;
 using AccountManagement.Domain.RoleAgg;
 using AccountManagement.Domain.UserAgg;
+using AccountManagement.Domain.UserRoleAgg;
 using AccountManagement.Infrastructure.EfCore;
 using AccountManagement.Infrastructure.EfCore.Repository;
 using Microsoft.EntityFrameworkCore;
@@ -26,6 +29,9 @@ namespace AccountManagement.Infrastructure.Configuration
 
             service.AddTransient<IUserRepository, UserRepository>();
             service.AddTransient<IUserApplication, UserApplication>();
+
+            service.AddTransient<IUserRoleRepository, UserRoleRepository>();
+            service.AddTransient<IUserRoleApplication, UserRoleApplication>();
         }
     }
 }

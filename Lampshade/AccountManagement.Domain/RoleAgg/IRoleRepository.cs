@@ -12,6 +12,5 @@ namespace AccountManagement.Domain.RoleAgg
     {
         IEnumerable<AdminRoleVM> GetAllForAdmin();
         EditRoleVM GetDetailForEdit(long id);
-        DeleteRoleVM GetDetailForDelete(long id);
     }
 }

@@ -15,6 +15,8 @@ namespace Framework.Infrastructure
 
         public void Create(T entity) => _context.Add(entity);
 
+        public void DeleteEntity(T entity) => _context.Remove(entity);
+
         public T Get(TKey id) => _context.Find<T>(id);
 
         public IEnumerable<T> GetAll() => _context.Set<T>().ToList();

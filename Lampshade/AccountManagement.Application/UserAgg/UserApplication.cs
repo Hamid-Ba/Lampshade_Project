@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AccountManagement.Application.Contract.UserAgg;
+using AccountManagement.Application.Contract.UserRoleAgg;
 using AccountManagement.Domain.UserAgg;
 using Framework.Application;
 using Framework.Application.Authentication;
@@ -15,12 +16,14 @@ namespace AccountManagement.Application.UserAgg
     {
         private readonly IUserRepository _userRepository;
         private readonly IPasswordHasher _passwordHasher;
+        private readonly IUserRoleApplication _userRoleApplication;
         private readonly IAuthHelper _authHelper;
 
-        public UserApplication(IUserRepository userRepository, IPasswordHasher passwordHasher, IAuthHelper authHelper)
+        public UserApplication(IUserRepository userRepository, IPasswordHasher passwordHasher, IUserRoleApplication userRoleApplication, IAuthHelper authHelper)
         {
             _userRepository = userRepository;
             _passwordHasher = passwordHasher;
+            _userRoleApplication = userRoleApplication;
             _authHelper = authHelper;
         }
 
@@ -29,7 +32,7 @@ namespace AccountManagement.Application.UserAgg
             OperationResult result = new OperationResult();
 
             if (_userRepository.IsExist(u =>
-                u.Username == command.Username.ToLower() || u.Email == command.Email || (!string.IsNullOrWhiteSpace(command.Mobile) &&  u.Mobile == command.Mobile)))
+                u.Username == command.Username.ToLower() || u.Email == command.Email || (!string.IsNullOrWhiteSpace(command.Mobile) && u.Mobile == command.Mobile)))
                 return result.Failed(ValidateMessage.IsDuplicated);
 
             var path = "UserProfile";
@@ -37,11 +40,18 @@ namespace AccountManagement.Application.UserAgg
 
             var password = _passwordHasher.Hash(command.Password);
 
-            var user = new User(command.Fullname, command.Username.ToLower(), command.Email, password, command.Mobile, picture,
-                command.RoleId);
+            var user = new User(command.Fullname, command.Username.ToLower(), command.Email, password, command.Mobile, picture);
 
             _userRepository.Create(user);
             _userRepository.SaveChanges();
+
+            if (command.RolesId != null)
+                _userRoleApplication.AddRolesToUser(user.Id, command.RolesId.ToArray());
+            else
+            {
+                long[] roles = { 2 };
+                _userRoleApplication.AddRolesToUser(user.Id, roles);
+            }
 
             return result.Succeeded();
         }
@@ -60,8 +70,10 @@ namespace AccountManagement.Application.UserAgg
             var path = "UserProfile";
             var picture = Uploader.ImageUploader(command.Picture, path, user.Picture);
 
-            user.Edit(command.Fullname, command.Username.ToLower(), command.Email, command.Mobile, picture, command.RoleId);
+            user.Edit(command.Fullname, command.Username.ToLower(), command.Email, command.Mobile, picture);
             _userRepository.SaveChanges();
+
+            if (command.RolesId.Count > 0) _userRoleApplication.AddRolesToUser(user.Id, command.RolesId.ToArray());
 
             return result.Succeeded();
         }
@@ -79,7 +91,7 @@ namespace AccountManagement.Application.UserAgg
             return result.Succeeded();
         }
 
-        public OperationResult Login(LoginVM command,bool keepMe)
+        public OperationResult Login(LoginVM command, bool keepMe)
         {
             OperationResult result = new OperationResult();
 
@@ -95,7 +107,7 @@ namespace AccountManagement.Application.UserAgg
             if (!(user.Username == command.UserName.ToLower() && user.Email == command.Email))
                 return result.Failed("نام کاربری یا پست الکترونیک صحیح نمی باشد!");
 
-            var authVM = new AuthViewModel(user.Id, user.RoleId, user.Role.Name, user.Fullname, user.Username,
+            var authVM = new AuthViewModel(user.Id, user.Fullname, user.Username,
                 user.Mobile, keepMe);
 
             _authHelper.Signin(authVM);
