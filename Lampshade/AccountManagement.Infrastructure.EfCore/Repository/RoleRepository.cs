@@ -21,11 +21,18 @@ namespace AccountManagement.Infrastructure.EfCore.Repository
             CreationDate = r.CreationTime.ToFarsi()
         }).ToList();
 
-        public EditRoleVM GetDetailForEdit(long id) => _context.Roles.Select(r => new EditRoleVM()
+        public EditRoleVM GetDetailForEdit(long id)
         {
-            Id = r.Id,
-            Name = r.Name,
-            Description = r.Description
-        }).FirstOrDefault(r => r.Id == id);
+            var query = _context.Roles.Select(r => new EditRoleVM()
+            {
+                Id = r.Id,
+                Name = r.Name,
+                Description = r.Description
+            }).FirstOrDefault(r => r.Id == id);
+
+            query.PermissionsId = _context.RolePermissions.Where(r => r.RoleId == query.Id).Select(p => p.PermissionId).ToArray();
+
+            return query;
+        }
     }
 }

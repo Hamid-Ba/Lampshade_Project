@@ -1,10 +1,16 @@
-﻿using AccountManagement.Application.Contract.RoleAgg;
+﻿using AccountManagement.Application.Contract.PermissionAgg;
+using AccountManagement.Application.Contract.RoleAgg;
+using AccountManagement.Application.Contract.RolePermissionAgg;
 using AccountManagement.Application.Contract.UserAgg;
 using AccountManagement.Application.Contract.UserRoleAgg;
+using AccountManagement.Application.PermissionAgg;
 using AccountManagement.Application.RoleAgg;
+using AccountManagement.Application.RolePermissionAgg;
 using AccountManagement.Application.UserAgg;
 using AccountManagement.Application.UserRoleAgg;
+using AccountManagement.Domain.PermissionAgg;
 using AccountManagement.Domain.RoleAgg;
+using AccountManagement.Domain.RolePermissionAgg;
 using AccountManagement.Domain.UserAgg;
 using AccountManagement.Domain.UserRoleAgg;
 using AccountManagement.Infrastructure.EfCore;
@@ -32,6 +38,12 @@ namespace AccountManagement.Infrastructure.Configuration
 
             service.AddTransient<IUserRoleRepository, UserRoleRepository>();
             service.AddTransient<IUserRoleApplication, UserRoleApplication>();
+
+            service.AddTransient<IRolePermissionRepository, RolePermissionRepository>();
+            service.AddTransient<IRolePermissionApplication, RolePermissionApplication>();
+
+            service.AddTransient<IPermissionRepository, PermissionRepository>();
+            service.AddTransient<IPermissionApplication, PermissionApplication>();
         }
     }
 }

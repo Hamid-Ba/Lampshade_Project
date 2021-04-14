@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using AccountManagement.Application.Contract.RoleAgg;
+using AccountManagement.Application.Contract.RolePermissionAgg;
 using AccountManagement.Domain.RoleAgg;
 using Framework.Application;
 
@@ -8,8 +9,12 @@ namespace AccountManagement.Application.RoleAgg
     public class RoleApplication : IRoleApplication
     {
         private readonly IRoleRepository _roleRepository;
-
-        public RoleApplication(IRoleRepository roleRepository) => _roleRepository = roleRepository;
+        private readonly IRolePermissionApplication _rolePermissionApplication;
+        public RoleApplication(IRoleRepository roleRepository, IRolePermissionApplication rolePermissionApplication)
+        {
+            _roleRepository = roleRepository;
+            _rolePermissionApplication = rolePermissionApplication;
+        }
 
         public OperationResult Create(CreateRoleVM command)
         {
@@ -21,6 +26,8 @@ namespace AccountManagement.Application.RoleAgg
             var role = new Role(command.Name, command.Description);
             _roleRepository.Create(role);
             _roleRepository.SaveChanges();
+
+            _rolePermissionApplication.AddPermissionsToRole(role.Id, command.PermissionsId);
 
             return result.Succeeded();
         }
@@ -38,6 +45,8 @@ namespace AccountManagement.Application.RoleAgg
 
             role.Edit(command.Name, command.Description);
             _roleRepository.SaveChanges();
+
+            _rolePermissionApplication.AddPermissionsToRole(role.Id, command.PermissionsId);
 
             return result.Succeeded();
         }

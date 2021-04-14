@@ -19,6 +19,24 @@ namespace AccountManagement.Infrastructure.EfCore.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.1");
 
+            modelBuilder.Entity("AccountManagement.Domain.PermissionAgg.Permission", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long?>("ParentId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Permissions");
+                });
+
             modelBuilder.Entity("AccountManagement.Domain.RoleAgg.Role", b =>
                 {
                     b.Property<long>("Id")
@@ -44,6 +62,21 @@ namespace AccountManagement.Infrastructure.EfCore.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Roles");
+                });
+
+            modelBuilder.Entity("AccountManagement.Domain.RolePermissionAgg.RolePermission", b =>
+                {
+                    b.Property<long>("RoleId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("PermissionId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("RoleId", "PermissionId");
+
+                    b.HasIndex("PermissionId");
+
+                    b.ToTable("RolePermissions");
                 });
 
             modelBuilder.Entity("AccountManagement.Domain.UserAgg.User", b =>
@@ -106,6 +139,25 @@ namespace AccountManagement.Infrastructure.EfCore.Migrations
                     b.ToTable("UserRoles");
                 });
 
+            modelBuilder.Entity("AccountManagement.Domain.RolePermissionAgg.RolePermission", b =>
+                {
+                    b.HasOne("AccountManagement.Domain.PermissionAgg.Permission", "Permission")
+                        .WithMany("RolePermissions")
+                        .HasForeignKey("PermissionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("AccountManagement.Domain.RoleAgg.Role", "Role")
+                        .WithMany("RolePermissions")
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Permission");
+
+                    b.Navigation("Role");
+                });
+
             modelBuilder.Entity("AccountManagement.Domain.UserRoleAgg.UserRole", b =>
                 {
                     b.HasOne("AccountManagement.Domain.RoleAgg.Role", "Role")
@@ -125,8 +177,15 @@ namespace AccountManagement.Infrastructure.EfCore.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("AccountManagement.Domain.PermissionAgg.Permission", b =>
+                {
+                    b.Navigation("RolePermissions");
+                });
+
             modelBuilder.Entity("AccountManagement.Domain.RoleAgg.Role", b =>
                 {
+                    b.Navigation("RolePermissions");
+
                     b.Navigation("UserRoles");
                 });
 

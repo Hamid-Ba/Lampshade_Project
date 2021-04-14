@@ -16,3 +16,4 @@ C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lam
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\BlogManagement.Application\obj\Debug\net5.0\BlogManagement.Application.dll
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\BlogManagement.Application\obj\Debug\net5.0\ref\BlogManagement.Application.dll
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\BlogManagement.Application\obj\Debug\net5.0\BlogManagement.Application.pdb
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\BlogManagement.Application\obj\Debug\net5.0\BlogManagement.Application.csprojAssemblyReference.cache

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using AccountManagement.Domain.RolePermissionAgg;
 using AccountManagement.Domain.UserRoleAgg;
 using Framework.Domain;
 
@@ -9,6 +10,7 @@ namespace AccountManagement.Domain.RoleAgg
         public string Name { get; private set; }
         public string Description { get; private set; }
         public List<UserRole> UserRoles { get; private set; }
+        public List<RolePermission> RolePermissions { get; private set; }
 
         public Role(string name, string description)
         {
@@ -21,6 +23,6 @@ namespace AccountManagement.Domain.RoleAgg
             Name = name;
             Description = description;
         }
-        
+
     }
 }

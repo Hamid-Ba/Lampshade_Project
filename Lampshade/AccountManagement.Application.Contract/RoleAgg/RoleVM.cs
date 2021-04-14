@@ -10,6 +10,7 @@ namespace AccountManagement.Application.Contract.RoleAgg
     {
         public string Name { get; set; }
         public string Description { get; set; }
+        public long[] PermissionsId { get; set; }
     }
 
     public class EditRoleVM : CreateRoleVM
