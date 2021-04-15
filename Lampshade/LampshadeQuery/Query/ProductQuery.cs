@@ -183,6 +183,7 @@ namespace LampshadeQuery.Query
             product.IsInStock = inventory.Find(i => i.ProductId == product.Id).IsInStock;
 
             product.Price = price.ToMoney();
+            product.DoublePrice = price;
 
             if (!product.HasDiscount) return product;
 

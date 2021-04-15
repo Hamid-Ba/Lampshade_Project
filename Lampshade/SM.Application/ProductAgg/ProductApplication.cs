@@ -25,7 +25,7 @@ namespace SM.Application.ProductAgg
 
             var slug = command.Slug.Slugify();
             var categorySlug = _categoryRepository.GetCategorySlugBy(command.CategoryId);
-            var folderName = $"{categorySlug}\\{slug}";
+            var folderName = $"{categorySlug}//{slug}";
 
             var pictureName = Uploader.ImageUploader(command.Picture, folderName,null!);
 
@@ -53,7 +53,7 @@ namespace SM.Application.ProductAgg
 
             var slug = command.Slug.Slugify();
             var categorySlug = _categoryRepository.GetCategorySlugBy(command.CategoryId);
-            var folderName = $"{categorySlug}\\{slug}";
+            var folderName = $"{categorySlug}//{slug}";
 
             var pictureName = Uploader.ImageUploader(command.Picture, folderName,product.Picture);
 

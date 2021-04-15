@@ -24,7 +24,7 @@ namespace Framework.Application
             var filePath = $"{directoryPath}\\{fileName}";
             using var output = File.Create(filePath);
             file.CopyTo(output);
-            return $"{path}\\{fileName}";
+            return $"{path}//{fileName}";
         }
 
         public static void ImageRemover(string imageName)
