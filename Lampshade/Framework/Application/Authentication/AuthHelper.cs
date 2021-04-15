@@ -32,9 +32,9 @@ namespace Framework.Application.Authentication
             var claims = new List<Claim>
             {
                 new Claim("UserId", account.Id.ToString()),
-                new Claim(ClaimTypes.Name, account.Fullname),
+                new Claim("Fullname", account.Fullname),
               //  new Claim(ClaimTypes.Role, account.RoleId.ToString()),
-                new Claim("Username", account.Username), // Or Use ClaimTypes.NameIdentifier
+                new Claim(ClaimTypes.Name, account.Username), // Or Use ClaimTypes.NameIdentifier
               //  new Claim("Mobile", account.Mobile)
             };
 

@@ -1,14 +1,15 @@
 using System.Collections.Generic;
 using AccountManagement.Application.Contract.RoleAgg;
 using AccountManagement.Application.Contract.UserAgg;
+using AccountManagement.Infrastructure.Configuration;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using ShopManagement.Application.Contracts.ProductAgg;
-using ShopManagement.Application.Contracts.ProductCategoryAgg;
+using ServiceHost.Tools;
 
 namespace ServiceHost.Areas.Administration.Pages.Account.User
 {
+    [PermissionChecker(AccountPermissions.UserList)]
     public class IndexModel : PageModel
     {
         private readonly IUserApplication _userApplication;

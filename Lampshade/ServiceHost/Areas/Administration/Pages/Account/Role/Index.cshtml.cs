@@ -1,12 +1,15 @@
 using System.Collections.Generic;
 using AccountManagement.Application.Contract.PermissionAgg;
 using AccountManagement.Application.Contract.RoleAgg;
+using AccountManagement.Infrastructure.Configuration;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using ServiceHost.Tools;
 
 namespace ServiceHost.Areas.Administration.Pages.Account.Role
 {
+    [PermissionChecker(AccountPermissions.RoleList)]
     public class IndexModel : PageModel
     {
         private readonly IRoleApplication _roleApplication;

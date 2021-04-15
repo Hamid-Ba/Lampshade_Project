@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AccountManagement.Application.Contract.RoleAgg;
 using AccountManagement.Application.Contract.UserAgg;
 using AccountManagement.Application.Contract.UserRoleAgg;
 using AccountManagement.Domain.UserAgg;
@@ -15,13 +16,15 @@ namespace AccountManagement.Application.UserAgg
     public class UserApplication : IUserApplication
     {
         private readonly IUserRepository _userRepository;
+        private readonly IRoleApplication _roleApplication;
         private readonly IPasswordHasher _passwordHasher;
         private readonly IUserRoleApplication _userRoleApplication;
         private readonly IAuthHelper _authHelper;
 
-        public UserApplication(IUserRepository userRepository, IPasswordHasher passwordHasher, IUserRoleApplication userRoleApplication, IAuthHelper authHelper)
+        public UserApplication(IUserRepository userRepository, IRoleApplication roleApplication, IPasswordHasher passwordHasher, IUserRoleApplication userRoleApplication, IAuthHelper authHelper)
         {
             _userRepository = userRepository;
+            _roleApplication = roleApplication;
             _passwordHasher = passwordHasher;
             _userRoleApplication = userRoleApplication;
             _authHelper = authHelper;
@@ -139,5 +142,17 @@ namespace AccountManagement.Application.UserAgg
         public DeleteUserVM GetDetailForDelete(long id) => _userRepository.GetDetailForDelete(id);
 
         public IEnumerable<AdminUserVM> GetAllForAdmin(SearchUserVM search) => _userRepository.GetAllForAdmin(search);
+
+        public bool IsUserHasPermissions(long permissionId, string userName)
+        {
+            var user = _userRepository.GetUserBy(userName.ToLower());
+            var userRoles = user.UserRoles;
+
+            var roles = userRoles.Select(r => r.RoleId).ToList();
+
+            foreach (var roleId in roles) if (_roleApplication.IsRoleHasThePermission(roleId, permissionId)) return true;
+
+            return false;
+        }
     }
 }

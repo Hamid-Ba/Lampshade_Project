@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using AccountManagement.Application.Contract.RoleAgg;
 using AccountManagement.Application.Contract.RolePermissionAgg;
 using AccountManagement.Domain.RoleAgg;
@@ -55,5 +56,15 @@ namespace AccountManagement.Application.RoleAgg
 
         public IEnumerable<AdminRoleVM> GetAllForAdmin() => _roleRepository.GetAllForAdmin();
 
+        public bool IsRoleHasThePermission(long roleId, long permissionId)
+        {
+            var role = _roleRepository.GetRoleWithPermissions(roleId);
+
+            var permissions = role.RolePermissions.Select(p => p.PermissionId).ToList();
+
+            foreach (var perId in permissions) if (perId == permissionId) return true;
+
+            return false;
+        }
     }
 }

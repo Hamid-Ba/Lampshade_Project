@@ -13,5 +13,6 @@ namespace AccountManagement.Application.Contract.RoleAgg
         OperationResult Edit(EditRoleVM command);
         EditRoleVM GetDetailForEdit(long id);
         IEnumerable<AdminRoleVM> GetAllForAdmin();
+        bool IsRoleHasThePermission(long roleId, long permissionId);
     }
 }

@@ -4,6 +4,7 @@ using _0_Framework.Application;
 using AccountManagement.Application.Contract.RoleAgg;
 using AccountManagement.Domain.RoleAgg;
 using Framework.Infrastructure;
+using Microsoft.EntityFrameworkCore;
 
 namespace AccountManagement.Infrastructure.EfCore.Repository
 {
@@ -34,5 +35,8 @@ namespace AccountManagement.Infrastructure.EfCore.Repository
 
             return query;
         }
+
+        public Role GetRoleWithPermissions(long id) => _context.Roles.Include(r => r.RolePermissions).ThenInclude(p => p.Permission).FirstOrDefault(r => r.Id == id);
+
     }
 }

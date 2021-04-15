@@ -6,7 +6,7 @@
             </div>
             <div class="user-info">
                 <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">John Doe <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">@User.Identity.Name<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="javascript:void(0)"><i class="md md-face-unlock"></i> Profile<div class="ripple-wrapper"></div></a></li>
                         <li><a href="javascript:void(0)"><i class="md md-settings"></i> Settings</a></li>
@@ -29,7 +29,7 @@
                     <a asp-page="/Inventory/Index" class="waves-effect"><i class="fa fa-database"></i><span> سیستم انبارداری </span></a>
                 </li>
 
-                <li class="has_sub">
+                <li Permission="@ShopPermissions.ShopManagement" class="has_sub">
                     <a class="waves-effect"><i class="md md-shopping-cart"></i><span> سیستم فروشگاهی </span><span class="pull-right"><i class="md md-add"></i></span></a>
                     <ul class="list-unstyled">
                         <li><a asp-page="/Shop/Product/Index">محصولات</a></li>

@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using AccountManagement.Application.Contract.UserAgg;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -15,8 +16,11 @@ namespace ServiceHost.Pages
 
         public AccountModel(IUserApplication userApplication) => _userApplication = userApplication;
 
-        public void OnGet()
+        public IActionResult OnGet()
         {
+            if (User.Identity.IsAuthenticated) return RedirectToPage("Index");
+
+            return Page();
         }
 
         public IActionResult OnPostLogin(LoginVM command, bool isKeep)
