@@ -8,6 +8,8 @@
     ".NETCoreApp,Version=v5.0": {
       "LampshadeQuery/1.0.0": {
         "dependencies": {
+          "AccountManagement.Application.Contract": "1.0.0",
+          "AccountManagement.Infrastructure.EfCore": "1.0.0",
           "BlogManagement.Infrastructure.EfCore": "1.0.0",
           "CommentManagement.Infrastructure.EfCore": "1.0.0",
           "DiscountManagement.Infrastructure.EfCore": "1.0.0",
@@ -1363,6 +1365,33 @@
           "System.Xml.XmlDocument": "4.3.0"
         }
       },
+      "AccountManagement.Application.Contract/1.0.0": {
+        "dependencies": {
+          "Framework": "1.0.0"
+        },
+        "runtime": {
+          "AccountManagement.Application.Contract.dll": {}
+        }
+      },
+      "AccountManagement.Domain/1.0.0": {
+        "dependencies": {
+          "AccountManagement.Application.Contract": "1.0.0",
+          "Framework": "1.0.0"
+        },
+        "runtime": {
+          "AccountManagement.Domain.dll": {}
+        }
+      },
+      "AccountManagement.Infrastructure.EfCore/1.0.0": {
+        "dependencies": {
+          "AccountManagement.Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "5.0.1",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.1"
+        },
+        "runtime": {
+          "AccountManagement.Infrastructure.EfCore.dll": {}
+        }
+      },
       "BlogManagement.Application.Contract/1.0.0": {
         "dependencies": {
           "Framework": "1.0.0"
@@ -2381,6 +2410,21 @@
       "sha512": "sha512-MYoTCP7EZ98RrANESW05J5ZwskKDoN0AuZ06ZflnowE50LTpbR5yRg3tHckTVm5j/m47stuGgCrCHWePyHS70Q==",
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    },
+    "AccountManagement.Application.Contract/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AccountManagement.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AccountManagement.Infrastructure.EfCore/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "BlogManagement.Application.Contract/1.0.0": {
       "type": "project",

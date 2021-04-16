@@ -8,6 +8,7 @@ using InventoryManagement.Infrastructure.EfCore;
 using LampshadeQuery.Contract.Comment;
 using LampshadeQuery.Contract.Product;
 using Microsoft.EntityFrameworkCore;
+using ShopManagement.Application.Contracts.OrderAgg;
 using ShopManagement.Domain.ProductPictureAgg;
 using ShopManagement.Infrastructure.EfCore;
 
@@ -223,6 +224,19 @@ namespace LampshadeQuery.Query
                 PictureName = p.PictureName,
                 PictureTitle = p.PictureTitle
             }).ToList();
+        }
+
+        public IEnumerable<CartItem> CheckIsInStock(IEnumerable<CartItem> cartItems)
+        {
+            var inventory = _inventoryContext.Inventories.ToList();
+
+            foreach (var item in cartItems.Where(cart => inventory.Any(i => i.ProductId == cart.Id && i.IsInStock)))
+            {
+                var itemInventory = inventory.FirstOrDefault(i => i.ProductId == item.Id);
+                item.IsInStock = itemInventory.CalculateStock() >= item.Count;
+            }
+
+            return cartItems;
         }
     }
 }

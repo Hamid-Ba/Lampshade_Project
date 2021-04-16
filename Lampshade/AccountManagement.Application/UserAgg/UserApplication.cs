@@ -102,6 +102,8 @@ namespace AccountManagement.Application.UserAgg
 
             if (user == null) return result.Failed("کاربری با این مشخصات یافت نشد !");
 
+            if (string.IsNullOrWhiteSpace(command.Password) || string.IsNullOrWhiteSpace(command.Email)) return result.Failed("تمام مقادیر را پر کنید");
+
             var passwordResult = _passwordHasher.Check(user.Password, command.Password);
 
             if (!passwordResult.Verified)
@@ -153,6 +155,13 @@ namespace AccountManagement.Application.UserAgg
             foreach (var roleId in roles) if (_roleApplication.IsRoleHasThePermission(roleId, permissionId)) return true;
 
             return false;
+        }
+
+        public bool IsColleague(string userName)
+        {
+            var user = _userRepository.GetUserBy(userName.ToLower());
+
+            return user.UserRoles.Any(u => u.RoleId == 8);// 8 Belongs To Colleague Role
         }
     }
 }

@@ -15,5 +15,6 @@ namespace AccountManagement.Application.Contract.UserAgg
         DeleteUserVM GetDetailForDelete(long id);
         IEnumerable<AdminUserVM> GetAllForAdmin(SearchUserVM search);
         bool IsUserHasPermissions(long permissionId, string userName);
+        bool IsColleague(string userName);
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShopManagement.Application.Contracts.OrderAgg;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,5 +12,6 @@ namespace LampshadeQuery.Contract.Product
         IEnumerable<ProductQueryVM> GetLatestArrival(int count);
         IEnumerable<ProductQueryVM> Search(string search);
         ProductQueryVM GetDetailsBy(string slug);
+        IEnumerable<CartItem> CheckIsInStock(IEnumerable<CartItem> cartItems);
     }
 }

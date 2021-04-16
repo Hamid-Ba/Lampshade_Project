@@ -32,61 +32,68 @@
                 <!--=======  page wrapper  =======-->
                 <div class="page-wrapper">
                     <div class="page-content-wrapper">
-                        <form action="#">
-                            <div class="cart-table table-responsive">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th class="pro-thumbnail">تصویر</th>
-                                            <th class="pro-title">محصول</th>
-                                            <th class="pro-price">قیمت واحد</th>
-                                            <th class="pro-quantity">تعداد</th>
-                                            <th class="pro-subtotal">قیمت کل</th>
-                                            <th class="pro-remove">عملیات</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach (var product in Model.CartItems)
-                                        {
-                                            <tr>
-                                                <td class="pro-thumbnail">
-                                                    <a asp-page="Product" asp-route-id="@product.Slug">
-                                                        <img src="/Pictures/@product.Picture" class="img-fluid" alt="@product.Name">
-                                                    </a>
-                                                </td>
-                                                <td class="pro-title">
-                                                    <a asp-page="Product" asp-route-id="@product.Slug">@product.Name</a>
-                                                </td>
-                                                <td class="pro-price">
-                                                    <span>@product.UnitPrice.ToMoney()</span>
-                                                </td>
-                                                <td class="pro-quantity">
-                                                    <div class="quantity-selection">
-                                                        <input type="number" value="@product.Count" min="1">
-                                                    </div>
-                                                </td>
-                                                <td class="pro-subtotal">
-                                                    <span>@product.TotalPrice.ToMoney()</span>
-                                                </td>
-                                                <td class="pro-remove">
-                                                    <a asp-page-handler="RemoveCartItem" asp-route-id="@product.Id">
-                                                        <i class="fa fa-trash-o"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                        }
 
-
-                                    </tbody>
-                                </table>
+                        @foreach (var item in Model.CartItems.Where(c => !c.IsInStock))
+                        {
+                            <div class="alert alert-warning">
+                                <i class="fa fa-warning"></i> <span>محصول @item.Name به تعداد @item.Count در انبار موجود نمی باشد!</span>
                             </div>
-                        </form>
+                        }
+
+
+                        <div class="cart-table table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th class="pro-thumbnail">تصویر</th>
+                                        <th class="pro-title">محصول</th>
+                                        <th class="pro-price">قیمت واحد</th>
+                                        <th class="pro-quantity">تعداد</th>
+                                        <th class="pro-subtotal">قیمت کل</th>
+                                        <th class="pro-remove">عملیات</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var product in Model.CartItems)
+                                    {
+                                        <tr>
+                                            <td class="pro-thumbnail">
+                                                <a asp-page="Product" asp-route-id="@product.Slug">
+                                                    <img src="/Pictures/@product.Picture" class="img-fluid" alt="@product.Name">
+                                                </a>
+                                            </td>
+                                            <td class="pro-title">
+                                                <a asp-page="Product" asp-route-id="@product.Slug">@product.Name</a>
+                                            </td>
+                                            <td class="pro-price">
+                                                <span>@product.UnitPrice.ToMoney()</span>
+                                            </td>
+                                            <td class="pro-quantity">
+                                                <div class="quantity-selection">
+                                                    <input type="number" value="@product.Count" min="1" onchange="changeCartItemCount('@product.Id', 'totalItemPrice-@product.Id', this.value)">
+                                                </div>
+                                            </td>
+                                            <td class="pro-subtotal">
+                                                <span id="totalItemPrice-@product.Id">@product.TotalPrice.ToMoney()</span>
+                                            </td>
+                                            <td class="pro-remove">
+                                                <a asp-page-handler="RemoveCartItem" asp-route-id="@product.Id">
+                                                    <i class="fa fa-trash-o"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    }
+
+
+                                </tbody>
+                            </table>
+                        </div>
 
                         <div class="row">
                             <div class="col-lg-6 col-12 d-flex">
                                 <div class="cart-summary">
                                     <div class="cart-summary-button">
-                                        <button class="checkout-btn">تسویه حساب</button>
+                                        <a asp-page-handler="Checkout" class="checkout-btn">تسویه حساب</a>
                                     </div>
                                 </div>
                             </div>
