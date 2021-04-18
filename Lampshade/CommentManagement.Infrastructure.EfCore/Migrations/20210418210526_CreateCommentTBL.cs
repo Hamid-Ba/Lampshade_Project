@@ -19,6 +19,7 @@ namespace CommentManagement.Infrastructure.EfCore.Migrations
                     IsConfirmed = table.Column<bool>(type: "bit", nullable: false),
                     Type = table.Column<int>(type: "int", nullable: false),
                     OwnerId = table.Column<long>(type: "bigint", nullable: false),
+                    OwnerName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ParentId = table.Column<long>(type: "bigint", nullable: false),
                     CreationTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false)
@@ -31,7 +32,7 @@ namespace CommentManagement.Infrastructure.EfCore.Migrations
                         column: x => x.ParentId,
                         principalTable: "Comments",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(

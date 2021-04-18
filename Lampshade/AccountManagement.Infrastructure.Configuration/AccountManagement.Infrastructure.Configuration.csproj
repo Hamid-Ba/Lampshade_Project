@@ -12,5 +12,6 @@
 	<ItemGroup>
 	  <ProjectReference Include="..\AccountManagement.Application\AccountManagement.Application.csproj" />
 	  <ProjectReference Include="..\AccountManagement.Infrastructure.EfCore\AccountManagement.Infrastructure.EfCore.csproj" />
+	  <ProjectReference Include="..\LampshadeQuery\LampshadeQuery.csproj" />
 	</ItemGroup>
 </Project>

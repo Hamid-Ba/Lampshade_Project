@@ -15,7 +15,7 @@ namespace Framework.Application.Authentication
         public string Username { get; set; }
         public string Mobile { get; set; }
         public bool KeepMe { get; set; }
-
+        public AuthViewModel() { }
         public AuthViewModel(long id, string fullname, string username, string mobile, bool keepMe)
         {
             Id = id;

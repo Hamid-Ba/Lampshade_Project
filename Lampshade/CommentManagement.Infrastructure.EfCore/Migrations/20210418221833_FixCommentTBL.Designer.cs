@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CommentManagement.Infrastructure.EfCore.Migrations
 {
     [DbContext(typeof(CommentContext))]
-    [Migration("20210409160647_AddPostTitleToTBL")]
-    partial class AddPostTitleToTBL
+    [Migration("20210418221833_FixCommentTBL")]
+    partial class FixCommentTBL
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -75,7 +75,7 @@ namespace CommentManagement.Infrastructure.EfCore.Migrations
                     b.HasOne("CommentManagement.Domain.CommentAgg.Comment", "Parent")
                         .WithMany("Children")
                         .HasForeignKey("ParentId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.SetNull)
                         .IsRequired();
 
                     b.Navigation("Parent");

@@ -15,6 +15,8 @@ using AccountManagement.Domain.UserAgg;
 using AccountManagement.Domain.UserRoleAgg;
 using AccountManagement.Infrastructure.EfCore;
 using AccountManagement.Infrastructure.EfCore.Repository;
+using LampshadeQuery.Contract.User;
+using LampshadeQuery.Query;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -44,6 +46,8 @@ namespace AccountManagement.Infrastructure.Configuration
 
             service.AddTransient<IPermissionRepository, PermissionRepository>();
             service.AddTransient<IPermissionApplication, PermissionApplication>();
+
+            service.AddTransient<IUserQuery, UserQuery>();
         }
     }
 }

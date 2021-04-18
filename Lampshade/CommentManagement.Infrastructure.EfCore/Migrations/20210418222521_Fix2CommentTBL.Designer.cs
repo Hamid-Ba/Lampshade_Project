@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CommentManagement.Infrastructure.EfCore.Migrations
 {
     [DbContext(typeof(CommentContext))]
-    [Migration("20210409153443_CreateCommentTBL")]
-    partial class CreateCommentTBL
+    [Migration("20210418222521_Fix2CommentTBL")]
+    partial class Fix2CommentTBL
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -53,6 +53,9 @@ namespace CommentManagement.Infrastructure.EfCore.Migrations
 
                     b.Property<long>("OwnerId")
                         .HasColumnType("bigint");
+
+                    b.Property<string>("OwnerName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<long>("ParentId")
                         .HasColumnType("bigint");

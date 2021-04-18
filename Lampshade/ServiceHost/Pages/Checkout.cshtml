@@ -31,7 +31,13 @@
             <div class="col-lg-12">
                 <div class="page-wrapper">
                     <div class="page-content-wrapper">
-                        <form action="#">
+                        @if (!string.IsNullOrWhiteSpace(Model.Message))
+                        {
+                            <div class="alert alert-danger">
+                                <i class="fa fa-warning"></i> <p>@Model.Message</p>
+                            </div>
+                        }
+                        <form method="post" asp-page-handler="Pay">
                             <div class="cart-table table-responsive">
                                 <table class="table">
                                     <thead>
@@ -85,23 +91,58 @@
                                     </tbody>
                                 </table>
                             </div>
-                        </form>
 
-                        <div class="row">
-                            <div class="col-lg-6 col-12 d-flex">
-                                <div class="cart-summary">
-                                    <div class="cart-summary-wrap">
-                                        <h4>خلاصه وضعیت فاکتور</h4>
-                                        <p>مبلغ نهایی <span>@Model.Cart.TotalPrice.ToMoney() تومان</span></p>
-                                        <p>مبلغ تخفیف <span>@Model.Cart.DiscountPrice.ToMoney() تومان</span></p>
-                                        <h2>مبلغ قابل پرداخت <span>@Model.Cart.PayAmount.ToMoney() تومان</span></h2>
+                            <div class="row">
+                                <div class="col-lg-6 col-12 d-flex">
+                                    <div class="cart-summary">
+                                        <div class="cart-summary-wrap">
+                                            <h4>آدرس دقیق شما :</h4>
+                                            <input type="text" class="form-control" name="address" />
+                                        </div>
                                     </div>
-                                    <div class="cart-summary-button">
-                                        <button class="checkout-btn">پرداخت</button>
+                                </div>
+                                <div class="col-lg-6 col-12 d-flex">
+                                    <div class="cart-summary">
+                                        <div class="cart-summary-wrap">
+                                            <h4>شماره موبایل :</h4>
+                                            <input type="text" class="form-control" name="phoneNumber" />
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+
+                            <div class="row">
+                                <div class="col-lg-6 col-12 d-flex">
+                                    <div class="checkout-payment-method">
+                                        <h4>نحوه پرداخت</h4>
+                                        <div class="single-method">
+                                            <input type="radio" id="payment_online" name="paymentMethod" value="1" checked>
+                                            <label for="payment_online">پرداخت اینترنتی</label>
+                                            <p data-method="1" style="display:block ">پرداخت بوسیله درگاه اینترنتی زرین پال صورت می گیرد</p>
+                                        </div>
+
+                                        <div class="single-method">
+                                            <input type="radio" id="payment_cash" name="paymentMethod" value="2">
+                                            <label for="payment_cash">پرداخت نقدی</label>
+                                            <p data-method="2">پرداخت در زمان تحویل محصولات انجام می گیرد</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-12 d-flex">
+                                    <div class="cart-summary">
+                                        <div class="cart-summary-wrap">
+                                            <h4>خلاصه وضعیت فاکتور</h4>
+                                            <p>مبلغ نهایی <span>@Model.Cart.TotalPrice.ToMoney() تومان</span></p>
+                                            <p>مبلغ تخفیف <span>@Model.Cart.DiscountPrice.ToMoney() تومان</span></p>
+                                            <h2>مبلغ قابل پرداخت <span>@Model.Cart.PayAmount.ToMoney() تومان</span></h2>
+                                        </div>
+                                        <div class="cart-summary-button">
+                                            <button type="submit" class="checkout-btn">پرداخت</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

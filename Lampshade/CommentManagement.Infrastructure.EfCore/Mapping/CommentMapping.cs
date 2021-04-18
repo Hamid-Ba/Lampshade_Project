@@ -14,9 +14,9 @@ namespace ShopManagement.Infrastructure.EfCore.Mapping
             builder.Property(p => p.Email).IsRequired();
             builder.Property(p => p.Message).HasMaxLength(500).IsRequired();
 
-            builder.HasOne(p => p.Parent).
-                WithMany(c => c.Children).
-                HasForeignKey(f => f.ParentId);
+            //builder.HasOne(p => p.Parent).
+            //    WithMany(c => c.Children).
+            //    HasForeignKey(f => f.ParentId);
         }
     }
 }

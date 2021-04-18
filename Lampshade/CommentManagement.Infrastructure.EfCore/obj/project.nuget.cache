@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "bl72jomHza+o0GMOaQWMWXipJAupK70swxLcXgqr1CzY/ai7k0HcgKyYQAyIIBOgo+0f+13rNrqBxdtq8b4hwQ==",
+  "dgSpecHash": "a78oLmip0JCGdbKMA5MYwQcYZ7Byi5NYAfXayNTChnDVo1RNLo+IJYh8mTP9qzXocxQgpi02z5q7I2SwNzaZTA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Danesh\\Documents\\Visual Studio 2019\\Projects\\Asp Core Pro\\Lampshade\\Lampshade\\CommentManagement.Infrastructure.EfCore\\CommentManagement.Infrastructure.EfCore.csproj",
   "expectedPackageFiles": [
@@ -56,6 +56,7 @@
     "C:\\Users\\Danesh\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Danesh\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\Danesh\\.nuget\\packages\\newtonsoft.json\\10.0.1\\newtonsoft.json.10.0.1.nupkg.sha512",
+    "C:\\Users\\Danesh\\.nuget\\packages\\restsharp\\106.11.7\\restsharp.106.11.7.nupkg.sha512",
     "C:\\Users\\Danesh\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\Danesh\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
     "C:\\Users\\Danesh\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",

@@ -11,11 +11,14 @@ namespace ShopManagement.Application.Contracts.OrderAgg
         public double TotalPrice { get; set; }
         public double DiscountPrice { get; set; }
         public double PayAmount { get; set; }
+        public int PaymentMethod { get; set; }
+        public string MobileNumber { get; set; }
+        public string Address { get; set; }
 
         public List<CartItem> CartItems { get; set; }
 
         public Cart() => CartItems = new List<CartItem>();
-        
+
         public void Add(CartItem item)
         {
             CartItems.Add(item);
@@ -24,5 +27,7 @@ namespace ShopManagement.Application.Contracts.OrderAgg
             DiscountPrice += item.DiscountPrice;
             PayAmount += item.PayAmount;
         }
+
+        public void SetPaymentMethod(int paymentMethodId) => PaymentMethod = paymentMethodId;
     }
 }

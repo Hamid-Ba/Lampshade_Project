@@ -11,5 +11,6 @@ namespace Framework.Application.Authentication
         void Signin(AuthViewModel account);
         void SignOut();
         bool IsAuthenticated();
+        long GetUserId();
     }
 }

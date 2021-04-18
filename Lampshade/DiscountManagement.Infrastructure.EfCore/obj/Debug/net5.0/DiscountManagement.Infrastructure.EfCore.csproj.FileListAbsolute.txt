@@ -26,3 +26,9 @@ C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lam
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\DiscountManagement.Infrastructure.EfCore\obj\Debug\net5.0\ref\DiscountManagement.Infrastructure.EfCore.dll
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\DiscountManagement.Infrastructure.EfCore\obj\Debug\net5.0\DiscountManagement.Infrastructure.EfCore.pdb
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\DiscountManagement.Infrastructure.EfCore\obj\Debug\net5.0\DiscountManagement.Infrastructure.EfCore.genruntimeconfig.cache
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\DiscountManagement.Infrastructure.EfCore\bin\Debug\net5.0\AccountManagement.Application.Contract.dll
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\DiscountManagement.Infrastructure.EfCore\bin\Debug\net5.0\AccountManagement.Domain.dll
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\DiscountManagement.Infrastructure.EfCore\bin\Debug\net5.0\AccountManagement.Infrastructure.EfCore.dll
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\DiscountManagement.Infrastructure.EfCore\bin\Debug\net5.0\AccountManagement.Application.Contract.pdb
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\DiscountManagement.Infrastructure.EfCore\bin\Debug\net5.0\AccountManagement.Domain.pdb
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\DiscountManagement.Infrastructure.EfCore\bin\Debug\net5.0\AccountManagement.Infrastructure.EfCore.pdb

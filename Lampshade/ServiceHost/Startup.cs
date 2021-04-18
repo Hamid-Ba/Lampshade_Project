@@ -16,6 +16,7 @@ using Framework.Application.Authentication;
 using Framework.Application.Hashing;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
+using Framework.Application.ZarinPal;
 
 namespace ServiceHost
 {
@@ -43,11 +44,12 @@ namespace ServiceHost
             services.AddSingleton(HtmlEncoder.Create(UnicodeRanges.BasicLatin, UnicodeRanges.Arabic));
             services.AddSingleton<IPasswordHasher, PasswordHasher>();
             services.AddTransient<IAuthHelper, AuthHelper>();
+            services.AddTransient<IZarinPalFactory, ZarinPalFactory>();
 
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, o =>
                 {
-                    o.LoginPath = "/";
+                    o.LoginPath = "/Account";
                     o.LogoutPath = "/Account/Logout";
                     o.AccessDeniedPath = new PathString("/AccessDenied");
                     o.ExpireTimeSpan = TimeSpan.FromMinutes(43200);

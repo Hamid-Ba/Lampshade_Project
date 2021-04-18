@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -17,15 +18,9 @@ namespace Framework.Application.Authentication
             _contextAccessor = contextAccessor;
         }
 
-        public bool IsAuthenticated()
-        {
-            return _contextAccessor.HttpContext.User.Identity != null && _contextAccessor.HttpContext.User.Identity.IsAuthenticated;
-            //var claims = _contextAccessor.HttpContext.User.Claims.ToList();
-            ////if (claims.Count > 0)
-            ////    return true;
-            ////return false;
-            //return claims.Count > 0;
-        }
+        public long GetUserId() => long.Parse(_contextAccessor.HttpContext.User.Claims.FirstOrDefault(c => c.Type == "UserId").Value);
+
+        public bool IsAuthenticated() =>  _contextAccessor.HttpContext.User.Identity != null && _contextAccessor.HttpContext.User.Identity.IsAuthenticated;
 
         public void Signin(AuthViewModel account)
         {
