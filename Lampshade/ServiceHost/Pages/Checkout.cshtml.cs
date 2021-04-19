@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Nancy.Json;
 using ShopManagement.Application.Contracts.OrderAgg;
+using ShopManagement.Domain.Service;
 
 namespace ServiceHost.Pages
 {
@@ -59,14 +60,14 @@ namespace ServiceHost.Pages
             return Page();
         }
 
-        public IActionResult OnPostPay(int paymentMethod,string address,string phoneNumber)
+        public IActionResult OnPostPay(int paymentMethod, string address, string phoneNumber)
         {
             if (string.IsNullOrEmpty(address) || string.IsNullOrEmpty(phoneNumber))
             {
                 long number;
                 if (string.IsNullOrEmpty(address)) Message = "آدرس خود را مشخص نمایید";
-                if (string.IsNullOrEmpty(phoneNumber) || !phoneNumber.StartsWith("09") || !long.TryParse(phoneNumber,out number) || phoneNumber.Length != 11) Message = "شماره موبایل خود را وارد نمایید";
-                return RedirectToPage("Checkout",new { message = Message });
+                if (string.IsNullOrEmpty(phoneNumber) || !phoneNumber.StartsWith("09") || !long.TryParse(phoneNumber, out number) || phoneNumber.Length != 11) Message = "شماره موبایل خود را وارد نمایید";
+                return RedirectToPage("Checkout", new { message = Message });
             }
 
             Cart = _cartService.GetCart();
@@ -86,24 +87,38 @@ namespace ServiceHost.Pages
                     $"https://{_zarinPalFactory.Prefix}.zarinpal.com/pg/StartPay/{paymentResponse.Authority}");
             }
 
-            OperationResult result = new OperationResult();
-            result.Succeeded("سفارش شما ثبت گردید ، جهت ارسال محصول ، همکاران ما با شما تماس خواهند گرفت!");
+            else if (paymentMethod == PaymentMethod.Cash)
+            {
+                OperationResult result = new OperationResult();
 
-            return RedirectToPage("PaymentResult", result);
+                var issueTrackingNo = _orderApplication.CreateCashOrderOperation(orderId);
+                result.Succeeded($"سفارش شما ثبت گردید ، جهت ارسال محصول ، همکاران ما با شما تماس خواهند گرفت!\nشماره پیگیری شما :{issueTrackingNo}");
+                Response.Cookies.Delete(CookieName);
+                
+                return RedirectToPage("PaymentResult", result);
+            }
+
+            return RedirectToPage("Index");
         }
 
         public IActionResult OnGetCallBack([FromQuery] string authority, [FromQuery] string status,
             [FromQuery] long oId)
         {
             var verificationResponse = _zarinPalFactory.CreateVerificationRequest(authority, _orderApplication.GetOrderPriceBy(oId).ToString());
+            OperationResult result = new OperationResult();
+
+            result.Failed("تراکنش با مشکل مواجه شد! در صورت کسر مبلغ ، حداکثر تا 24 ساعت دیگر برگردانده می شود");
 
             if (verificationResponse.Status == 100 && status.ToLower() == "ok")
             {
                 var issueTrackingNo = _orderApplication.PaymentSuccedded(oId, verificationResponse.RefID);
+                result.Succeeded($"سفارش شما با موفقیت ثبت گردید!\nشماره پیگیری شما : {issueTrackingNo}");
                 Response.Cookies.Delete(CookieName);
+
+                return RedirectToPage("PaymentResult", result);
             }
 
-            return null;
+            return RedirectToPage("Index");
         }
     }
 }

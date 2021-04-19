@@ -6,6 +6,15 @@ using System.Threading.Tasks;
 
 namespace ShopManagement.Application.Contracts.OrderAgg
 {
+
+    public class DeleteOrderVM
+    {
+        public long Id { get; set; }
+        public long UserId { get; set; }
+        public string Fullname { get; set; }
+        public double TotalPrice { get; set; }
+    }
+
     public class AdminOrderVM
     {
         public long Id { get; set; }
@@ -38,4 +47,6 @@ namespace ShopManagement.Application.Contracts.OrderAgg
         public int DiscountRate { get;  set; }
         public int Count { get;  set; }
     }
+
+    
 }

@@ -15,7 +15,7 @@ namespace SM.Application.OrderAgg
         private readonly IOrderRepository _orderRepository;
         private readonly IShopInventoryACL _shopInventoryACL;
 
-        public OrderApplication(IAuthHelper authHelper,IConfiguration configuration, IOrderRepository orderRepository,IShopInventoryACL shopInventoryACL)
+        public OrderApplication(IAuthHelper authHelper, IConfiguration configuration, IOrderRepository orderRepository, IShopInventoryACL shopInventoryACL)
         {
             _authHelper = authHelper;
             _configuration = configuration;
@@ -25,7 +25,7 @@ namespace SM.Application.OrderAgg
 
         public long PlaceOrder(Cart cart)
         {
-            var order = new Order(_authHelper.GetUserId(), cart.TotalPrice, cart.DiscountPrice, cart.PayAmount,cart.Address,cart.MobileNumber,OrderStatus.Transaction, cart.PaymentMethod);
+            var order = new Order(_authHelper.GetUserId(), cart.TotalPrice, cart.DiscountPrice, cart.PayAmount, cart.Address, cart.MobileNumber, OrderStatus.Transaction, cart.PaymentMethod);
 
             foreach (var item in cart.CartItems)
             {
@@ -49,15 +49,15 @@ namespace SM.Application.OrderAgg
         {
             var order = _orderRepository.Get(orderId);
 
-            if(order != null)
+            if (order != null)
             {
                 order.PaymentSuccedded(refId);
-                
-                var issueTrackingNo = CodeGenerator.Generate(_configuration.GetSection("Symbol").Value);
+
+                var issueTrackingNo = CodeGenerator.Generate(_configuration.GetSection("OnlineSymbol").Value);
                 order.SetIssueTrackingNo(issueTrackingNo);
                 order.SetOrderStatus(OrderStatus.PreParation);
 
-                if(!_shopInventoryACL.ReduceFromInventory(order.OrderItems)) return "";
+                if (!_shopInventoryACL.ReduceFromInventory(order.OrderItems)) return "";
 
                 _orderRepository.SaveChanges();
 
@@ -66,5 +66,56 @@ namespace SM.Application.OrderAgg
 
             return "";
         }
+
+        public string CreateCashOrderOperation(long orderId)
+        {
+            var result = new OperationResult();
+
+            var order = _orderRepository.Get(orderId);
+
+            if (order != null)
+            {
+                var issueTrackingNo = CodeGenerator.Generate(_configuration.GetSection("CashSymbol").Value);
+                order.SetIssueTrackingNo(issueTrackingNo);
+                order.SetOrderStatus(OrderStatus.PreParation);
+
+                if (!_shopInventoryACL.ReduceFromInventory(order.OrderItems)) return "";
+
+                _orderRepository.SaveChanges();
+
+                return issueTrackingNo;
+            }
+
+            return "همچین محصولی وجود ندارد";
+        }
+
+        public OperationResult MakePaymentSuccedded(long orderId)
+        {
+            var result = new OperationResult();
+
+            var order = _orderRepository.Get(orderId);
+
+            if (order == null) return result.Failed();
+
+            order.PaymentSuccedded(0);
+
+            return result.Succeeded();
+        }
+
+        public OperationResult Delete(DeleteOrderVM command)
+        {
+            OperationResult result = new OperationResult();
+
+            var order = _orderRepository.Get(command.Id);
+
+            if (order == null) return result.Failed(ValidateMessage.IsExist);
+
+            order.Delete();
+            _orderRepository.SaveChanges();
+
+            return result.Succeeded();
+        }
+
+        public DeleteOrderVM GetDetailForDelete(long orderId) => _orderRepository.GetDetailForDelete(orderId);
     }
 }

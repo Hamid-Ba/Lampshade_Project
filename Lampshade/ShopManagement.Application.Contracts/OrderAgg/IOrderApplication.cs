@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Framework.Application;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,10 @@ namespace ShopManagement.Application.Contracts.OrderAgg
     {
         long PlaceOrder(Cart cart);
         string PaymentSuccedded(long orderId, long refId);
+        string CreateCashOrderOperation(long orderId);
+        OperationResult MakePaymentSuccedded(long orderId);
+        OperationResult Delete(DeleteOrderVM command);
+        DeleteOrderVM GetDetailForDelete(long orderId);
         IEnumerable<AdminOrderVM> GetAllForAdmin(SearchOrderVM search);
         IEnumerable<AdminOrderItemVM> GetAllItemsForAdminBy(long orderId);
         double GetOrderPriceBy(long orderId);

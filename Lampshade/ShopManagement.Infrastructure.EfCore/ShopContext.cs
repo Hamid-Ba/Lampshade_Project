@@ -21,6 +21,7 @@ namespace ShopManagement.Infrastructure.EfCore
             modelBuilder.Entity<Product>().HasQueryFilter(p => !p.IsDeleted || p.Category == null);
             modelBuilder.Entity<ProductPicture>().HasQueryFilter(p => !p.IsDeleted);
             modelBuilder.Entity<Slide>().HasQueryFilter(s => !s.IsDeleted);
+            modelBuilder.Entity<Order>().HasQueryFilter(o => !o.IsDeleted);
         }
 
         public DbSet<ProductCategory> ProductCategories { get; set; }

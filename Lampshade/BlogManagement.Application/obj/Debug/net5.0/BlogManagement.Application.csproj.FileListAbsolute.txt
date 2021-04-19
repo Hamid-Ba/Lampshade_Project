@@ -8,6 +8,7 @@ C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lam
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\BlogManagement.Application\bin\Debug\net5.0\BlogManagement.Application.Contract.pdb
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\BlogManagement.Application\bin\Debug\net5.0\BlogManagement.Domain.pdb
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\BlogManagement.Application\bin\Debug\net5.0\Framework.pdb
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\BlogManagement.Application\obj\Debug\net5.0\BlogManagement.Application.csprojAssemblyReference.cache
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\BlogManagement.Application\obj\Debug\net5.0\BlogManagement.Application.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\BlogManagement.Application\obj\Debug\net5.0\BlogManagement.Application.AssemblyInfoInputs.cache
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\BlogManagement.Application\obj\Debug\net5.0\BlogManagement.Application.AssemblyInfo.cs
@@ -16,4 +17,3 @@ C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lam
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\BlogManagement.Application\obj\Debug\net5.0\BlogManagement.Application.dll
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\BlogManagement.Application\obj\Debug\net5.0\ref\BlogManagement.Application.dll
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\BlogManagement.Application\obj\Debug\net5.0\BlogManagement.Application.pdb
-C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\BlogManagement.Application\obj\Debug\net5.0\BlogManagement.Application.csprojAssemblyReference.cache

@@ -1,16 +1,13 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+using Framework.Application;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace ServiceHost.Pages
 {
     public class PaymentResultModel : PageModel
     {
-        public void OnGet()
-        {
-        }
+        public OperationResult Result { get; set; }
+
+        public void OnGet(OperationResult result) => Result = result;
+        
     }
 }

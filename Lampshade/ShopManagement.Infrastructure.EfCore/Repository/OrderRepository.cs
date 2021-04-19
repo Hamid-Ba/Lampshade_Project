@@ -92,5 +92,20 @@ namespace ShopManagement.Infrastructure.EfCore.Repository
             return items;
         }
 
+        public DeleteOrderVM GetDetailForDelete(long orderId)
+        {
+            var users = _accountContext.Users.Select(u => new { u.Id, u.Fullname }).ToList();
+
+            var result = _shopContext.Orders.Select(o => new DeleteOrderVM
+            {
+                Id = o.Id,
+                TotalPrice = o.TotalPrice,
+                UserId = o.UserId
+            }).AsNoTracking().FirstOrDefault(o => o.Id == orderId);
+
+            result.Fullname = users.FirstOrDefault(u => u.Id == result.UserId)?.Fullname;
+
+            return result;
+        }
     }
 }

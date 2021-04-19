@@ -48,5 +48,7 @@ namespace ShopManagement.Domain.OrderAgg
         public void SetOrderStatus(int status) => Status = status;
 
         public void AddItem(OrderItem item) => OrderItems.Add(item);
+
+        public void Delete() => IsDeleted = true;
     }
 }

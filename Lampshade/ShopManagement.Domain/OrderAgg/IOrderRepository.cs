@@ -10,6 +10,7 @@ namespace ShopManagement.Domain.OrderAgg
 {
     public interface IOrderRepository : IRepository<long, Order>
     {
+        DeleteOrderVM GetDetailForDelete(long orderId);
         IEnumerable<AdminOrderVM> GetAllForAdmin(SearchOrderVM search);
         IEnumerable<AdminOrderItemVM> GetAllItemsForAdminBy(long orderId);
     }
