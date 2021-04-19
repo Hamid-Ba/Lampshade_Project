@@ -99,9 +99,8 @@ namespace ServiceHost.Pages
 
             if (verificationResponse.Status == 100 && status.ToLower() == "ok")
             {
-                //Set IssueTrackingNo And Succedded Payment
+                var issueTrackingNo = _orderApplication.PaymentSuccedded(oId, verificationResponse.RefID);
                 Response.Cookies.Delete(CookieName);
-
             }
 
             return null;

@@ -52,6 +52,9 @@ namespace ShopManagement.Infrastructure.EfCore.Repository
             {
                 switch (order.Status)
                 {
+                    case OrderStatus.Transaction:
+                        order.StatusTitle = "در حال انجام تراکنش";
+                        break;
                     case OrderStatus.PreParation:
                         order.StatusTitle = "آماده سازی";
                         break;

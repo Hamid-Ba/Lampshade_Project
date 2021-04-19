@@ -3500,7 +3500,8 @@
           "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0",
           "SM.Application": "1.0.0",
           "ShopManagement.Domain": "1.0.0",
-          "ShopManagement.Infrastructure.EfCore": "1.0.0"
+          "ShopManagement.Infrastructure.EfCore": "1.0.0",
+          "ShopManagement.Infrastructure.InventoryACL": "1.0.0"
         },
         "compile": {
           "bin/placeholder/ShopManagement.Infrastructure.Configuration.dll": {}
@@ -3523,6 +3524,20 @@
         },
         "runtime": {
           "bin/placeholder/ShopManagement.Infrastructure.EfCore.dll": {}
+        }
+      },
+      "ShopManagement.Infrastructure.InventoryACL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "InventoryManagement.Application.Contract": "1.0.0",
+          "ShopManagement.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ShopManagement.Infrastructure.InventoryACL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ShopManagement.Infrastructure.InventoryACL.dll": {}
         }
       },
       "SM.Application/1.0.0": {
@@ -10410,6 +10425,11 @@
       "type": "project",
       "path": "../ShopManagement.Infrastructure.EfCore/ShopManagement.Infrastructure.EfCore.csproj",
       "msbuildProject": "../ShopManagement.Infrastructure.EfCore/ShopManagement.Infrastructure.EfCore.csproj"
+    },
+    "ShopManagement.Infrastructure.InventoryACL/1.0.0": {
+      "type": "project",
+      "path": "../ShopManagement.Infrastructure.InventoryACL/ShopManagement.Infrastructure.InventoryACL.csproj",
+      "msbuildProject": "../ShopManagement.Infrastructure.InventoryACL/ShopManagement.Infrastructure.InventoryACL.csproj"
     },
     "SM.Application/1.0.0": {
       "type": "project",

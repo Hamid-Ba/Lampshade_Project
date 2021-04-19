@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using _0_Framework.Application;
+using AccountManagement.Infrastructure.EfCore;
 using Framework.Infrastructure;
 using InventoryManagement.Application.Contract.InventoryAgg;
 using InventoryManagement.Domain.InventoryAgg;
@@ -10,12 +11,15 @@ namespace InventoryManagement.Infrastructure.EfCore.Repository
 {
     public class InventoryRepository : RepositoryBase<long, Inventory>, IInventoryRepository
     {
-        private readonly InventoryContext _context;
         private readonly ShopContext _shopContext;
+        private readonly AccountContext _accountContext;
+        private readonly InventoryContext _context;
 
-        public InventoryRepository(InventoryContext context, ShopContext shopContext) : base(context)
+
+        public InventoryRepository(InventoryContext context, AccountContext accountContext, ShopContext shopContext) : base(context)
         {
             _context = context;
+            _accountContext = accountContext;
             _shopContext = shopContext;
         }
 
@@ -73,9 +77,10 @@ namespace InventoryManagement.Infrastructure.EfCore.Repository
 
         public IEnumerable<InventoryOperationsVM> GetAllOperations(long inventoryId)
         {
+            var user = _accountContext.Users.Select(u => new { u.Id, u.Fullname }).ToList();
             var inventory = _context.Inventories.Find(inventoryId);
 
-            return inventory.InventoryOperations.Select(o => new InventoryOperationsVM()
+            var operations = inventory.InventoryOperations.Select(o => new InventoryOperationsVM()
             {
                 Id = o.Id,
                 Description = o.Description,
@@ -84,9 +89,12 @@ namespace InventoryManagement.Infrastructure.EfCore.Repository
                 Operation = o.Operation,
                 OperationDate = o.OperationDate.ToFarsi(),
                 OperatorId = o.OperatorId,
-                OperatorName = "مدیر سیستم",
                 OrderId = o.OrderId
             }).ToList();
+
+            operations.ForEach(o => o.OperatorName = user.FirstOrDefault(u => u.Id == o.OperatorId)?.Fullname);
+
+            return operations;
         }
     }
 }

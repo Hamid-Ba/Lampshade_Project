@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Framework.Application;
+using Framework.Application.Authentication;
 using InventoryManagement.Application.Contract.InventoryAgg;
 using InventoryManagement.Domain.InventoryAgg;
 
@@ -11,8 +12,13 @@ namespace InventoryManagement.Application.InventoryAgg
 {
     public class InventoryApplication : IInventoryApplication
     {
+        private readonly IAuthHelper _authHelper;
         private readonly IInventoryRepository _inventoryRepository;
-        public InventoryApplication(IInventoryRepository inventoryRepository) => _inventoryRepository = inventoryRepository;
+        public InventoryApplication(IAuthHelper authHelper, IInventoryRepository inventoryRepository)
+        {
+            _authHelper = authHelper;
+            _inventoryRepository = inventoryRepository;
+        }
 
         public OperationResult Create(CreateInventoryVM command)
         {
@@ -68,8 +74,8 @@ namespace InventoryManagement.Application.InventoryAgg
 
             if (inventory == null) return result.Failed(ValidateMessage.IsExist);
 
-            //ToDo OperatorId
-            var operatorId = 1;
+            var operatorId = _authHelper.GetUserId();
+
             inventory.Increase(command.Count, operatorId, command.Description);
             _inventoryRepository.SaveChanges();
 
@@ -84,9 +90,10 @@ namespace InventoryManagement.Application.InventoryAgg
 
             if (inventory == null) return result.Failed(ValidateMessage.IsExist);
 
-            //ToDo OperatorId
-            var operatorId = 1;
+            var operatorId = _authHelper.GetUserId();
+
             inventory.Decrease(command.Count, operatorId, command.OrderId, command.Description);
+            
             _inventoryRepository.SaveChanges();
 
             return result.Succeeded();
@@ -96,8 +103,7 @@ namespace InventoryManagement.Application.InventoryAgg
         {
             OperationResult result = new OperationResult();
 
-            //ToDo OperatorId
-            var operatorId = 1;
+            var operatorId = _authHelper.GetUserId();
 
             foreach (var item in commands)
             {
