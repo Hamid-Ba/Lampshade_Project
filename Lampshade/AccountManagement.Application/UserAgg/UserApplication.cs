@@ -163,5 +163,8 @@ namespace AccountManagement.Application.UserAgg
 
             return user.UserRoles.Any(u => u.RoleId == 8);// 8 Belongs To Colleague Role
         }
+
+        public IEnumerable<UserForSearchVM> GetAllForSearch() => _userRepository.GetAllForSearch();
+        
     }
 }

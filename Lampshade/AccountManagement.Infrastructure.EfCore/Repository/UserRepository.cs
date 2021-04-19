@@ -102,5 +102,11 @@ namespace AccountManagement.Infrastructure.EfCore.Repository
 
             return (rolesId.ToArray(), allRolesName);
         }
+
+        public IEnumerable<UserForSearchVM> GetAllForSearch() => _context.Users.Select(u => new UserForSearchVM
+        {
+            Id = u.Id,
+            Fullname = u.Fullname
+        }).ToList();
     }
 }

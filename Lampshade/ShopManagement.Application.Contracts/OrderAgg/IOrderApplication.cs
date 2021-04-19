@@ -14,7 +14,10 @@ namespace ShopManagement.Application.Contracts.OrderAgg
         string CreateCashOrderOperation(long orderId);
         OperationResult MakePaymentSuccedded(long orderId);
         OperationResult Delete(DeleteOrderVM command);
+        OperationResult ChangeStatus(ChangeStatusOrderVM command);
         DeleteOrderVM GetDetailForDelete(long orderId);
+        ChangeStatusOrderVM GetDetailForChangeStatus(long orderId);
+        DetailCustomerOrderVM GetDetailOfOrderCustomer(long orderId);
         IEnumerable<AdminOrderVM> GetAllForAdmin(SearchOrderVM search);
         IEnumerable<AdminOrderItemVM> GetAllItemsForAdminBy(long orderId);
         double GetOrderPriceBy(long orderId);

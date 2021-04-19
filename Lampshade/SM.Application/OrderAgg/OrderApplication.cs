@@ -98,6 +98,7 @@ namespace SM.Application.OrderAgg
             if (order == null) return result.Failed();
 
             order.PaymentSuccedded(0);
+            _orderRepository.SaveChanges();
 
             return result.Succeeded();
         }
@@ -117,5 +118,24 @@ namespace SM.Application.OrderAgg
         }
 
         public DeleteOrderVM GetDetailForDelete(long orderId) => _orderRepository.GetDetailForDelete(orderId);
+
+        public OperationResult ChangeStatus(ChangeStatusOrderVM command)
+        {
+            OperationResult result = new OperationResult();
+
+            var order = _orderRepository.Get(command.Id);
+
+            if (order == null) return result.Failed(ValidateMessage.IsExist);
+
+            order.SetOrderStatus(command.Status);
+            _orderRepository.SaveChanges();
+
+            return result.Succeeded();
+        }
+
+        public ChangeStatusOrderVM GetDetailForChangeStatus(long orderId) => _orderRepository.GetDetailForChangeStatus(orderId);
+
+        public DetailCustomerOrderVM GetDetailOfOrderCustomer(long orderId) => _orderRepository.GetDetailOfOrderCustomer(orderId);
+        
     }
 }

@@ -1,0 +1,22 @@
+﻿@model ShopManagement.Application.Contracts.OrderAgg.DeleteOrderVM
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h4 class="modal-title">حذف سفارش</h4>
+</div>
+
+<form asp-page="./Index" asp-page-handler="Delete"
+      method="post"
+      data-ajax="true"
+      data-callback=""
+      data-action="Refresh"
+      enctype="multipart/form-data">
+    <div class="modal-body">
+        <h5 style="font-style: oblique">آیا از حذف سفارش @Model.Fullname با مبلغ @Model.TotalPrice مطمئن هستید؟</h5>
+    </div>
+    <div class="modal-footer">
+        <input asp-for="Id" type="hidden"/>
+        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">خیر</button>
+        <button type="submit" class="btn btn-danger waves-effect waves-light">بله</button>
+    </div>
+</form>

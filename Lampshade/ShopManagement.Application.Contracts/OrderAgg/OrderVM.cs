@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Framework.Application;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,10 +35,28 @@ namespace ShopManagement.Application.Contracts.OrderAgg
         public string CreationDate { get; set; }
     }
 
+    public class DetailCustomerOrderVM
+    {
+        public long Id { get; set; }
+        public long UserId { get; set; }
+        public string Fullname { get; set; }
+        public string Address { get; set; }
+        public string MobilePhone { get; set; }
+    }
+
     public class SearchOrderVM
     {
         public long UserId { get; set; }
         public int Status { get; set; }
+    }
+
+    public class ChangeStatusOrderVM
+    {
+        public long Id { get; set; }
+
+        [Range(1,int.MaxValue,ErrorMessage = ValidateMessage.IsRequired)]
+        public int Status { get; set; }
+        public string StatusTitle { get; set; }
     }
 
     public class AdminOrderItemVM

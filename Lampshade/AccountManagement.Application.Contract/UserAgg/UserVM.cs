@@ -85,4 +85,10 @@ namespace AccountManagement.Application.Contract.UserAgg
         public string Email { get; set; }
         public string Password { get; set; }
     }
+
+    public class UserForSearchVM
+    {
+        public long Id { get; set; }
+        public string Fullname { get; set; }
+    }
 }

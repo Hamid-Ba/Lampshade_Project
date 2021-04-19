@@ -46,7 +46,7 @@ namespace ShopManagement.Infrastructure.EfCore.Repository
             var orders = query.ToList();
 
             orders.ForEach(o => o.PaymentMethod = o.PaymentMethodId == PaymentMethod.Online ? "پرداخت اینترنتی" : "پرداخت نقدی");
-            orders.ForEach(o => o.Fullname = users.FirstOrDefault(u => u.Id == o.Id)?.Fullname);
+            orders.ForEach(o => o.Fullname = users.Find(u => u.Id == o.UserId)?.Fullname);
 
             foreach (var order in orders)
             {
@@ -92,6 +92,37 @@ namespace ShopManagement.Infrastructure.EfCore.Repository
             return items;
         }
 
+        public ChangeStatusOrderVM GetDetailForChangeStatus(long orderId)
+        {
+            var order = _shopContext.Orders.Select(o => new ChangeStatusOrderVM
+            {
+                Id = o.Id,
+                Status = o.Status
+            }).FirstOrDefault(o => o.Id == orderId);
+
+
+            switch (order.Status)
+            {
+                case OrderStatus.Transaction:
+                    order.StatusTitle = "در حال انجام تراکنش";
+                    break;
+                case OrderStatus.PreParation:
+                    order.StatusTitle = "آماده سازی";
+                    break;
+                case OrderStatus.Dispatching:
+                    order.StatusTitle = "در حال ارسال";
+                    break;
+                case OrderStatus.AgentDelivary:
+                    order.StatusTitle = "تحویل پست";
+                    break;
+                case OrderStatus.CustomerDelivary:
+                    order.StatusTitle = "تحویل داده شد";
+                    break;
+            }
+
+            return order;
+        }
+
         public DeleteOrderVM GetDetailForDelete(long orderId)
         {
             var users = _accountContext.Users.Select(u => new { u.Id, u.Fullname }).ToList();
@@ -106,6 +137,23 @@ namespace ShopManagement.Infrastructure.EfCore.Repository
             result.Fullname = users.FirstOrDefault(u => u.Id == result.UserId)?.Fullname;
 
             return result;
+        }
+
+        public DetailCustomerOrderVM GetDetailOfOrderCustomer(long orderId)
+        {
+            var users = _accountContext.Users.Select(u => new { u.Id, u.Fullname }).ToList();
+
+            var customer = _shopContext.Orders.Select(o => new DetailCustomerOrderVM
+            {
+                Id = o.Id,
+                UserId = o.UserId,
+                Address = o.Address,
+                MobilePhone = o.MobileNumber
+            }).AsNoTracking().FirstOrDefault(o => o.Id == orderId);
+
+            customer.Fullname = users.FirstOrDefault(u => u.Id == customer.UserId)?.Fullname;
+
+            return customer;
         }
     }
 }
