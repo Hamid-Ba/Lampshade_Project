@@ -15,7 +15,6 @@ namespace InventoryManagement.Infrastructure.EfCore.Repository
         private readonly AccountContext _accountContext;
         private readonly InventoryContext _context;
 
-
         public InventoryRepository(InventoryContext context, AccountContext accountContext, ShopContext shopContext) : base(context)
         {
             _context = context;
@@ -95,6 +94,25 @@ namespace InventoryManagement.Infrastructure.EfCore.Repository
             operations.ForEach(o => o.OperatorName = user.FirstOrDefault(u => u.Id == o.OperatorId)?.Fullname);
 
             return operations;
+        }
+
+        public StatusCheckVM CheckStock(CheckCartItemCountVM command)
+        {
+            var inventory = _context.Inventories.FirstOrDefault(i => i.ProductId == command.ProductId);
+
+            if (inventory == null || inventory.CalculateStock() < command.Count)
+            {
+                var products = _shopContext.Products.Select(p => new { p.Id, p.Name }).ToList();
+
+                return new StatusCheckVM
+                {
+                    IsInStock = false,
+                    ProductName = products.FirstOrDefault(p => p.Id == command.ProductId)?.Name
+                };
+
+            }
+
+            return new StatusCheckVM { IsInStock = true };
         }
     }
 }

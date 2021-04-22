@@ -33,12 +33,17 @@
                 <div class="page-wrapper">
                     <div class="page-content-wrapper">
 
-                        @foreach (var item in Model.CartItems.Where(c => !c.IsInStock))
-                        {
-                            <div class="alert alert-warning">
-                                <i class="fa fa-warning"></i> <span>محصول @item.Name به تعداد @item.Count در انبار موجود نمی باشد!</span>
-                            </div>
-                        }
+                        <div id="productStockWarnings">
+                            @foreach (var item in Model.CartItems.Where(c => !c.IsInStock))
+                            {
+                                <div class="alert alert-warning" id="@item.Id">
+                                    <i class="fa fa-warning"></i> کالای
+                                    <strong>@item.Name</strong>
+                                    در انبار کمتر از تعداد درخواستی موجود است.
+                                </div>
+                            }
+                        </div>
+
 
 
                         <div class="cart-table table-responsive">

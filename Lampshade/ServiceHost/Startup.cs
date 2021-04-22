@@ -17,6 +17,7 @@ using Framework.Application.Hashing;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
 using Framework.Application.ZarinPal;
+using InventoryManagement.Presentation.Api;
 
 namespace ServiceHost
 {
@@ -55,7 +56,10 @@ namespace ServiceHost
                     o.ExpireTimeSpan = TimeSpan.FromMinutes(43200);
                 });
 
-            services.AddRazorPages();
+            services.AddRazorPages().
+                AddApplicationPart(typeof(InventoryController).Assembly);
+               // AddNewtonsoftJson();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -84,6 +88,7 @@ namespace ServiceHost
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
+                endpoints.MapControllers();
             });
         }
     }

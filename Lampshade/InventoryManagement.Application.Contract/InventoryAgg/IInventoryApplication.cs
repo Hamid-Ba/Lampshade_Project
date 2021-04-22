@@ -19,5 +19,6 @@ namespace InventoryManagement.Application.Contract.InventoryAgg
         EditInventoryVM GetDetailForEdit(long id);
         DeleteInventoryVM GetDetailForDelete(long id);
         IEnumerable<InventoryOperationsVM> GetAllOperations(long inventoryId);
+        StatusCheckVM CheckStock(CheckCartItemCountVM command);
     }
 }

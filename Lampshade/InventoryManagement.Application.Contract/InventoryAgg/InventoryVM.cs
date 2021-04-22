@@ -70,4 +70,16 @@ namespace InventoryManagement.Application.Contract.InventoryAgg
         public string OperationDate { get; set; }
         public string Description { get; set; }
     }
+
+    public class StatusCheckVM
+    {
+        public bool IsInStock { get; set; }
+        public string ProductName { get; set; }
+    }
+
+    public class CheckCartItemCountVM
+    {
+        public long ProductId { get; set; }
+        public int Count { get; set; }
+    }
 }

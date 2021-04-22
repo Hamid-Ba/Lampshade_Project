@@ -93,7 +93,7 @@ namespace InventoryManagement.Application.InventoryAgg
             var operatorId = _authHelper.GetUserId();
 
             inventory.Decrease(command.Count, operatorId, command.OrderId, command.Description);
-            
+
             _inventoryRepository.SaveChanges();
 
             return result.Succeeded();
@@ -126,5 +126,7 @@ namespace InventoryManagement.Application.InventoryAgg
         public DeleteInventoryVM GetDetailForDelete(long id) => _inventoryRepository.GetDetailForDelete(id);
 
         public IEnumerable<InventoryOperationsVM> GetAllOperations(long inventoryId) => _inventoryRepository.GetAllOperations(inventoryId);
+
+        public StatusCheckVM CheckStock(CheckCartItemCountVM command) => _inventoryRepository.CheckStock(command);
     }
 }
