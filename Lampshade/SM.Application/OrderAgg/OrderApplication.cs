@@ -1,5 +1,6 @@
 ﻿using Framework.Application;
 using Framework.Application.Authentication;
+using Framework.Application.SMS;
 using Microsoft.Extensions.Configuration;
 using ShopManagement.Application.Contracts.OrderAgg;
 using ShopManagement.Domain.OrderAgg;
@@ -10,13 +11,15 @@ namespace SM.Application.OrderAgg
 {
     public class OrderApplication : IOrderApplication
     {
+        private readonly ISmsService _smsService;
         private readonly IAuthHelper _authHelper;
         private readonly IConfiguration _configuration;
         private readonly IOrderRepository _orderRepository;
         private readonly IShopInventoryACL _shopInventoryACL;
 
-        public OrderApplication(IAuthHelper authHelper, IConfiguration configuration, IOrderRepository orderRepository, IShopInventoryACL shopInventoryACL)
+        public OrderApplication(ISmsService smsService, IAuthHelper authHelper, IConfiguration configuration, IOrderRepository orderRepository, IShopInventoryACL shopInventoryACL)
         {
+            _smsService = smsService;
             _authHelper = authHelper;
             _configuration = configuration;
             _orderRepository = orderRepository;
@@ -61,6 +64,9 @@ namespace SM.Application.OrderAgg
 
                 _orderRepository.SaveChanges();
 
+                var message = $"کاربر گرامی سفارش شما در مرحله آماده سازی با موفقیت ثبت سیستم شده است ، شماره پیگیری شما {order.IssueTrackingNo} می باشد";
+                _smsService.SendSms(order.MobileNumber, message);
+
                 return issueTrackingNo;
             }
 
@@ -82,6 +88,9 @@ namespace SM.Application.OrderAgg
                 if (!_shopInventoryACL.ReduceFromInventory(order.OrderItems)) return "";
 
                 _orderRepository.SaveChanges();
+
+                var message = $"کاربر گرامی سفارش شما با موفقیت ثبت سیستم شده است ، شماره پیگیری شما {order.IssueTrackingNo} می باشد";
+                _smsService.SendSms(order.MobileNumber, message);
 
                 return issueTrackingNo;
             }
@@ -129,6 +138,12 @@ namespace SM.Application.OrderAgg
 
             order.SetOrderStatus(command.Status);
             _orderRepository.SaveChanges();
+
+            if(order.Status == OrderStatus.AgentDelivary)
+            {
+                var message = $"کاربر گرامی ، سفارش شما بوسیله مامور پست تحویل گرفته شد ، تا 24 ساعت آینده تحیل شما قرار خواهد گرفت";
+                _smsService.SendSms(order.MobileNumber, message);
+            }
 
             return result.Succeeded();
         }

@@ -67,6 +67,4 @@ namespace ShopManagement.Application.Contracts.OrderAgg
         public int DiscountRate { get;  set; }
         public int Count { get;  set; }
     }
-
-    
 }
