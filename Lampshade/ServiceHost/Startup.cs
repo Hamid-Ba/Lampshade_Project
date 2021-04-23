@@ -19,6 +19,7 @@ using Microsoft.AspNetCore.Http;
 using Framework.Application.ZarinPal;
 using InventoryManagement.Presentation.Api;
 using Framework.Application.SMS;
+using Framework.Application.Email;
 
 namespace ServiceHost
 {
@@ -48,6 +49,7 @@ namespace ServiceHost
             services.AddTransient<IAuthHelper, AuthHelper>();
             services.AddTransient<IZarinPalFactory, ZarinPalFactory>();
             services.AddTransient<ISmsService, SmsService>();
+            services.AddTransient<IEmailService, EmailService>();
 
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, o =>
@@ -60,7 +62,7 @@ namespace ServiceHost
 
             services.AddRazorPages().
                 AddApplicationPart(typeof(InventoryController).Assembly);
-               // AddNewtonsoftJson();
+            // AddNewtonsoftJson();
 
         }
 

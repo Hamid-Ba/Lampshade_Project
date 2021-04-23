@@ -9,25 +9,28 @@ using AccountManagement.Application.Contract.UserRoleAgg;
 using AccountManagement.Domain.UserAgg;
 using Framework.Application;
 using Framework.Application.Authentication;
+using Framework.Application.Email;
 using Framework.Application.Hashing;
 
 namespace AccountManagement.Application.UserAgg
 {
     public class UserApplication : IUserApplication
     {
+        private readonly IAuthHelper _authHelper;
+        private readonly IEmailService _emailService;
+        private readonly IPasswordHasher _passwordHasher;
         private readonly IUserRepository _userRepository;
         private readonly IRoleApplication _roleApplication;
-        private readonly IPasswordHasher _passwordHasher;
         private readonly IUserRoleApplication _userRoleApplication;
-        private readonly IAuthHelper _authHelper;
 
-        public UserApplication(IUserRepository userRepository, IRoleApplication roleApplication, IPasswordHasher passwordHasher, IUserRoleApplication userRoleApplication, IAuthHelper authHelper)
+        public UserApplication(IAuthHelper authHelper, IEmailService emailService, IPasswordHasher passwordHasher, IUserRepository userRepository, IRoleApplication roleApplication, IUserRoleApplication userRoleApplication)
         {
+            _authHelper = authHelper;
+            _emailService = emailService;
+            _passwordHasher = passwordHasher;
             _userRepository = userRepository;
             _roleApplication = roleApplication;
-            _passwordHasher = passwordHasher;
             _userRoleApplication = userRoleApplication;
-            _authHelper = authHelper;
         }
 
         public OperationResult Create(CreateUserVM command)
@@ -55,6 +58,9 @@ namespace AccountManagement.Application.UserAgg
                 long[] roles = { 2 };
                 _userRoleApplication.AddRolesToUser(user.Id, roles);
             }
+
+            var message = $"{user.Fullname} عزیز به سایت Lampshade خوش آمدید";
+            _emailService.SendEmail("خوش آمدید به Lampshade", message, user.Email);
 
             return result.Succeeded();
         }
@@ -165,6 +171,6 @@ namespace AccountManagement.Application.UserAgg
         }
 
         public IEnumerable<UserForSearchVM> GetAllForSearch() => _userRepository.GetAllForSearch();
-        
+
     }
 }
