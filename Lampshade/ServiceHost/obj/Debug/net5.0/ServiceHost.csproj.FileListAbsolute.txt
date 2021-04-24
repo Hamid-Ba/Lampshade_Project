@@ -303,3 +303,5 @@ C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lam
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ServiceHost\bin\Debug\net5.0\MailKit.dll
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ServiceHost\bin\Debug\net5.0\MimeKit.dll
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ServiceHost\bin\Debug\net5.0\BouncyCastle.Crypto.dll
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ServiceHost\obj\Debug\net5.0\Razor\Pages\ForgetPassword.cshtml.g.cs
+C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\ServiceHost\obj\Debug\net5.0\Razor\Pages\ChangePassword.cshtml.g.cs

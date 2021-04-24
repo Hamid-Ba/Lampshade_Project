@@ -75,7 +75,9 @@ namespace AccountManagement.Application.Contract.UserAgg
     public class ChangePasswordVM
     {
         public long Id { get; set; }
+        [Required(ErrorMessage = ValidateMessage.IsRequired)]
         public string NewPassword { get; set; }
+        [Required(ErrorMessage = ValidateMessage.IsRequired)]
         public string RePassword { get; set; }
     }
 
@@ -90,5 +92,13 @@ namespace AccountManagement.Application.Contract.UserAgg
     {
         public long Id { get; set; }
         public string Fullname { get; set; }
+    }
+
+    public class ForgetPasswordUserVM
+    {
+        [Required(ErrorMessage = ValidateMessage.IsRequired)]
+        public string Username { get; set; }
+        [Required(ErrorMessage = ValidateMessage.IsRequired)]
+        public string Email { get; set; }
     }
 }

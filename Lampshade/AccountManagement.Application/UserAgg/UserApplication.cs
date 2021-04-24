@@ -142,6 +142,9 @@ namespace AccountManagement.Application.UserAgg
             user.ChangePassword(newPassword);
             _userRepository.SaveChanges();
 
+            var message = $"{user.Fullname} گرامی ، رمز عبور جدید شما {command.NewPassword} می باشد";
+            _emailService.SendEmail("رمز عبور جدید", message, user.Email);
+
             return result.Succeeded();
         }
 
@@ -171,6 +174,21 @@ namespace AccountManagement.Application.UserAgg
         }
 
         public IEnumerable<UserForSearchVM> GetAllForSearch() => _userRepository.GetAllForSearch();
+
+        public OperationResult CanChangePassword(ForgetPasswordUserVM command)
+        {
+            var result = new OperationResult();
+
+            var user = _userRepository.GetUserBy(command.Username);
+
+            if (user != null)
+                if (user.Email.ToLower() == command.Email.ToLower())
+                    return result.Succeeded($"{user.Fullname} عزیز ، الان میتونی رمز عبورت رو تغییر بدی");
+
+            return result.Failed("همچین کاربری وجود ندارد!");
+        }
+
+        public long GetUserIdBy(string userName) => _userRepository.GetUserBy(userName).Id;
 
     }
 }
