@@ -9,4 +9,3 @@ C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lam
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\Framework\obj\Debug\net5.0\Framework.dll
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\Framework\obj\Debug\net5.0\ref\Framework.dll
 C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\Framework\obj\Debug\net5.0\Framework.pdb
-C:\Users\Danesh\Documents\Visual Studio 2019\Projects\Asp Core Pro\Lampshade\Lampshade\Framework\obj\Debug\net5.0\Framework.csprojAssemblyReference.cache

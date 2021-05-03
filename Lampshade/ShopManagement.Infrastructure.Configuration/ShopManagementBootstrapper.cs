@@ -1,5 +1,6 @@
 ﻿using LampshadeQuery.Contract.Cart;
 using LampshadeQuery.Contract.Category;
+using LampshadeQuery.Contract.Order;
 using LampshadeQuery.Contract.Product;
 using LampshadeQuery.Contract.Slide;
 using LampshadeQuery.Query;
@@ -60,7 +61,9 @@ namespace ShopManagement.Infrastructure.Configuration
             service.AddTransient<ISlideQuery, SlideQuery>();
             service.AddTransient<ICategoryQuery, CategoryQuery>();
             service.AddTransient<IProductQuery, ProductQuery>();
+            service.AddTransient<IOrderQuery, OrderQuery>();
             service.AddTransient<ICalculateCart, CalculateCart>();
+            
         }
     }
 }

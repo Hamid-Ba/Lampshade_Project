@@ -78,7 +78,7 @@
                                     <!-- mini cart  -->
                                     <div class="mini-cart" id="mini-cart">
                                         <div class="cart-items-wrapper ps-scroll" id="cart_items_wrapper">
-                                            
+
                                         </div>
                                         <div class="cart-buttons">
                                             <a asp-page="Cart">سبد خرید</a>
@@ -107,6 +107,27 @@
                                                     <li>
                                                         <a>@User.Identity.Name خوش آمدی</a>
                                                     </li>
+
+                                                    @if (Model.UserOrdersStatus.Count() > 0)
+                                                    {
+                                                        <li>
+                                                            وضعیت سفارشات شما:
+                                                            <ul>
+
+                                                                @foreach (var status in Model.UserOrdersStatus)
+                                                                {
+                                                                    <li>
+                                                                        <div class="progress">
+                                                                            <div class="progress-bar bg-success progress-bar-striped" style="width:@status.Item1%">@status.Item2</div>
+                                                                        </div>
+                                                                        <br>
+                                                                    </li>
+                                                                }
+
+                                                            </ul>
+                                                        </li>
+                                                    }
+
                                                 }
                                                 else
                                                 {
@@ -117,7 +138,7 @@
                                                         <a asp-page="Account">ورود</a>
                                                     </li>
                                                 }
-                                                
+
                                             </ul>
                                         </div>
                                     </div>

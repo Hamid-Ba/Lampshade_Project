@@ -8,5 +8,6 @@ namespace LampshadeQuery
     {
         public IEnumerable<ArticleCategoryQueryVM> ArticleCategoryQuery { get; set; }
         public IEnumerable<CategoryQueryVM> CategoryQuery { get; set; }
+        public IEnumerable<(int, string)> UserOrdersStatus { get; set; }
     }
 }
